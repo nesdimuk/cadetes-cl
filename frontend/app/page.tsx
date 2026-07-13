@@ -35,7 +35,15 @@ export default function Home() {
     if (selectedTeam) ms = ms.filter(m => m.home_team === selectedTeam || m.away_team === selectedTeam)
     if (selectedCategory) ms = ms.filter(m => m.category === selectedCategory)
     if (selectedRound !== "") ms = ms.filter(m => m.round === selectedRound)
-    return ms
+    return [...ms].sort((a, b) => {
+      // Jugados primero (más reciente arriba), luego pendientes (próximo primero)
+      if (a.status === "played" && b.status === "pending") return -1
+      if (a.status === "pending" && b.status === "played") return 1
+      const da = a.date ?? ""
+      const db = b.date ?? ""
+      if (a.status === "played") return db.localeCompare(da) // reciente primero
+      return da.localeCompare(db) // próximo primero
+    })
   }, [allMatches, selectedTeam, selectedCategory, selectedRound])
 
   const teamMatches = useMemo(() =>
