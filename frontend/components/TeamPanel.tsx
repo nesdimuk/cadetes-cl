@@ -8,9 +8,10 @@ interface Props {
 }
 
 export default function TeamPanel({ team, matches, allMatches }: Props) {
+  const today = new Date().toISOString().slice(0, 10)
   const played = matches.filter(m => m.status === "played")
   const upcoming = matches
-    .filter(m => m.status === "pending" && m.date)
+    .filter(m => m.status === "pending" && m.date && m.date >= today)
     .sort((a, b) => (a.date ?? "").localeCompare(b.date ?? ""))
   const next = upcoming[0] ?? null
 
