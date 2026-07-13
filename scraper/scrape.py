@@ -58,9 +58,19 @@ def parse_anwp_games(soup: BeautifulSoup, category: str) -> list[dict]:
     # Los slides del swiper corresponden a cada jornada
     slides = soup.find_all("div", class_="anwp-fl-matchweek-slides__swiper-slide")
 
+    seen_round1 = False
     for slide_idx, slide in enumerate(slides):
-        # La jornada puede estar en el texto del slide o inferirse del índice
-        round_num = slide_idx + 1
+        # Extraer número de jornada del título del slide
+        title_el = slide.find("div", class_="competition__stage-title")
+        title_txt = title_el.get_text(strip=True) if title_el else ""
+        m = re.match(r"fecha\s+(\d+)", title_txt.lower())
+        round_num = int(m.group(1)) if m else slide_idx + 1
+
+        # Si encontramos una segunda "Fecha 1", es un torneo anterior — parar
+        if round_num == 1:
+            if seen_round1:
+                break
+            seen_round1 = True
 
         game_divs = slide.find_all("div", attrs={"data-anwp-match": True})
         for g in game_divs:
