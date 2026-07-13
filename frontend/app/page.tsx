@@ -44,8 +44,11 @@ export default function Home() {
   }, [allMatches, selectedTeam, selectedCategory, selectedRound])
 
   const teamMatches = useMemo(() =>
-    selectedTeam ? allMatches.filter(m => m.home_team === selectedTeam || m.away_team === selectedTeam) : [],
-    [allMatches, selectedTeam]
+    selectedTeam ? allMatches.filter(m =>
+      (m.home_team === selectedTeam || m.away_team === selectedTeam) &&
+      (!selectedCategory || m.category === selectedCategory)
+    ) : [],
+    [allMatches, selectedTeam, selectedCategory]
   )
 
   const paged = filtered.slice(0, page * PER_PAGE)
