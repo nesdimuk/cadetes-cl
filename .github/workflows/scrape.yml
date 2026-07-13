@@ -1,0 +1,35 @@
+name: Scrape & Deploy
+
+on:
+  schedule:
+    - cron: "0 6,18 * * *"  # 6am y 6pm UTC = 3am y 3pm Chile
+  workflow_dispatch:          # También se puede lanzar manualmente
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r scraper/requirements.txt
+          playwright install chromium --with-deps
+
+      - name: Run scraper
+        run: python scraper/scrape.py
+
+      - name: Copy data to frontend
+        run: cp data/matches.json frontend/public/data/matches.json
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/matches.json frontend/public/data/matches.json
+          git diff --staged --quiet || git commit -m "chore: actualizar partidos [skip ci]"
+          git push
