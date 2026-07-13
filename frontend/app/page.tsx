@@ -13,6 +13,7 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("")
   const [selectedRound, setSelectedRound] = useState<number | "">("")
   const [showSubscribe, setShowSubscribe] = useState(false)
+  const [sortOrder, setSortOrder] = useState<"desc" | "asc">("desc")
   const [page, setPage] = useState(1)
   const PER_PAGE = 30
 
@@ -36,13 +37,9 @@ export default function Home() {
     if (selectedCategory) ms = ms.filter(m => m.category === selectedCategory)
     if (selectedRound !== "") ms = ms.filter(m => m.round === selectedRound)
     return [...ms].sort((a, b) => {
-      // Jugados primero (más reciente arriba), luego pendientes (próximo primero)
-      if (a.status === "played" && b.status === "pending") return -1
-      if (a.status === "pending" && b.status === "played") return 1
       const da = a.date ?? ""
       const db = b.date ?? ""
-      if (a.status === "played") return db.localeCompare(da) // reciente primero
-      return da.localeCompare(db) // próximo primero
+      return sortOrder === "desc" ? db.localeCompare(da) : da.localeCompare(db)
     })
   }, [allMatches, selectedTeam, selectedCategory, selectedRound])
 
@@ -131,16 +128,32 @@ export default function Home() {
           </div>
         )}
 
-        {/* Count */}
+        {/* Count + sort */}
         <div className="flex items-center justify-between mb-3">
           <p className="text-sm text-gray-500">
             {data ? `${filtered.length} partidos` : "Cargando..."}
           </p>
-          {(selectedTeam || selectedCategory || selectedRound !== "") && (
-            <button onClick={resetFilters} className="text-xs text-green-600 hover:underline">
-              Limpiar filtros
-            </button>
-          )}
+          <div className="flex items-center gap-3">
+            <div className="flex items-center bg-white border border-gray-200 rounded-lg overflow-hidden text-xs font-semibold">
+              <button
+                onClick={() => { setSortOrder("desc"); setPage(1) }}
+                className={`px-3 py-1.5 transition-colors ${sortOrder === "desc" ? "bg-green-600 text-white" : "text-gray-500 hover:bg-gray-50"}`}
+              >
+                Más reciente
+              </button>
+              <button
+                onClick={() => { setSortOrder("asc"); setPage(1) }}
+                className={`px-3 py-1.5 transition-colors ${sortOrder === "asc" ? "bg-green-600 text-white" : "text-gray-500 hover:bg-gray-50"}`}
+              >
+                Más antigua
+              </button>
+            </div>
+            {(selectedTeam || selectedCategory || selectedRound !== "") && (
+              <button onClick={resetFilters} className="text-xs text-green-600 hover:underline">
+                Limpiar filtros
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Skeleton */}
