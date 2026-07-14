@@ -1,6 +1,5 @@
+export const runtime = "nodejs"
 import { NextRequest, NextResponse } from "next/server"
-
-const BREVO_API_KEY = process.env.BREVO_API_KEY!
 const BREVO_LIST_ID = 6
 
 function getCategoryFromBirthYear(birthYear: number): string {
@@ -17,6 +16,9 @@ function getCategoryFromBirthYear(birthYear: number): string {
 }
 
 export async function POST(req: NextRequest) {
+  const BREVO_API_KEY = process.env.BREVO_API_KEY
+  if (!BREVO_API_KEY) return NextResponse.json({ error: "API key no configurada" }, { status: 500 })
+
   const { parentName, email, childName, birthYear, team } = await req.json()
 
   if (!parentName || !email || !childName || !birthYear || !team) {
