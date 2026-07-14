@@ -45,10 +45,9 @@ export async function POST(req: NextRequest) {
     }),
   })
 
-  if (!res.ok && res.status !== 204) {
+  if (!res.ok) {
     const err = await res.json().catch(() => ({}))
-    console.error("Brevo error:", err)
-    return NextResponse.json({ error: "Error al suscribir" }, { status: 500 })
+    return NextResponse.json({ error: "Brevo: " + (err.message ?? res.status) }, { status: 500 })
   }
 
   return NextResponse.json({ ok: true, category })
