@@ -17,20 +17,39 @@ const CATEGORIES = [
   { key: "sub-20", label: "Sub 20" },
 ]
 
+const MONTHS = [
+  "Enero","Febrero","Marzo","Abril","Mayo","Junio",
+  "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
+]
+
+const CURRENT_YEAR = new Date().getFullYear()
+
 export default function SubscribeModal({ onClose, defaultTeam = "" }: Props) {
   const [parentName, setParentName] = useState("")
   const [email, setEmail] = useState("")
   const [childName, setChildName] = useState("")
+  const [birthDay, setBirthDay] = useState("")
+  const [birthMonth, setBirthMonth] = useState("")
+  const [birthYear, setBirthYear] = useState("")
   const [selectedCats, setSelectedCats] = useState<string[]>([])
   const [team, setTeam] = useState(defaultTeam)
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
+  const [suggestedCat, setSuggestedCat] = useState("")
 
   const toggleCat = (cat: string) => {
-    setSelectedCats(prev =>
-      prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat]
-    )
+    setSelectedCats(prev => {
+      if (prev.includes(cat)) return prev.filter(c => c !== cat)
+      if (prev.length >= 2) return prev
+      return [...prev, cat]
+    })
+  }
+
+  const handleYearChange = (y: string) => {
+    setBirthYear(y)
+    setSuggestedCat("")
+    setSelectedCats([])
   }
 
   const submit = async (e: React.FormEvent) => {
@@ -42,10 +61,18 @@ export default function SubscribeModal({ onClose, defaultTeam = "" }: Props) {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ parentName, email, childName, categories: selectedCats, team }),
+        body: JSON.stringify({
+          parentName, email, childName,
+          birthDay: birthDay ? Number(birthDay) : null,
+          birthMonth: birthMonth ? Number(birthMonth) : null,
+          birthYear: Number(birthYear),
+          categories: selectedCats,
+          team,
+        }),
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error)
+      setSuggestedCat(data.suggestedCategory)
       setSent(true)
     } catch {
       setError("Hubo un error. Intenta de nuevo.")
@@ -62,11 +89,16 @@ export default function SubscribeModal({ onClose, defaultTeam = "" }: Props) {
             <div className="text-5xl mb-3">⚽</div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">¡Listo, {parentName}!</h3>
             <p className="text-gray-500 text-sm mb-2">
-              Cada viernes te llega el resumen de <strong>{team}</strong> en{" "}
+              Cada viernes recibirás el resumen de <strong>{team}</strong> en{" "}
               <strong>{selectedCats.map(c => CATEGORIES.find(x => x.key === c)?.label).join(" y ")}</strong>.
             </p>
-            <p className="text-gray-400 text-xs">
-              Si {childName} cambia de categoría, puedes actualizarlo desde cualquier email que recibas.
+            {birthDay && birthMonth && (
+              <p className="text-gray-400 text-xs mt-2">
+                🎂 Le mandaremos un saludo especial a {childName} el día de su cumpleaños.
+              </p>
+            )}
+            <p className="text-gray-400 text-xs mt-2">
+              Puedes actualizar la categoría en cualquier momento desde el email.
             </p>
             <button onClick={onClose} className="mt-5 w-full bg-green-600 text-white rounded-xl py-2.5 font-semibold text-sm hover:bg-green-700 transition-colors">
               Cerrar
@@ -105,23 +137,67 @@ export default function SubscribeModal({ onClose, defaultTeam = "" }: Props) {
                 className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-green-500 transition-colors"
               />
 
+              {/* Fecha de nacimiento */}
               <div>
-                <p className="text-xs text-gray-500 mb-2">Categoría(s) donde juega tu hijo/a <span className="text-gray-400">(puedes marcar más de una)</span></p>
+                <p className="text-xs text-gray-500 mb-1.5">Fecha de nacimiento de tu hijo/a <span className="text-green-600">🎂</span></p>
+                <div className="grid grid-cols-3 gap-2">
+                  <select
+                    value={birthDay} onChange={e => setBirthDay(e.target.value)}
+                    className="border border-gray-200 rounded-xl px-2 py-2.5 text-sm outline-none focus:border-green-500 transition-colors text-gray-600"
+                  >
+                    <option value="">Día</option>
+                    {Array.from({ length: 31 }, (_, i) => i + 1).map(d => (
+                      <option key={d} value={d}>{d}</option>
+                    ))}
+                  </select>
+                  <select
+                    value={birthMonth} onChange={e => setBirthMonth(e.target.value)}
+                    className="border border-gray-200 rounded-xl px-2 py-2.5 text-sm outline-none focus:border-green-500 transition-colors text-gray-600"
+                  >
+                    <option value="">Mes</option>
+                    {MONTHS.map((m, i) => (
+                      <option key={i} value={i + 1}>{m}</option>
+                    ))}
+                  </select>
+                  <select
+                    required value={birthYear} onChange={e => handleYearChange(e.target.value)}
+                    className="border border-gray-200 rounded-xl px-2 py-2.5 text-sm outline-none focus:border-green-500 transition-colors text-gray-600"
+                  >
+                    <option value="">Año</option>
+                    {Array.from({ length: 10 }, (_, i) => CURRENT_YEAR - 11 - i).map(y => (
+                      <option key={y} value={y}>{y}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              {/* Categorías */}
+              <div>
+                <p className="text-xs text-gray-500 mb-1.5">
+                  Categoría(s) donde juega <span className="text-gray-400">(máximo 2)</span>
+                </p>
                 <div className="grid grid-cols-4 gap-2">
-                  {CATEGORIES.map(cat => (
-                    <button
-                      key={cat.key}
-                      type="button"
-                      onClick={() => toggleCat(cat.key)}
-                      className={`py-1.5 rounded-lg text-xs font-semibold transition-colors border ${
-                        selectedCats.includes(cat.key)
-                          ? "bg-green-600 text-white border-green-600"
-                          : "bg-white text-gray-600 border-gray-200 hover:border-green-400"
-                      }`}
-                    >
-                      {cat.label}
-                    </button>
-                  ))}
+                  {CATEGORIES.map(cat => {
+                    const selected = selectedCats.includes(cat.key)
+                    const disabled = !selected && selectedCats.length >= 2
+                    return (
+                      <button
+                        key={cat.key}
+                        type="button"
+                        onClick={() => toggleCat(cat.key)}
+                        disabled={disabled}
+                        className={`py-1.5 rounded-lg text-xs font-semibold transition-colors border ${
+                          selected
+                            ? "bg-green-600 text-white border-green-600"
+                            : disabled
+                            ? "bg-gray-50 text-gray-300 border-gray-100 cursor-not-allowed"
+                            : "bg-white text-gray-600 border-gray-200 hover:border-green-400"
+                        }`}
+                      >
+                        {cat.label}
+                      </button>
+                    )
+                  })}
                 </div>
               </div>
 
