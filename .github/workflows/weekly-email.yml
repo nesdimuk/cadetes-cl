@@ -1,0 +1,24 @@
+name: Email Semanal
+
+on:
+  schedule:
+    - cron: "0 14 * * 5"  # Viernes 11am Chile (14:00 UTC)
+  workflow_dispatch:       # También se puede lanzar manualmente
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Enviar emails semanales
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+        run: python scraper/send_weekly_email.py
