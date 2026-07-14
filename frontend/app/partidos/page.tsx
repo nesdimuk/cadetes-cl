@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { useEffect, useState, useMemo } from "react"
+import { useEffect, useState, useMemo, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { Match, MatchData } from "@/lib/types"
 import { getAllTeams, CATEGORIES, CATEGORY_LABELS, getMaxRound } from "@/lib/utils"
@@ -9,7 +9,7 @@ import MatchCard from "@/components/MatchCard"
 import TeamPanel from "@/components/TeamPanel"
 import SubscribeModal from "@/components/SubscribeModal"
 
-export default function Partidos() {
+function PartidosInner() {
   const searchParams = useSearchParams()
   const [data, setData] = useState<MatchData | null>(null)
   const [selectedTeam, setSelectedTeam] = useState("")
@@ -213,5 +213,13 @@ export default function Partidos() {
         />
       )}
     </div>
+  )
+}
+
+export default function Partidos() {
+  return (
+    <Suspense>
+      <PartidosInner />
+    </Suspense>
   )
 }
