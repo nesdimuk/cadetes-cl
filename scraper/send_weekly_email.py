@@ -178,7 +178,7 @@ def build_email(contact, all_matches):
         "to": [{"email": contact["email"], "name": first_name}],
         "subject": f"⚽ Resumen de {child_name} en {team} — esta semana",
         "htmlContent": body,
-        "sender": {"name": "Cadetes.cl", "email": "no-reply@cadetes.cl"},
+        "sender": {"name": "Cadetes.cl", "email": "marcelo@saidcoach.com"},
     }
 
 def send_email(payload):
