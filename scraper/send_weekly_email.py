@@ -55,12 +55,38 @@ def get_contacts():
 def normalize(name):
     return re.sub(r"\s+", " ", name.strip().lower())
 
-def get_standings(matches, category):
+def find_group(matches, category, team_norm):
+    """Encuentra el grupo del equipo usando componentes conectados del grafo de partidos."""
+    played = [m for m in matches if m["category"] == category and m["status"] == "played" and m["home_score"] is not None]
+    # Union-Find
+    parent = {}
+    def find(x):
+        parent.setdefault(x, x)
+        if parent[x] != x:
+            parent[x] = find(parent[x])
+        return parent[x]
+    def union(x, y):
+        parent[find(x)] = find(y)
+    for m in played:
+        union(normalize(m["home_team"]), normalize(m["away_team"]))
+    # Grupo del equipo buscado
+    if team_norm not in parent:
+        return None
+    root = find(team_norm)
+    return {t for t in parent if find(t) == root}
+
+def get_standings(matches, category, team_norm=None):
+    # Filtrar solo equipos del mismo grupo si se especifica equipo
+    group_teams = find_group(matches, category, team_norm) if team_norm else None
+
     rows = {}
     for m in matches:
         if m["category"] != category or m["status"] != "played":
             continue
         if m["home_score"] is None:
+            continue
+        hn, an = normalize(m["home_team"]), normalize(m["away_team"])
+        if group_teams and hn not in group_teams and an not in group_teams:
             continue
         for team in [m["home_team"], m["away_team"]]:
             if team not in rows:
@@ -109,8 +135,8 @@ def build_email(contact, all_matches):
         upcoming = [m for m in team_matches if m["status"] == "pending" and m.get("date") and m["date"] >= TODAY]
         next_match = sorted(upcoming, key=lambda m: m["date"])[0] if upcoming else None
 
-        # Posición en tabla
-        standings = get_standings(cat_matches, cat)
+        # Posición en tabla (solo dentro del grupo del equipo)
+        standings = get_standings(cat_matches, cat, team_norm)
         pos = next((i + 1 for i, (t, _) in enumerate(standings) if normalize(t) == team_norm), None)
         total = len(standings)
 
