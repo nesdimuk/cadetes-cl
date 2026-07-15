@@ -197,6 +197,9 @@ def build_email(contact, all_matches):
       ¿Cambió la categoría? <a href='https://cadetes.cl/actualizar?email={contact["email"]}' style='color:#16a34a'>Actualízala aquí</a><br>
       Cadetes.cl · El portal del fútbol formativo chileno
     </p>
+    <p style='color:#d1d5db;font-size:10px;text-align:center;margin-top:8px'>
+      Datos obtenidos de <a href='https://www.campeonatochileno.cl' style='color:#d1d5db'>campeonatochileno.cl</a> · La información se actualiza automáticamente desde esa fuente y puede no reflejar cambios de último momento.
+    </p>
   </div>
 </div>"""
 
