@@ -54,8 +54,8 @@ const GUIDES = [
 ]
 
 const CAT_ICONS: Record<string, string> = {
-  "sub-11": "👦", "sub-12": "👦", "sub-13": "🧒", "sub-14": "🧒",
-  "sub-15": "🧑", "sub-16": "🧑", "sub-18": "👨", "sub-20": "👨",
+  "sub-11": "🌱", "sub-12": "⚡", "sub-13": "🔥", "sub-14": "🎯",
+  "sub-15": "💪", "sub-16": "🏆", "sub-18": "⭐", "sub-20": "🦁",
 }
 
 export default function Landing() {
