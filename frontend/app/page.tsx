@@ -114,6 +114,12 @@ export default function Landing() {
             >
               Ver partidos →
             </Link>
+            <Link
+              href="/tabla"
+              className="bg-white/15 text-white font-bold px-8 py-3 rounded-xl hover:bg-white/25 transition-colors text-base border border-white/30"
+            >
+              Tabla de posiciones →
+            </Link>
             <button
               onClick={() => setShowSubscribe(true)}
               className="border-2 border-white/60 text-white font-semibold px-8 py-3 rounded-xl hover:bg-white/10 transition-colors text-base"

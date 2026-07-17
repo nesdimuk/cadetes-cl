@@ -28,3 +28,24 @@ export interface StandingRow {
   gd: number
   points: number
 }
+
+export interface StandingEntry {
+  category: string
+  group: string
+  rank: number
+  team: string
+  played: number
+  won: number
+  drawn: number
+  lost: number
+  gf: number
+  ga: number
+  gd: number
+  pts: number
+}
+
+export interface StandingsData {
+  updated_at: string
+  total: number
+  standings: StandingEntry[]
+}

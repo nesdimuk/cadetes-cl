@@ -77,12 +77,17 @@ function PartidosInner() {
                 <p className="text-green-200 text-xs mt-0.5">Fútbol formativo chileno Sub-11 a Sub-20</p>
               </div>
             </Link>
-            <button
-              onClick={() => setShowSubscribe(true)}
-              className="bg-white text-green-700 font-semibold text-sm px-4 py-2 rounded-xl hover:bg-green-50 transition-colors shadow-sm"
-            >
-              Seguir equipo
-            </button>
+            <div className="flex items-center gap-2">
+              <Link href="/tabla" className="text-green-200 hover:text-white text-sm hidden sm:block transition-colors">
+                Tabla →
+              </Link>
+              <button
+                onClick={() => setShowSubscribe(true)}
+                className="bg-white text-green-700 font-semibold text-sm px-4 py-2 rounded-xl hover:bg-green-50 transition-colors shadow-sm"
+              >
+                Seguir equipo
+              </button>
+            </div>
           </div>
           <SearchBar teams={teams} value={selectedTeam} onChange={team => { setSelectedTeam(team); setPage(1) }} />
         </div>
