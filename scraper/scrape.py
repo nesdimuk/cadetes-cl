@@ -224,6 +224,63 @@ def _parse_text_content(soup: BeautifulSoup, category: str) -> list[dict]:
     return matches
 
 
+# ── Parser de tablas de posiciones ───────────────────────────────────────────
+
+def parse_standings(soup: BeautifulSoup, category: str) -> list[dict]:
+    """Extrae tablas de posiciones por grupo desde la página de la categoría.
+    Solo toma la primera tabla de cada grupo (torneo actual, no el anterior)."""
+    blocks = soup.find_all(class_=lambda c: c and "standing--shortcode" in str(c))
+    result = []
+    seen_groups: set[str] = set()
+
+    for block in blocks:
+        title_el = block.find(class_="standing__title")
+        group_name = title_el.get_text(strip=True) if title_el else "Grupo único"
+
+        # Saltar si ya procesamos este grupo (segunda tabla = torneo anterior)
+        if group_name in seen_groups:
+            continue
+        seen_groups.add(group_name)
+
+        cells = block.find_all("div", class_=lambda c: c and "anwp-grid-table__td" in str(c))
+
+        # Columnas por equipo: rank, club, PJ, V, E, D, G, GC, DG, PT = 10
+        COLS = 10
+        for i in range(0, len(cells), COLS):
+            row = cells[i:i + COLS]
+            if len(row) < COLS:
+                continue
+
+            rank_text = row[0].get_text(strip=True)
+            rank = int(re.sub(r"[^\d]", "", rank_text) or "0")
+
+            club_el = row[1].find("div", class_="d-flex")
+            club_raw = club_el.get_text(strip=True) if club_el else row[1].get_text(strip=True)
+            club = re.sub(r"\s*sub-?\d+.*", "", club_raw, flags=re.IGNORECASE).strip()
+
+            nums = [row[j].get_text(strip=True) for j in range(2, COLS)]
+            def n(val):
+                try: return int(val)
+                except: return 0
+
+            result.append({
+                "category": category,
+                "group": group_name,
+                "rank": rank,
+                "team": club,
+                "played": n(nums[0]),
+                "won": n(nums[1]),
+                "drawn": n(nums[2]),
+                "lost": n(nums[3]),
+                "gf": n(nums[4]),
+                "ga": n(nums[5]),
+                "gd": n(nums[6]),
+                "pts": n(nums[7]),
+            })
+
+    return result
+
+
 # ── Fetch y dispatch ──────────────────────────────────────────────────────────
 
 def fetch_soup(url: str) -> BeautifulSoup | None:
@@ -251,13 +308,13 @@ def fetch_soup_playwright(url: str) -> BeautifulSoup | None:
         return None
 
 
-def scrape_category(category: str, url: str) -> list[dict]:
+def scrape_category(category: str, url: str) -> tuple[list[dict], list[dict]]:
     print(f"  Scraping {category}...")
 
     # Intentar primero con requests (rápido)
     soup = fetch_soup(url)
     if not soup:
-        return []
+        return [], []
 
     # Si la página tiene elementos anwp-fl-game, usamos el parser moderno
     game_divs = soup.find_all("div", attrs={"data-anwp-match": True})
@@ -270,11 +327,13 @@ def scrape_category(category: str, url: str) -> list[dict]:
             print(f"  -> usando Playwright para {category}...")
             soup2 = fetch_soup_playwright(url)
             if soup2:
-                matches = parse_anwp_games(soup2, category)
-        return matches
+                soup = soup2
+                matches = parse_anwp_games(soup, category)
+        standings = parse_standings(soup, category)
+        return matches, standings
 
     # Fallback: parser de texto para páginas simples
-    return _parse_text_content(soup, category)
+    return _parse_text_content(soup, category), []
 
 
 def main():
@@ -282,21 +341,33 @@ def main():
     output_dir.mkdir(exist_ok=True)
 
     all_matches = []
+    all_standings = []
     for category, url in CATEGORIES.items():
-        matches = scrape_category(category, url)
+        matches, standings = scrape_category(category, url)
         all_matches.extend(matches)
-        print(f"  -> {len(matches)} partidos")
+        all_standings.extend(standings)
+        print(f"  -> {len(matches)} partidos, {len(standings)} filas tabla")
         time.sleep(1)
 
-    output = {
-        "updated_at": datetime.now(timezone.utc).isoformat(),
+    now = datetime.now(timezone.utc).isoformat()
+
+    matches_output = {
+        "updated_at": now,
         "total": len(all_matches),
         "matches": all_matches,
     }
+    matches_file = output_dir / "matches.json"
+    matches_file.write_text(json.dumps(matches_output, ensure_ascii=False, indent=2))
+    print(f"\nTotal: {len(all_matches)} partidos guardados en {matches_file}")
 
-    out_file = output_dir / "matches.json"
-    out_file.write_text(json.dumps(output, ensure_ascii=False, indent=2))
-    print(f"\nTotal: {len(all_matches)} partidos guardados en {out_file}")
+    standings_output = {
+        "updated_at": now,
+        "total": len(all_standings),
+        "standings": all_standings,
+    }
+    standings_file = output_dir / "standings.json"
+    standings_file.write_text(json.dumps(standings_output, ensure_ascii=False, indent=2))
+    print(f"Total: {len(all_standings)} filas de tabla guardadas en {standings_file}")
 
 
 if __name__ == "__main__":
