@@ -1,5 +1,10 @@
+import Link from "next/link"
 import { Match } from "@/lib/types"
 import { formatDate, CATEGORY_LABELS } from "@/lib/utils"
+
+function teamSlug(name: string) {
+  return name.toLowerCase().replace(/\s+/g, "-")
+}
 
 export default function MatchCard({ match, highlight }: { match: Match; highlight?: string }) {
   const isPlayed = match.status === "played"
@@ -29,7 +34,12 @@ export default function MatchCard({ match, highlight }: { match: Match; highligh
       </div>
 
       <div className="flex items-center gap-3">
-        <span className="flex-1 text-right font-semibold text-gray-800 text-sm">{hl(match.home_team)}</span>
+        <Link
+          href={`/equipo/${teamSlug(match.home_team)}?cat=${match.category}`}
+          className="flex-1 text-right font-semibold text-gray-800 text-sm hover:text-green-700 transition-colors"
+        >
+          {hl(match.home_team)}
+        </Link>
 
         <div className="flex items-center gap-1.5 shrink-0">
           {isPlayed ? (
@@ -41,7 +51,12 @@ export default function MatchCard({ match, highlight }: { match: Match; highligh
           )}
         </div>
 
-        <span className="flex-1 font-semibold text-gray-800 text-sm">{hl(match.away_team)}</span>
+        <Link
+          href={`/equipo/${teamSlug(match.away_team)}?cat=${match.category}`}
+          className="flex-1 font-semibold text-gray-800 text-sm hover:text-green-700 transition-colors"
+        >
+          {hl(match.away_team)}
+        </Link>
       </div>
 
       <p className="mt-2 text-center text-xs text-gray-400 truncate">{match.stadium}</p>
