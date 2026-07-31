@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-31T09:12:49.888060+00:00",
+  "updated_at": "2026-07-31T19:45:16.649121+00:00",
   "total": 1694,
   "matches": [
     {
@@ -2397,10 +2397,10 @@
       "time": "11:00 am",
       "home_team": "Deportes Recoleta",
       "away_team": "Trasandino",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 7,
+      "away_score": 0,
       "stadium": "Estadio Polideportivo Enrique Soro",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -2409,10 +2409,10 @@
       "time": "11:00 am",
       "home_team": "Sport Madrid",
       "away_team": "Colchagua",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 4,
       "stadium": "Arena Sport Madrid, Colina",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -2421,10 +2421,10 @@
       "time": "2:00 pm",
       "home_team": "Universidad Católica",
       "away_team": "Universidad de Chile",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 4,
       "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -2469,10 +2469,10 @@
       "time": "10:00 am",
       "home_team": "Lautaro de Buin",
       "away_team": "Santiago City",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 1,
       "stadium": "Estadio Lautaro de Buin",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -2493,10 +2493,10 @@
       "time": "12:00 pm",
       "home_team": "Atlético Colina",
       "away_team": "Captadores FC",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 2,
       "stadium": "Estadio Manuel Rojas del Rio – Cancha 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -2517,10 +2517,10 @@
       "time": "3:00 pm",
       "home_team": "Santiago Morning",
       "away_team": "O'Higgins",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 4,
       "stadium": "Arena Sport Madrid, Colina",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
