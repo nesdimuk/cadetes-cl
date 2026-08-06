@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-05T19:45:58.675935+00:00",
+  "updated_at": "2026-08-06T08:48:54.240104+00:00",
   "total": 1693,
   "matches": [
     {
@@ -11013,10 +11013,10 @@
       "time": "2:30 pm",
       "home_team": "O'Higgins",
       "away_team": "Cobresal",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 4,
+      "away_score": 0,
       "stadium": "Monasterio Celeste",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -14753,6 +14753,18 @@
     {
       "category": "sub-15",
       "round": 3,
+      "date": null,
+      "time": null,
+      "home_team": "Colo Colo",
+      "away_team": "Universidad de Concepción",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-15",
+      "round": 3,
       "date": "2026-08-01",
       "time": "12:15 pm",
       "home_team": "O'Higgins",
@@ -14785,18 +14797,6 @@
       "away_score": 1,
       "stadium": "Complejo Mantagua",
       "status": "played"
-    },
-    {
-      "category": "sub-15",
-      "round": 3,
-      "date": "2026-08-02",
-      "time": "12:00 am",
-      "home_team": "Colo Colo",
-      "away_team": "Universidad de Concepción",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
     },
     {
       "category": "sub-15",
@@ -16193,6 +16193,18 @@
     {
       "category": "sub-16",
       "round": 3,
+      "date": null,
+      "time": null,
+      "home_team": "Colo Colo",
+      "away_team": "Universidad de Concepción",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-16",
+      "round": 3,
       "date": "2026-08-01",
       "time": "10:00 am",
       "home_team": "O'Higgins",
@@ -16225,18 +16237,6 @@
       "away_score": 1,
       "stadium": "Complejo Mantagua",
       "status": "played"
-    },
-    {
-      "category": "sub-16",
-      "round": 3,
-      "date": "2026-08-02",
-      "time": "12:00 am",
-      "home_team": "Colo Colo",
-      "away_team": "Universidad de Concepción",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
     },
     {
       "category": "sub-16",
@@ -17537,6 +17537,18 @@
     {
       "category": "sub-18",
       "round": 2,
+      "date": null,
+      "time": null,
+      "home_team": "Coquimbo Unido",
+      "away_team": "Deportes Iquique",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-18",
+      "round": 2,
       "date": "2026-07-24",
       "time": "11:00 am",
       "home_team": "Unión Española",
@@ -17598,18 +17610,6 @@
       "category": "sub-18",
       "round": 2,
       "date": "2026-07-26",
-      "time": "12:00 am",
-      "home_team": "Coquimbo Unido",
-      "away_team": "Deportes Iquique",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-18",
-      "round": 2,
-      "date": "2026-07-26",
       "time": "1:30 pm",
       "home_team": "Everton",
       "away_team": "Universidad de Chile",
@@ -17625,9 +17625,21 @@
       "time": "12:15 pm",
       "home_team": "Colo Colo",
       "away_team": "Universidad Católica",
+      "home_score": 5,
+      "away_score": 5,
+      "stadium": "Estadio Monumental – Cancha Sintética",
+      "status": "played"
+    },
+    {
+      "category": "sub-18",
+      "round": 3,
+      "date": null,
+      "time": null,
+      "home_team": "Universidad de Concepción",
+      "away_team": "Colo Colo",
       "home_score": null,
       "away_score": null,
-      "stadium": "Estadio Monumental – Cancha Sintética",
+      "stadium": "",
       "status": "pending"
     },
     {
@@ -17653,18 +17665,6 @@
       "away_score": 3,
       "stadium": "Centro de Entrenamiento de Cobreloa",
       "status": "played"
-    },
-    {
-      "category": "sub-18",
-      "round": 3,
-      "date": "2026-08-01",
-      "time": "8:15 am",
-      "home_team": "Universidad de Concepción",
-      "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Complejo Campanil UDEC",
-      "status": "pending"
     },
     {
       "category": "sub-18",
@@ -18977,6 +18977,18 @@
     {
       "category": "sub-20",
       "round": 2,
+      "date": null,
+      "time": null,
+      "home_team": "Coquimbo Unido",
+      "away_team": "Deportes Iquique",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-20",
+      "round": 2,
       "date": "2026-07-24",
       "time": "8:30 am",
       "home_team": "Unión Española",
@@ -19038,18 +19050,6 @@
       "category": "sub-20",
       "round": 2,
       "date": "2026-07-26",
-      "time": "12:00 am",
-      "home_team": "Coquimbo Unido",
-      "away_team": "Deportes Iquique",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-20",
-      "round": 2,
-      "date": "2026-07-26",
       "time": "11:00 am",
       "home_team": "Everton",
       "away_team": "Universidad de Chile",
@@ -19065,10 +19065,10 @@
       "time": "10:00 am",
       "home_team": "Colo Colo",
       "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 4,
+      "away_score": 4,
       "stadium": "Estadio Monumental – Cancha Sintética",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-20",
