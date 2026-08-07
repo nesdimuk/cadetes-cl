@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-07T07:27:55.360618+00:00",
+  "updated_at": "2026-08-07T19:07:13.274045+00:00",
   "total": 1692,
   "matches": [
     {
@@ -59,7 +59,7 @@
       "away_team": "Academia Antofagasta",
       "home_score": null,
       "away_score": null,
-      "stadium": "Estadio Nacional de Rosario",
+      "stadium": "Estadio Club Deportivo Atlético Lo Miranda",
       "status": "pending"
     },
     {
@@ -2567,7 +2567,7 @@
       "away_team": "Academia Antofagasta",
       "home_score": null,
       "away_score": null,
-      "stadium": "Estadio Nacional de Rosario",
+      "stadium": "Estadio Club Deportivo Atlético Lo Miranda",
       "status": "pending"
     },
     {
@@ -6185,6 +6185,30 @@
     {
       "category": "sub-13",
       "round": 6,
+      "date": null,
+      "time": null,
+      "home_team": "Universidad de Chile",
+      "away_team": "Universidad Católica",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 6,
+      "date": null,
+      "time": null,
+      "home_team": "Santiago Wanderers",
+      "away_team": "Colo Colo",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 6,
       "date": "2026-07-29",
       "time": "11:30 am",
       "home_team": "Deportes Iquique",
@@ -6294,18 +6318,6 @@
       "category": "sub-13",
       "round": 6,
       "date": "2026-08-02",
-      "time": "12:00 am",
-      "home_team": "Universidad de Chile",
-      "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 6,
-      "date": "2026-08-02",
       "time": "10:15 am",
       "home_team": "Unión Española",
       "away_team": "Cobreloa",
@@ -6337,18 +6349,6 @@
       "away_score": 3,
       "stadium": "Estadio Municipal de Graneros",
       "status": "played"
-    },
-    {
-      "category": "sub-13",
-      "round": 6,
-      "date": "2026-08-02",
-      "time": "1:00 pm",
-      "home_team": "Santiago Wanderers",
-      "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Complejo Mantagua",
-      "status": "pending"
     },
     {
       "category": "sub-13",
@@ -6408,6 +6408,18 @@
       "home_score": null,
       "away_score": null,
       "stadium": "Complejo Labranza M11",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 7,
+      "date": null,
+      "time": null,
+      "home_team": "Universidad Católica",
+      "away_team": "Palestino",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
       "status": "pending"
     },
     {
@@ -6516,18 +6528,6 @@
       "home_score": null,
       "away_score": null,
       "stadium": "Centro de entrenamiento Everton",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 7,
-      "date": "2026-08-09",
-      "time": "12:00 am",
-      "home_team": "Universidad Católica",
-      "away_team": "Palestino",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
       "status": "pending"
     },
     {
@@ -8465,6 +8465,18 @@
     {
       "category": "sub-13",
       "round": 16,
+      "date": null,
+      "time": null,
+      "home_team": "Deportes La Serena",
+      "away_team": "Deportes Antofagasta",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 16,
       "date": "2026-10-04",
       "time": "12:00 am",
       "home_team": "Unión La Calera",
@@ -8625,18 +8637,6 @@
       "time": "12:00 am",
       "home_team": "Deportes Iquique",
       "away_team": "Coquimbo Unido",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 16,
-      "date": "2026-10-18",
-      "time": "12:00 am",
-      "home_team": "Deportes La Serena",
-      "away_team": "Deportes Antofagasta",
       "home_score": null,
       "away_score": null,
       "stadium": "",
@@ -10937,6 +10937,42 @@
     {
       "category": "sub-14",
       "round": 6,
+      "date": null,
+      "time": null,
+      "home_team": "Deportes La Serena",
+      "away_team": "Deportes Antofagasta",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 6,
+      "date": null,
+      "time": null,
+      "home_team": "Universidad de Chile",
+      "away_team": "Universidad Católica",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 6,
+      "date": null,
+      "time": null,
+      "home_team": "Santiago Wanderers",
+      "away_team": "Colo Colo",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 6,
       "date": "2026-07-29",
       "time": "9:30 am",
       "home_team": "Deportes Iquique",
@@ -11034,30 +11070,6 @@
       "category": "sub-14",
       "round": 6,
       "date": "2026-08-02",
-      "time": "12:00 am",
-      "home_team": "Deportes La Serena",
-      "away_team": "Deportes Antofagasta",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 6,
-      "date": "2026-08-02",
-      "time": "12:00 am",
-      "home_team": "Universidad de Chile",
-      "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 6,
-      "date": "2026-08-02",
       "time": "8:00 am",
       "home_team": "Unión Española",
       "away_team": "Cobreloa",
@@ -11077,18 +11089,6 @@
       "away_score": 0,
       "stadium": "Estadio Universidad de Atacama",
       "status": "played"
-    },
-    {
-      "category": "sub-14",
-      "round": 6,
-      "date": "2026-08-02",
-      "time": "11:00 am",
-      "home_team": "Santiago Wanderers",
-      "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Complejo Mantagua",
-      "status": "pending"
     },
     {
       "category": "sub-14",
@@ -11160,6 +11160,18 @@
       "home_score": null,
       "away_score": null,
       "stadium": "Complejo Labranza M11",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 7,
+      "date": null,
+      "time": null,
+      "home_team": "Universidad Católica",
+      "away_team": "Palestino",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
       "status": "pending"
     },
     {
@@ -11268,18 +11280,6 @@
       "home_score": null,
       "away_score": null,
       "stadium": "Centro de entrenamiento Everton",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 7,
-      "date": "2026-08-09",
-      "time": "12:00 am",
-      "home_team": "Universidad Católica",
-      "away_team": "Palestino",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
       "status": "pending"
     },
     {
