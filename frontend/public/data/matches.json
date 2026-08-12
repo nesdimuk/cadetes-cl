@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-11T19:12:07.828498+00:00",
+  "updated_at": "2026-08-12T07:43:22.910854+00:00",
   "total": 1692,
   "matches": [
     {
@@ -5731,6 +5731,18 @@
       "round": 4,
       "date": null,
       "time": null,
+      "home_team": "Deportes Copiapó",
+      "away_team": "Deportes La Serena",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 4,
+      "date": null,
+      "time": null,
       "home_team": "Deportes Antofagasta",
       "away_team": "Deportes Iquique",
       "home_score": null,
@@ -5929,18 +5941,6 @@
       "away_score": 1,
       "stadium": "Complejo Campanil UDEC",
       "status": "played"
-    },
-    {
-      "category": "sub-13",
-      "round": 4,
-      "date": "2026-08-12",
-      "time": "3:30 pm",
-      "home_team": "Deportes Copiapó",
-      "away_team": "Deportes La Serena",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Estadio Universidad de Atacama",
-      "status": "pending"
     },
     {
       "category": "sub-13",
@@ -6641,6 +6641,30 @@
     {
       "category": "sub-13",
       "round": 8,
+      "date": null,
+      "time": null,
+      "home_team": "Deportes La Serena",
+      "away_team": "Coquimbo Unido",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 8,
+      "date": null,
+      "time": null,
+      "home_team": "San Marcos de Arica",
+      "away_team": "Deportes Iquique",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 8,
       "date": "2026-08-11",
       "time": "3:30 pm",
       "home_team": "Palestino",
@@ -6780,30 +6804,6 @@
       "home_score": null,
       "away_score": null,
       "stadium": "CDA – Paño FF Norte",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 8,
-      "date": "2026-08-16",
-      "time": "12:00 am",
-      "home_team": "Deportes La Serena",
-      "away_team": "Coquimbo Unido",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 8,
-      "date": "2026-08-16",
-      "time": "12:00 am",
-      "home_team": "San Marcos de Arica",
-      "away_team": "Deportes Iquique",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
       "status": "pending"
     },
     {
@@ -10483,6 +10483,18 @@
       "round": 4,
       "date": null,
       "time": null,
+      "home_team": "Deportes Copiapó",
+      "away_team": "Deportes La Serena",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 4,
+      "date": null,
+      "time": null,
       "home_team": "Deportes Antofagasta",
       "away_team": "Deportes Iquique",
       "home_score": null,
@@ -10681,18 +10693,6 @@
       "away_score": 1,
       "stadium": "Complejo Campanil UDEC",
       "status": "played"
-    },
-    {
-      "category": "sub-14",
-      "round": 4,
-      "date": "2026-08-12",
-      "time": "12:30 pm",
-      "home_team": "Deportes Copiapó",
-      "away_team": "Deportes La Serena",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Estadio Universidad de Atacama",
-      "status": "pending"
     },
     {
       "category": "sub-14",
@@ -11393,6 +11393,30 @@
     {
       "category": "sub-14",
       "round": 8,
+      "date": null,
+      "time": null,
+      "home_team": "Deportes La Serena",
+      "away_team": "Coquimbo Unido",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 8,
+      "date": null,
+      "time": null,
+      "home_team": "San Marcos de Arica",
+      "away_team": "Deportes Iquique",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 8,
       "date": "2026-08-11",
       "time": "1:00 pm",
       "home_team": "Palestino",
@@ -11532,30 +11556,6 @@
       "home_score": null,
       "away_score": null,
       "stadium": "CDA – Paño FF Norte",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 8,
-      "date": "2026-08-16",
-      "time": "12:00 am",
-      "home_team": "Deportes La Serena",
-      "away_team": "Coquimbo Unido",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 8,
-      "date": "2026-08-16",
-      "time": "12:00 am",
-      "home_team": "San Marcos de Arica",
-      "away_team": "Deportes Iquique",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
       "status": "pending"
     },
     {
