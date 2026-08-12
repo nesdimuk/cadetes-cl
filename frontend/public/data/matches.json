@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-12T07:43:22.910854+00:00",
+  "updated_at": "2026-08-12T19:11:47.627122+00:00",
   "total": 1692,
   "matches": [
     {
@@ -269,18 +269,6 @@
     {
       "category": "sub-11",
       "round": 2,
-      "date": "2026-08-15",
-      "time": "3:30 pm",
-      "home_team": "Fluminense Chile",
-      "away_team": "Unión La Calera",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Complejo Liga Aeropuerto",
-      "status": "pending"
-    },
-    {
-      "category": "sub-11",
-      "round": 2,
       "date": "2026-08-16",
       "time": "10:00 am",
       "home_team": "Diablos Rojos",
@@ -288,6 +276,18 @@
       "home_score": null,
       "away_score": null,
       "stadium": "Arena Sport Madrid, Colina",
+      "status": "pending"
+    },
+    {
+      "category": "sub-11",
+      "round": 2,
+      "date": "2026-08-16",
+      "time": "11:30 am",
+      "home_team": "Fluminense Chile",
+      "away_team": "Unión La Calera",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Bernardo O'Higgins",
       "status": "pending"
     },
     {
@@ -2789,18 +2789,6 @@
     {
       "category": "sub-12",
       "round": 2,
-      "date": "2026-08-15",
-      "time": "5:00 pm",
-      "home_team": "Fluminense Chile",
-      "away_team": "Unión La Calera",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Complejo Liga Aeropuerto",
-      "status": "pending"
-    },
-    {
-      "category": "sub-12",
-      "round": 2,
       "date": "2026-08-16",
       "time": "12:00 pm",
       "home_team": "Diablos Rojos",
@@ -2808,6 +2796,18 @@
       "home_score": null,
       "away_score": null,
       "stadium": "Arena Sport Madrid, Colina",
+      "status": "pending"
+    },
+    {
+      "category": "sub-12",
+      "round": 2,
+      "date": "2026-08-16",
+      "time": "1:15 pm",
+      "home_team": "Fluminense Chile",
+      "away_team": "Unión La Calera",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Bernardo O'Higgins",
       "status": "pending"
     },
     {
