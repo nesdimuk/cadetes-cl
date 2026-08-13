@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-13T07:45:07.283652+00:00",
+  "updated_at": "2026-08-13T19:13:03.553331+00:00",
   "total": 1692,
   "matches": [
     {
@@ -198,12 +198,12 @@
       "category": "sub-11",
       "round": 2,
       "date": "2026-08-15",
-      "time": "10:30 am",
+      "time": "10:00 am",
       "home_team": "Academia Antofagasta",
       "away_team": "Santiago City",
       "home_score": null,
       "away_score": null,
-      "stadium": "Cancha Los Eucaliptos",
+      "stadium": "Cancha Juventud Chacabuco",
       "status": "pending"
     },
     {
@@ -2706,24 +2706,24 @@
       "category": "sub-12",
       "round": 2,
       "date": "2026-08-15",
-      "time": "12:00 pm",
-      "home_team": "Universidad de Chile",
-      "away_team": "O'Higgins",
+      "time": "11:45 am",
+      "home_team": "Academia Antofagasta",
+      "away_team": "Santiago City",
       "home_score": null,
       "away_score": null,
-      "stadium": "CDA – Paño FF Norte",
+      "stadium": "Cancha Juventud Chacabuco",
       "status": "pending"
     },
     {
       "category": "sub-12",
       "round": 2,
       "date": "2026-08-15",
-      "time": "12:15 pm",
-      "home_team": "Academia Antofagasta",
-      "away_team": "Santiago City",
+      "time": "12:00 pm",
+      "home_team": "Universidad de Chile",
+      "away_team": "O'Higgins",
       "home_score": null,
       "away_score": null,
-      "stadium": "Cancha Los Eucaliptos",
+      "stadium": "CDA – Paño FF Norte",
       "status": "pending"
     },
     {
@@ -6869,6 +6869,18 @@
     {
       "category": "sub-13",
       "round": 9,
+      "date": null,
+      "time": null,
+      "home_team": "Colchagua",
+      "away_team": "Unión San Felipe",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 9,
       "date": "2026-08-15",
       "time": "11:00 am",
       "home_team": "Audax Italiano",
@@ -6924,18 +6936,6 @@
       "home_score": null,
       "away_score": null,
       "stadium": "Estadio Malaquias Concha",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 9,
-      "date": "2026-08-15",
-      "time": "2:00 pm",
-      "home_team": "Colchagua",
-      "away_team": "Unión San Felipe",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Estadio Patricio Mekis",
       "status": "pending"
     },
     {
@@ -11621,6 +11621,18 @@
     {
       "category": "sub-14",
       "round": 9,
+      "date": null,
+      "time": null,
+      "home_team": "Colchagua",
+      "away_team": "Unión San Felipe",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 9,
       "date": "2026-08-15",
       "time": "9:00 am",
       "home_team": "Audax Italiano",
@@ -11688,18 +11700,6 @@
       "home_score": null,
       "away_score": null,
       "stadium": "Monasterio Celeste",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 9,
-      "date": "2026-08-15",
-      "time": "12:00 pm",
-      "home_team": "Colchagua",
-      "away_team": "Unión San Felipe",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Estadio Patricio Mekis",
       "status": "pending"
     },
     {
