@@ -42,7 +42,15 @@ function PartidosInner() {
     return [...ms].sort((a, b) => {
       const da = a.date ?? ""
       const db = b.date ?? ""
-      return sortOrder === "desc" ? db.localeCompare(da) : da.localeCompare(db)
+      if (sortOrder === "desc") {
+        // Jugados primero (más reciente), luego pendientes (más próximo)
+        if (a.status !== b.status) return a.status === "played" ? -1 : 1
+        return db.localeCompare(da)
+      } else {
+        // Pendientes primero (más próximo), luego jugados (más antiguo)
+        if (a.status !== b.status) return a.status === "pending" ? -1 : 1
+        return da.localeCompare(db)
+      }
     })
   }, [allMatches, selectedTeam, selectedCategory, selectedRound])
 
