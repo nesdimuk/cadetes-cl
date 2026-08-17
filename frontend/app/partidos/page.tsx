@@ -52,7 +52,7 @@ function PartidosInner() {
         return da.localeCompare(db)
       }
     })
-  }, [allMatches, selectedTeam, selectedCategory, selectedRound])
+  }, [allMatches, selectedTeam, selectedCategory, selectedRound, sortOrder])
 
   const teamMatches = useMemo(() =>
     selectedTeam ? allMatches.filter(m =>

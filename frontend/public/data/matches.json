@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-17T23:02:32.258304+00:00",
+  "updated_at": "2026-08-17T23:23:25.432938+00:00",
   "total": 1691,
   "matches": [
     {
@@ -7605,10 +7605,10 @@
       "time": "1:00 am",
       "home_team": "Deportes Rengo",
       "away_team": "Santiago City",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": null,
+      "away_score": null,
       "stadium": "",
-      "status": "played"
+      "status": "pending"
     },
     {
       "category": "sub-13",
@@ -12405,10 +12405,10 @@
       "time": "1:00 am",
       "home_team": "Deportes Rengo",
       "away_team": "Santiago City",
-      "home_score": 0,
-      "away_score": 1,
+      "home_score": null,
+      "away_score": null,
       "stadium": "",
-      "status": "played"
+      "status": "pending"
     },
     {
       "category": "sub-14",

@@ -104,7 +104,8 @@ def parse_anwp_games(soup: BeautifulSoup, category: str) -> list[dict]:
             home_score_txt = score_home_el.get_text(strip=True) if score_home_el else "–"
             away_score_txt = score_away_el.get_text(strip=True) if score_away_el else "–"
 
-            if re.match(r"^\d+$", home_score_txt) and re.match(r"^\d+$", away_score_txt):
+            today = datetime.now().strftime("%Y-%m-%d")
+            if re.match(r"^\d+$", home_score_txt) and re.match(r"^\d+$", away_score_txt) and (date_val is None or date_val <= today):
                 status = "played"
                 home_score = int(home_score_txt)
                 away_score = int(away_score_txt)
@@ -182,7 +183,8 @@ def _parse_text_content(soup: BeautifulSoup, category: str) -> list[dict]:
             away_score_str = lines[i + 3]
             away_team = clean_team_name(lines[i + 4])
 
-            is_played = re.match(r"^\d+$", home_score_str) and re.match(r"^\d+$", away_score_str)
+            today = datetime.now().strftime("%Y-%m-%d")
+            is_played = re.match(r"^\d+$", home_score_str) and re.match(r"^\d+$", away_score_str) and (current_date is None or current_date <= today)
             is_pending = home_score_str in ("–", "-", "—") and away_score_str in ("–", "-", "—")
 
             if is_played:
