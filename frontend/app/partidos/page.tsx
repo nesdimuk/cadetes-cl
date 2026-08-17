@@ -34,6 +34,23 @@ function PartidosInner() {
     [allMatches, selectedCategory]
   )
 
+  const roundStatus = useMemo(() => {
+    const result: Record<number, "played" | "mixed" | "pending"> = {}
+    const catMatches = selectedCategory
+      ? allMatches.filter(m => m.category === selectedCategory)
+      : allMatches
+    const byRound: Record<number, Match[]> = {}
+    for (const m of catMatches) {
+      if (!byRound[m.round]) byRound[m.round] = []
+      byRound[m.round].push(m)
+    }
+    for (const [round, matches] of Object.entries(byRound)) {
+      const played = matches.filter(m => m.status === "played").length
+      result[Number(round)] = played === matches.length ? "played" : played > 0 ? "mixed" : "pending"
+    }
+    return result
+  }, [allMatches, selectedCategory])
+
   const filtered = useMemo(() => {
     let ms = allMatches
     if (selectedTeam) ms = ms.filter(m => m.home_team === selectedTeam || m.away_team === selectedTeam)
@@ -134,19 +151,34 @@ function PartidosInner() {
 
         {/* Round filter */}
         {selectedCategory && maxRound > 0 && (
-          <div className="flex flex-wrap gap-2 mb-5">
+          <div className="mb-5">
+          <div className="flex flex-wrap gap-2 mb-2">
             <span className="text-xs text-gray-500 self-center mr-1">Fecha:</span>
-            {Array.from({ length: maxRound }, (_, i) => i + 1).map(r => (
+            {Array.from({ length: maxRound }, (_, i) => i + 1).map(r => {
+              const rs = roundStatus[r] ?? "pending"
+              const colorClass = selectedRound === r
+                ? "bg-green-600 text-white border-green-600"
+                : rs === "played"
+                  ? "bg-green-100 text-green-700 border-green-300 hover:border-green-500"
+                  : rs === "mixed"
+                    ? "bg-yellow-100 text-yellow-700 border-yellow-300 hover:border-yellow-500"
+                    : "bg-white text-gray-400 border-gray-200 hover:border-green-400"
+              return (
               <button
                 key={r}
                 onClick={() => { setSelectedRound(selectedRound === r ? "" : r); setPage(1) }}
-                className={`w-8 h-8 rounded-lg text-xs font-semibold transition-colors ${
-                  selectedRound === r ? "bg-green-600 text-white" : "bg-white text-gray-600 border border-gray-200 hover:border-green-400"
-                }`}
+                className={`w-8 h-8 rounded-lg text-xs font-semibold transition-colors border ${colorClass}`}
               >
                 {r}
               </button>
-            ))}
+              )
+            })}
+          </div>
+          <div className="flex gap-3 text-xs text-gray-400">
+            <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-green-200 inline-block"/>Jugada</span>
+            <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-yellow-200 inline-block"/>Incompleta</span>
+            <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-gray-100 border border-gray-200 inline-block"/>Pendiente</span>
+          </div>
           </div>
         )}
 
