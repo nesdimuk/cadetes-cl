@@ -41,6 +41,7 @@ function PartidosInner() {
       : allMatches
     const byRound: Record<number, Match[]> = {}
     for (const m of catMatches) {
+      if (m.round === null) continue
       if (!byRound[m.round]) byRound[m.round] = []
       byRound[m.round].push(m)
     }
