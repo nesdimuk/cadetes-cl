@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-17T23:23:25.432938+00:00",
+  "updated_at": "2026-08-19T18:50:29.084171+00:00",
   "total": 1691,
   "matches": [
     {
@@ -15077,13 +15077,13 @@
     {
       "category": "sub-15",
       "round": 6,
-      "date": "2026-08-23",
-      "time": "12:00 am",
+      "date": "2026-08-22",
+      "time": "1:45 pm",
       "home_team": "Cobreloa",
       "away_team": "Palestino",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Cancha Club de Campo Cobreloa",
       "status": "pending"
     },
     {
@@ -16517,13 +16517,13 @@
     {
       "category": "sub-16",
       "round": 6,
-      "date": "2026-08-23",
-      "time": "12:00 am",
+      "date": "2026-08-22",
+      "time": "11:00 am",
       "home_team": "Cobreloa",
       "away_team": "Palestino",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Cancha Club de Campo Cobreloa",
       "status": "pending"
     },
     {
