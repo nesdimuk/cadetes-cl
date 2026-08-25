@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-25T06:59:20.139890+00:00",
+  "updated_at": "2026-08-25T18:49:39.522706+00:00",
   "total": 1691,
   "matches": [
     {
@@ -559,18 +559,6 @@
       "round": 4,
       "date": "2026-08-29",
       "time": "10:00 am",
-      "home_team": "San Luis",
-      "away_team": "Lautaro de Buin",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Complejo San Luis",
-      "status": "pending"
-    },
-    {
-      "category": "sub-11",
-      "round": 4,
-      "date": "2026-08-29",
-      "time": "10:00 am",
       "home_team": "Deportes Recoleta",
       "away_team": "Fluminense Chile",
       "home_score": null,
@@ -618,6 +606,30 @@
       "category": "sub-11",
       "round": 4,
       "date": "2026-08-29",
+      "time": "11:00 am",
+      "home_team": "San Luis",
+      "away_team": "Lautaro de Buin",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo San Luis",
+      "status": "pending"
+    },
+    {
+      "category": "sub-11",
+      "round": 4,
+      "date": "2026-08-29",
+      "time": "11:00 am",
+      "home_team": "Deportes Rengo",
+      "away_team": "Magallanes",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Nacional de Rosario",
+      "status": "pending"
+    },
+    {
+      "category": "sub-11",
+      "round": 4,
+      "date": "2026-08-29",
       "time": "2:00 pm",
       "home_team": "Universidad Católica",
       "away_team": "Santiago Wanderers",
@@ -636,18 +648,6 @@
       "home_score": null,
       "away_score": null,
       "stadium": "Centro Deportivo Everton",
-      "status": "pending"
-    },
-    {
-      "category": "sub-11",
-      "round": 4,
-      "date": "2026-08-30",
-      "time": "12:00 am",
-      "home_team": "Deportes Rengo",
-      "away_team": "Magallanes",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
       "status": "pending"
     },
     {
@@ -3090,12 +3090,12 @@
       "category": "sub-12",
       "round": 4,
       "date": "2026-08-29",
-      "time": "12:00 pm",
-      "home_team": "San Luis",
-      "away_team": "Lautaro de Buin",
+      "time": "12:30 pm",
+      "home_team": "O'Higgins",
+      "away_team": "U. San Sebastián",
       "home_score": null,
       "away_score": null,
-      "stadium": "Complejo San Luis",
+      "stadium": "Monasterio Celeste",
       "status": "pending"
     },
     {
@@ -3103,11 +3103,23 @@
       "round": 4,
       "date": "2026-08-29",
       "time": "12:30 pm",
-      "home_team": "O'Higgins",
-      "away_team": "U. San Sebastián",
+      "home_team": "Deportes Rengo",
+      "away_team": "Magallanes",
       "home_score": null,
       "away_score": null,
-      "stadium": "Monasterio Celeste",
+      "stadium": "Estadio Nacional de Rosario",
+      "status": "pending"
+    },
+    {
+      "category": "sub-12",
+      "round": 4,
+      "date": "2026-08-29",
+      "time": "12:45 pm",
+      "home_team": "San Luis",
+      "away_team": "Lautaro de Buin",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo San Luis",
       "status": "pending"
     },
     {
@@ -3156,18 +3168,6 @@
       "home_score": null,
       "away_score": null,
       "stadium": "Centro Deportivo Everton",
-      "status": "pending"
-    },
-    {
-      "category": "sub-12",
-      "round": 4,
-      "date": "2026-08-30",
-      "time": "12:00 am",
-      "home_team": "Deportes Rengo",
-      "away_team": "Magallanes",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
       "status": "pending"
     },
     {
