@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-25T18:49:39.522706+00:00",
+  "updated_at": "2026-08-26T07:00:24.539568+00:00",
   "total": 1691,
   "matches": [
     {
@@ -671,7 +671,7 @@
       "away_team": "Trasandino",
       "home_score": null,
       "away_score": null,
-      "stadium": "Premier League Chicureo",
+      "stadium": "Arena Sport Madrid, Colina",
       "status": "pending"
     },
     {
@@ -3191,7 +3191,7 @@
       "away_team": "Trasandino",
       "home_score": null,
       "away_score": null,
-      "stadium": "Premier League Chicureo",
+      "stadium": "Arena Sport Madrid, Colina",
       "status": "pending"
     },
     {
@@ -16638,7 +16638,7 @@
       "category": "sub-16",
       "round": 7,
       "date": "2026-08-30",
-      "time": "9:30 am",
+      "time": "9:00 am",
       "home_team": "Huachipato",
       "away_team": "Deportes Recoleta",
       "home_score": null,
