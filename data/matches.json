@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-26T07:00:24.539568+00:00",
+  "updated_at": "2026-08-26T19:56:43.540736+00:00",
   "total": 1691,
   "matches": [
     {
@@ -15186,24 +15186,24 @@
       "category": "sub-15",
       "round": 7,
       "date": "2026-08-30",
-      "time": "11:30 am",
-      "home_team": "Unión Española",
-      "away_team": "Colo Colo",
+      "time": "11:15 am",
+      "home_team": "Huachipato",
+      "away_team": "Deportes Recoleta",
       "home_score": null,
       "away_score": null,
-      "stadium": "Estadio Santa Laura – Cancha 2",
+      "stadium": "Estadio Huachipato-Cancha 4",
       "status": "pending"
     },
     {
       "category": "sub-15",
       "round": 7,
       "date": "2026-08-30",
-      "time": "12:00 pm",
-      "home_team": "Huachipato",
-      "away_team": "Deportes Recoleta",
+      "time": "11:30 am",
+      "home_team": "Unión Española",
+      "away_team": "Colo Colo",
       "home_score": null,
       "away_score": null,
-      "stadium": "Estadio Huachipato-Cancha 4",
+      "stadium": "Estadio Santa Laura – Cancha 2",
       "status": "pending"
     },
     {
