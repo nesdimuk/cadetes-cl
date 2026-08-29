@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-28T18:30:27.152582+00:00",
+  "updated_at": "2026-08-29T12:35:58.710698+00:00",
   "total": 1691,
   "matches": [
     {
@@ -7374,24 +7374,24 @@
       "category": "sub-13",
       "round": 11,
       "date": "2026-08-29",
-      "time": "1:15 pm",
-      "home_team": "Trasandino",
-      "away_team": "Colchagua",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Complejo Marista de Los Andes",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 11,
-      "date": "2026-08-29",
       "time": "2:00 pm",
       "home_team": "Santiago City",
       "away_team": "Unión La Calera",
       "home_score": null,
       "away_score": null,
       "stadium": "Estadio Municipal de La Pintana – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 11,
+      "date": "2026-08-29",
+      "time": "4:00 pm",
+      "home_team": "Trasandino",
+      "away_team": "Colchagua",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Centenario de los Andes",
       "status": "pending"
     },
     {
@@ -12103,18 +12103,6 @@
       "round": 11,
       "date": "2026-08-29",
       "time": "11:00 am",
-      "home_team": "Trasandino",
-      "away_team": "Colchagua",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Complejo Marista de Los Andes",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 11,
-      "date": "2026-08-29",
-      "time": "11:00 am",
       "home_team": "Deportes Limache",
       "away_team": "Deportes Rengo",
       "home_score": null,
@@ -12132,6 +12120,18 @@
       "home_score": null,
       "away_score": null,
       "stadium": "Estadio Municipal de La Pintana – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 11,
+      "date": "2026-08-29",
+      "time": "2:00 pm",
+      "home_team": "Trasandino",
+      "away_team": "Colchagua",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Centenario de los Andes",
       "status": "pending"
     },
     {
