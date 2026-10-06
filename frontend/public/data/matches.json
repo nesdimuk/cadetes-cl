@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T14:19:44.779487+00:00",
+  "updated_at": "2026-10-06T13:11:52.138001+00:00",
   "total": 1691,
   "matches": [
     {
@@ -1181,38 +1181,14 @@
     {
       "category": "sub-11",
       "round": 8,
-      "date": null,
-      "time": null,
-      "home_team": "Palestino",
-      "away_team": "Cobreloa",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-11",
-      "round": 8,
-      "date": null,
-      "time": null,
-      "home_team": "Sport Madrid",
-      "away_team": "Magallanes",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-11",
-      "round": 8,
       "date": "2026-09-30",
       "time": "10:00 am",
       "home_team": "Trasandino",
       "away_team": "Unión La Calera",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 2,
       "stadium": "Estadio Centenario de los Andes",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1221,10 +1197,10 @@
       "time": "11:00 am",
       "home_team": "Colchagua",
       "away_team": "Captadores FC",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 5,
       "stadium": "Estadio Jorge Silva Valenzuela – Cancha 4",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1233,10 +1209,10 @@
       "time": "12:00 pm",
       "home_team": "Atlético Colina",
       "away_team": "O'Higgins",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 3,
       "stadium": "Estadio Victoria de Chacabuco",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1245,10 +1221,10 @@
       "time": "12:00 pm",
       "home_team": "Deportes Recoleta",
       "away_team": "Santiago City",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 2,
       "stadium": "Estadio Polideportivo Enrique Soro",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1257,10 +1233,10 @@
       "time": "1:00 pm",
       "home_team": "Fluminense Chile",
       "away_team": "San Luis",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 4,
       "stadium": "Cancha Los Eucaliptos",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1269,10 +1245,10 @@
       "time": "2:00 pm",
       "home_team": "Universidad de Chile",
       "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 4,
+      "away_score": 0,
       "stadium": "CDA – Paño FF Norte",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1281,10 +1257,10 @@
       "time": "2:00 pm",
       "home_team": "Cobresal",
       "away_team": "Santiago Morning",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 1,
       "stadium": "Complejo Amador Donoso",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1293,10 +1269,10 @@
       "time": "2:45 pm",
       "home_team": "U. San Sebastián",
       "away_team": "Unión Española",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 0,
       "stadium": "Complejo USS – Cancha 3",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1305,10 +1281,10 @@
       "time": "2:45 pm",
       "home_team": "Real San Joaquin",
       "away_team": "Deportes Santa Cruz",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 4,
+      "away_score": 2,
       "stadium": "Cancha Real Aeropuerto",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1317,10 +1293,10 @@
       "time": "3:00 pm",
       "home_team": "Santiago Wanderers",
       "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 4,
       "stadium": "Estadio Baquedano",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1329,10 +1305,10 @@
       "time": "3:00 pm",
       "home_team": "Diablos Rojos",
       "away_team": "Everton",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 2,
       "stadium": "Premier League Chicureo",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1341,9 +1317,33 @@
       "time": "4:00 pm",
       "home_team": "Lautaro de Buin",
       "away_team": "Deportes Rengo",
+      "home_score": 0,
+      "away_score": 3,
+      "stadium": "Estadio Lautaro de Buin",
+      "status": "played"
+    },
+    {
+      "category": "sub-11",
+      "round": 8,
+      "date": "2026-10-08",
+      "time": "1:30 pm",
+      "home_team": "Palestino",
+      "away_team": "Cobreloa",
       "home_score": null,
       "away_score": null,
-      "stadium": "Estadio Lautaro de Buin",
+      "stadium": "Estadio Municipal de La Cisterna – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-11",
+      "round": 8,
+      "date": "2026-10-12",
+      "time": "4:00 pm",
+      "home_team": "Sport Madrid",
+      "away_team": "Magallanes",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Arena Sport Madrid, Colina",
       "status": "pending"
     },
     {
@@ -1353,10 +1353,10 @@
       "time": "10:00 am",
       "home_team": "O'Higgins",
       "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 3,
       "stadium": "Monasterio Celeste",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1365,10 +1365,10 @@
       "time": "10:00 am",
       "home_team": "Academia Antofagasta",
       "away_team": "Lautaro de Buin",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 2,
       "stadium": "Cancha Los Eucaliptos",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1377,10 +1377,10 @@
       "time": "11:00 am",
       "home_team": "Unión Española",
       "away_team": "Colchagua",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 0,
       "stadium": "Complejo Malloco",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1389,10 +1389,10 @@
       "time": "11:00 am",
       "home_team": "San Luis",
       "away_team": "Deportes Recoleta",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "Complejo San Luis",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1401,10 +1401,10 @@
       "time": "11:30 am",
       "home_team": "Everton",
       "away_team": "Fluminense Chile",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 0,
       "stadium": "Centro Deportivo Everton",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1413,10 +1413,10 @@
       "time": "2:30 pm",
       "home_team": "Audax Italiano",
       "away_team": "Atlético Colina",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 2,
       "stadium": "Complejo Ciudad de Campeones",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1425,10 +1425,10 @@
       "time": "3:00 pm",
       "home_team": "Santiago Wanderers",
       "away_team": "Palestino",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 3,
       "stadium": "Estadio Baquedano",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1437,10 +1437,10 @@
       "time": "3:00 pm",
       "home_team": "Magallanes",
       "away_team": "Real San Joaquin",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 6,
+      "away_score": 3,
       "stadium": "Cancha Juventud Chacabuco",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1461,10 +1461,10 @@
       "time": "10:00 am",
       "home_team": "Unión La Calera",
       "away_team": "Diablos Rojos",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 0,
       "stadium": "Estadio Pueblo Nuevo",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1473,10 +1473,10 @@
       "time": "11:00 am",
       "home_team": "Deportes Rengo",
       "away_team": "Sport Madrid",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 5,
+      "away_score": 0,
       "stadium": "Estadio Nacional de Rosario",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1485,10 +1485,10 @@
       "time": "12:15 pm",
       "home_team": "Captadores FC",
       "away_team": "Cobreloa",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 4,
       "stadium": "Cancha Club Deportivo Villa Corhabit",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1497,10 +1497,10 @@
       "time": "1:00 pm",
       "home_team": "Santiago City",
       "away_team": "Trasandino",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "Complejo BSC Sport",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
@@ -1509,45 +1509,105 @@
       "time": "3:00 pm",
       "home_team": "Santiago Morning",
       "away_team": "Universidad de Chile",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 2,
       "stadium": "Coplejo Santiago Morning Quilicura",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-11",
       "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-10",
+      "time": "9:00 am",
       "home_team": "Colo Colo",
       "away_team": "Universidad Católica",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Estadio Monumental – Cancha 2",
       "status": "pending"
     },
     {
       "category": "sub-11",
       "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Cobreloa",
-      "away_team": "Universidad de Chile",
+      "date": "2026-10-10",
+      "time": "9:00 am",
+      "home_team": "Everton",
+      "away_team": "Unión La Calera",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Centro de entrenamiento Everton",
       "status": "pending"
     },
     {
       "category": "sub-11",
       "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-10",
+      "time": "10:00 am",
+      "home_team": "Academia Antofagasta",
+      "away_team": "Magallanes",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Cancha Los Eucaliptos",
+      "status": "pending"
+    },
+    {
+      "category": "sub-11",
+      "round": 10,
+      "date": "2026-10-10",
+      "time": "10:30 am",
       "home_team": "Unión Española",
       "away_team": "O'Higgins",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Complejo Malloco",
+      "status": "pending"
+    },
+    {
+      "category": "sub-11",
+      "round": 10,
+      "date": "2026-10-10",
+      "time": "11:00 am",
+      "home_team": "U. San Sebastián",
+      "away_team": "Santiago Wanderers",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo USS – Cancha 3",
+      "status": "pending"
+    },
+    {
+      "category": "sub-11",
+      "round": 10,
+      "date": "2026-10-10",
+      "time": "11:00 am",
+      "home_team": "Trasandino",
+      "away_team": "Real San Joaquin",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo Marista de Los Andes",
+      "status": "pending"
+    },
+    {
+      "category": "sub-11",
+      "round": 10,
+      "date": "2026-10-10",
+      "time": "12:30 pm",
+      "home_team": "Deportes Santa Cruz",
+      "away_team": "San Luis",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal Santa Ana",
+      "status": "pending"
+    },
+    {
+      "category": "sub-11",
+      "round": 10,
+      "date": "2026-10-10",
+      "time": "1:30 pm",
+      "home_team": "Cobresal",
+      "away_team": "Audax Italiano",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de Puente Alto",
       "status": "pending"
     },
     {
@@ -1557,54 +1617,6 @@
       "time": "12:00 am",
       "home_team": "Palestino",
       "away_team": "Santiago Morning",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-11",
-      "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "U. San Sebastián",
-      "away_team": "Santiago Wanderers",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-11",
-      "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Cobresal",
-      "away_team": "Audax Italiano",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-11",
-      "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Captadores FC",
-      "away_team": "Atlético Colina",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-11",
-      "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Everton",
-      "away_team": "Unión La Calera",
       "home_score": null,
       "away_score": null,
       "stadium": "",
@@ -1627,30 +1639,6 @@
       "round": 10,
       "date": "2026-10-11",
       "time": "12:00 am",
-      "home_team": "Deportes Santa Cruz",
-      "away_team": "San Luis",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-11",
-      "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Academia Antofagasta",
-      "away_team": "Magallanes",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-11",
-      "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
       "home_team": "Deportes Rengo",
       "away_team": "Fluminense Chile",
       "home_score": null,
@@ -1662,24 +1650,36 @@
       "category": "sub-11",
       "round": 10,
       "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Diablos Rojos",
-      "away_team": "Deportes Recoleta",
+      "time": "12:15 pm",
+      "home_team": "Captadores FC",
+      "away_team": "Atlético Colina",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Cancha Club Deportivo Villa Corhabit",
       "status": "pending"
     },
     {
       "category": "sub-11",
       "round": 10,
       "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Trasandino",
-      "away_team": "Real San Joaquin",
+      "time": "2:30 pm",
+      "home_team": "Cobreloa",
+      "away_team": "Universidad de Chile",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Estadio Robert Kennedy",
+      "status": "pending"
+    },
+    {
+      "category": "sub-11",
+      "round": 10,
+      "date": "2026-10-11",
+      "time": "3:00 pm",
+      "home_team": "Diablos Rojos",
+      "away_team": "Deportes Recoleta",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Arena Sport Madrid, Colina",
       "status": "pending"
     },
     {
@@ -3669,10 +3669,10 @@
       "time": "2:00 pm",
       "home_team": "Captadores FC",
       "away_team": "Santiago Wanderers",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 0,
       "stadium": "Cancha Club Deportivo Villa Corhabit",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3701,38 +3701,14 @@
     {
       "category": "sub-12",
       "round": 8,
-      "date": null,
-      "time": null,
-      "home_team": "Palestino",
-      "away_team": "Cobreloa",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-12",
-      "round": 8,
-      "date": null,
-      "time": null,
-      "home_team": "Sport Madrid",
-      "away_team": "Magallanes",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-12",
-      "round": 8,
       "date": "2026-09-30",
       "time": "11:45 am",
       "home_team": "Trasandino",
       "away_team": "Unión La Calera",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "Estadio Centenario de los Andes",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3741,10 +3717,10 @@
       "time": "1:00 pm",
       "home_team": "Colchagua",
       "away_team": "Captadores FC",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 4,
       "stadium": "Estadio Jorge Silva Valenzuela – Cancha 4",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3753,10 +3729,10 @@
       "time": "1:30 pm",
       "home_team": "Deportes Recoleta",
       "away_team": "Santiago City",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 6,
+      "away_score": 0,
       "stadium": "Estadio Polideportivo Enrique Soro",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3765,10 +3741,10 @@
       "time": "1:45 pm",
       "home_team": "Atlético Colina",
       "away_team": "O'Higgins",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 4,
       "stadium": "Estadio Victoria de Chacabuco",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3777,10 +3753,10 @@
       "time": "2:45 pm",
       "home_team": "Fluminense Chile",
       "away_team": "San Luis",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 4,
       "stadium": "Cancha Los Eucaliptos",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3789,10 +3765,10 @@
       "time": "3:45 pm",
       "home_team": "Cobresal",
       "away_team": "Santiago Morning",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 3,
       "stadium": "Complejo Amador Donoso",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3801,10 +3777,10 @@
       "time": "4:00 pm",
       "home_team": "Universidad de Chile",
       "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 0,
       "stadium": "CDA – Paño FF Norte",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3813,10 +3789,10 @@
       "time": "4:30 pm",
       "home_team": "U. San Sebastián",
       "away_team": "Unión Española",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 2,
       "stadium": "Complejo USS – Cancha 3",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3825,10 +3801,10 @@
       "time": "4:30 pm",
       "home_team": "Real San Joaquin",
       "away_team": "Deportes Santa Cruz",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 5,
       "stadium": "Cancha Real Aeropuerto",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3837,10 +3813,10 @@
       "time": "4:45 pm",
       "home_team": "Santiago Wanderers",
       "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 3,
       "stadium": "Estadio Baquedano",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3849,10 +3825,10 @@
       "time": "5:00 pm",
       "home_team": "Diablos Rojos",
       "away_team": "Everton",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 5,
       "stadium": "Premier League Chicureo",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3861,9 +3837,33 @@
       "time": "5:45 pm",
       "home_team": "Lautaro de Buin",
       "away_team": "Deportes Rengo",
+      "home_score": 0,
+      "away_score": 5,
+      "stadium": "Estadio Lautaro de Buin",
+      "status": "played"
+    },
+    {
+      "category": "sub-12",
+      "round": 8,
+      "date": "2026-10-08",
+      "time": "3:30 pm",
+      "home_team": "Palestino",
+      "away_team": "Cobreloa",
       "home_score": null,
       "away_score": null,
-      "stadium": "Estadio Lautaro de Buin",
+      "stadium": "Estadio Municipal de La Cisterna – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-12",
+      "round": 8,
+      "date": "2026-10-12",
+      "time": "6:00 pm",
+      "home_team": "Sport Madrid",
+      "away_team": "Magallanes",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Arena Sport Madrid, Colina",
       "status": "pending"
     },
     {
@@ -3873,10 +3873,10 @@
       "time": "11:45 am",
       "home_team": "O'Higgins",
       "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 4,
       "stadium": "Monasterio Celeste",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3885,10 +3885,10 @@
       "time": "11:45 am",
       "home_team": "Academia Antofagasta",
       "away_team": "Lautaro de Buin",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 0,
       "stadium": "Cancha Los Eucaliptos",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3897,10 +3897,10 @@
       "time": "12:30 pm",
       "home_team": "San Luis",
       "away_team": "Deportes Recoleta",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 2,
       "stadium": "Complejo San Luis",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3909,10 +3909,10 @@
       "time": "1:00 pm",
       "home_team": "Unión Española",
       "away_team": "Colchagua",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 5,
+      "away_score": 4,
       "stadium": "Complejo Malloco",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3921,10 +3921,10 @@
       "time": "1:00 pm",
       "home_team": "Everton",
       "away_team": "Fluminense Chile",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 4,
+      "away_score": 1,
       "stadium": "Centro Deportivo Everton",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3933,10 +3933,10 @@
       "time": "4:15 pm",
       "home_team": "Audax Italiano",
       "away_team": "Atlético Colina",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "Complejo Ciudad de Campeones",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3945,10 +3945,10 @@
       "time": "4:45 pm",
       "home_team": "Santiago Wanderers",
       "away_team": "Palestino",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 2,
       "stadium": "Estadio Baquedano",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3957,10 +3957,10 @@
       "time": "4:45 pm",
       "home_team": "Magallanes",
       "away_team": "Real San Joaquin",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 0,
       "stadium": "Cancha Juventud Chacabuco",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3969,10 +3969,10 @@
       "time": "11:00 am",
       "home_team": "Universidad Católica",
       "away_team": "Cobresal",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 4,
+      "away_score": 0,
       "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -3981,10 +3981,10 @@
       "time": "11:45 am",
       "home_team": "Unión La Calera",
       "away_team": "Diablos Rojos",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 3,
       "stadium": "Estadio Pueblo Nuevo",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -4005,10 +4005,10 @@
       "time": "2:00 pm",
       "home_team": "Captadores FC",
       "away_team": "Cobreloa",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 2,
       "stadium": "Cancha Club Deportivo Villa Corhabit",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -4017,10 +4017,10 @@
       "time": "2:45 pm",
       "home_team": "Santiago City",
       "away_team": "Trasandino",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 4,
       "stadium": "Complejo BSC Sport",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -4029,45 +4029,105 @@
       "time": "4:45 pm",
       "home_team": "Santiago Morning",
       "away_team": "Universidad de Chile",
+      "home_score": 1,
+      "away_score": 4,
+      "stadium": "Coplejo Santiago Morning Quilicura",
+      "status": "played"
+    },
+    {
+      "category": "sub-12",
+      "round": 10,
+      "date": "2026-10-10",
+      "time": "10:45 am",
+      "home_team": "Everton",
+      "away_team": "Unión La Calera",
       "home_score": null,
       "away_score": null,
-      "stadium": "Coplejo Santiago Morning Quilicura",
+      "stadium": "Centro de entrenamiento Everton",
       "status": "pending"
     },
     {
       "category": "sub-12",
       "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-10",
+      "time": "11:00 am",
       "home_team": "Colo Colo",
       "away_team": "Universidad Católica",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Estadio Monumental – Cancha 2",
       "status": "pending"
     },
     {
       "category": "sub-12",
       "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Cobreloa",
-      "away_team": "Universidad de Chile",
+      "date": "2026-10-10",
+      "time": "11:45 am",
+      "home_team": "Academia Antofagasta",
+      "away_team": "Magallanes",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Cancha Los Eucaliptos",
       "status": "pending"
     },
     {
       "category": "sub-12",
       "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-10",
+      "time": "12:30 pm",
       "home_team": "Unión Española",
       "away_team": "O'Higgins",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Complejo Malloco",
+      "status": "pending"
+    },
+    {
+      "category": "sub-12",
+      "round": 10,
+      "date": "2026-10-10",
+      "time": "12:45 pm",
+      "home_team": "U. San Sebastián",
+      "away_team": "Santiago Wanderers",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo USS – Cancha 3",
+      "status": "pending"
+    },
+    {
+      "category": "sub-12",
+      "round": 10,
+      "date": "2026-10-10",
+      "time": "12:45 pm",
+      "home_team": "Trasandino",
+      "away_team": "Real San Joaquin",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo Marista de Los Andes",
+      "status": "pending"
+    },
+    {
+      "category": "sub-12",
+      "round": 10,
+      "date": "2026-10-10",
+      "time": "2:30 pm",
+      "home_team": "Deportes Santa Cruz",
+      "away_team": "San Luis",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal Santa Ana",
+      "status": "pending"
+    },
+    {
+      "category": "sub-12",
+      "round": 10,
+      "date": "2026-10-10",
+      "time": "3:30 pm",
+      "home_team": "Cobresal",
+      "away_team": "Audax Italiano",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de Puente Alto",
       "status": "pending"
     },
     {
@@ -4077,54 +4137,6 @@
       "time": "12:00 am",
       "home_team": "Palestino",
       "away_team": "Santiago Morning",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-12",
-      "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "U. San Sebastián",
-      "away_team": "Santiago Wanderers",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-12",
-      "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Cobresal",
-      "away_team": "Audax Italiano",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-12",
-      "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Captadores FC",
-      "away_team": "Atlético Colina",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-12",
-      "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Everton",
-      "away_team": "Unión La Calera",
       "home_score": null,
       "away_score": null,
       "stadium": "",
@@ -4147,30 +4159,6 @@
       "round": 10,
       "date": "2026-10-11",
       "time": "12:00 am",
-      "home_team": "Deportes Santa Cruz",
-      "away_team": "San Luis",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-12",
-      "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Academia Antofagasta",
-      "away_team": "Magallanes",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-12",
-      "round": 10,
-      "date": "2026-10-11",
-      "time": "12:00 am",
       "home_team": "Deportes Rengo",
       "away_team": "Fluminense Chile",
       "home_score": null,
@@ -4182,24 +4170,36 @@
       "category": "sub-12",
       "round": 10,
       "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Diablos Rojos",
-      "away_team": "Deportes Recoleta",
+      "time": "2:00 pm",
+      "home_team": "Captadores FC",
+      "away_team": "Atlético Colina",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Cancha Club Deportivo Villa Corhabit",
       "status": "pending"
     },
     {
       "category": "sub-12",
       "round": 10,
       "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Trasandino",
-      "away_team": "Real San Joaquin",
+      "time": "4:15 pm",
+      "home_team": "Cobreloa",
+      "away_team": "Universidad de Chile",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Estadio Robert Kennedy",
+      "status": "pending"
+    },
+    {
+      "category": "sub-12",
+      "round": 10,
+      "date": "2026-10-11",
+      "time": "5:00 pm",
+      "home_team": "Diablos Rojos",
+      "away_team": "Deportes Recoleta",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Arena Sport Madrid, Colina",
       "status": "pending"
     },
     {
@@ -5513,18 +5513,6 @@
     {
       "category": "sub-13",
       "round": 3,
-      "date": null,
-      "time": null,
-      "home_team": "Trasandino",
-      "away_team": "Deportes Limache",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 3,
       "date": "2026-07-15",
       "time": "11:00 am",
       "home_team": "Coquimbo Unido",
@@ -5728,6 +5716,18 @@
     },
     {
       "category": "sub-13",
+      "round": 3,
+      "date": "2026-10-07",
+      "time": "12:15 pm",
+      "home_team": "Trasandino",
+      "away_team": "Deportes Limache",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de Calle Larga",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
       "round": 4,
       "date": null,
       "time": null,
@@ -5745,18 +5745,6 @@
       "time": null,
       "home_team": "Deportes Antofagasta",
       "away_team": "Deportes Iquique",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 4,
-      "date": null,
-      "time": null,
-      "home_team": "Universidad Católica",
-      "away_team": "Unión Española",
       "home_score": null,
       "away_score": null,
       "stadium": "",
@@ -5953,6 +5941,18 @@
       "away_score": 4,
       "stadium": "Complejo Costanera",
       "status": "played"
+    },
+    {
+      "category": "sub-13",
+      "round": 4,
+      "date": "2026-10-07",
+      "time": "4:30 pm",
+      "home_team": "Universidad Católica",
+      "away_team": "Unión Española",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
+      "status": "pending"
     },
     {
       "category": "sub-13",
@@ -6405,10 +6405,10 @@
       "time": "11:30 am",
       "home_team": "Universidad de Chile",
       "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 0,
       "stadium": "CDA-Cancha Leonel Sánchez",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -6633,10 +6633,10 @@
       "time": "3:00 pm",
       "home_team": "Ñublense",
       "away_team": "Curicó Unido",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 3,
       "stadium": "Cancha ANFA Chillán",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -7013,18 +7013,6 @@
     {
       "category": "sub-13",
       "round": 9,
-      "date": "2026-08-29",
-      "time": "3:00 pm",
-      "home_team": "U. de Concepción",
-      "away_team": "Deportes Temuco",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Complejo Universidad de Concepción",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 9,
       "date": "2026-08-30",
       "time": "2:00 pm",
       "home_team": "Ñublense",
@@ -7077,10 +7065,10 @@
       "time": "11:30 am",
       "home_team": "Deportes Iquique",
       "away_team": "Deportes Antofagasta",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 6,
+      "away_score": 0,
       "stadium": "Miniestadio Tierra de Campeones",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -7089,9 +7077,21 @@
       "time": "12:00 pm",
       "home_team": "Audax Italiano",
       "away_team": "Cobreloa",
+      "home_score": 1,
+      "away_score": 3,
+      "stadium": "Complejo Ciudad de Campeones",
+      "status": "played"
+    },
+    {
+      "category": "sub-13",
+      "round": 9,
+      "date": "2026-10-07",
+      "time": "3:00 pm",
+      "home_team": "U. de Concepción",
+      "away_team": "Deportes Temuco",
       "home_score": null,
       "away_score": null,
-      "stadium": "Complejo Ciudad de Campeones",
+      "stadium": "Complejo Universidad de Concepción",
       "status": "pending"
     },
     {
@@ -7749,10 +7749,10 @@
       "time": "2:00 pm",
       "home_team": "Huachipato",
       "away_team": "Ñublense",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 5,
       "stadium": "Estadio Huachipato",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -7773,10 +7773,10 @@
       "time": "4:00 pm",
       "home_team": "Colo Colo",
       "away_team": "Cobresal",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 0,
       "stadium": "Estadio Monumental – Cancha 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -7965,10 +7965,10 @@
       "time": "12:00 pm",
       "home_team": "Deportes Concepción",
       "away_team": "Deportes Puerto Montt",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Campos Deportivos Ricardo Keller",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -7977,10 +7977,10 @@
       "time": "12:00 pm",
       "home_team": "Santa Cruz",
       "away_team": "Curicó Unido",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 7,
       "stadium": "Estadio Municipal Santa Ana",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -7989,10 +7989,10 @@
       "time": "12:15 pm",
       "home_team": "Huachipato",
       "away_team": "U. de Concepción",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Estadio Huachipato-Cancha 4",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8001,10 +8001,10 @@
       "time": "11:45 am",
       "home_team": "Deportes Temuco",
       "away_team": "Rangers",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 2,
       "stadium": "Complejo Labranza M11",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8013,7 +8013,7 @@
       "time": "10:30 am",
       "home_team": "Santiago City",
       "away_team": "Colchagua",
-      "home_score": 0,
+      "home_score": 3,
       "away_score": 0,
       "stadium": "Complejo BSC Sport",
       "status": "played"
@@ -8157,10 +8157,10 @@
       "time": "11:00 am",
       "home_team": "Deportes Antofagasta",
       "away_team": "Deportes Iquique",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 2,
       "stadium": "Estadio Regional Calvo y Bascuñan – Cancha 5",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8169,10 +8169,10 @@
       "time": "7:00 pm",
       "home_team": "San Marcos de Arica",
       "away_team": "Coquimbo Unido",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Complejo Valle Nuevo",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8181,57 +8181,57 @@
       "time": "4:00 pm",
       "home_team": "Deportes Copiapó",
       "away_team": "Deportes La Serena",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 1,
       "stadium": "Estadio Universidad de Atacama",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
       "round": 14,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "U. de Concepción",
-      "away_team": "Ñublense",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 14,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Deportes Puerto Montt",
-      "away_team": "Huachipato",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 14,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Curicó Unido",
-      "away_team": "Deportes Concepción",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 14,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-10",
+      "time": "11:45 am",
       "home_team": "Deportes Temuco",
       "away_team": "Santa Cruz",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Complejo Labranza M11",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 14,
+      "date": "2026-10-10",
+      "time": "12:00 pm",
+      "home_team": "Deportes Puerto Montt",
+      "away_team": "Huachipato",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Antonio Varas",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 14,
+      "date": "2026-10-10",
+      "time": "2:15 pm",
+      "home_team": "Curicó Unido",
+      "away_team": "Deportes Concepción",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo Deportivo Curicó Unido",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 14,
+      "date": "2026-10-10",
+      "time": "4:00 pm",
+      "home_team": "U. de Concepción",
+      "away_team": "Ñublense",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo Universidad de Concepción",
       "status": "pending"
     },
     {
@@ -8241,10 +8241,10 @@
       "time": null,
       "home_team": "Palestino",
       "away_team": "Santiago Wanderers",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 5,
+      "away_score": 3,
       "stadium": "",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8381,25 +8381,25 @@
     {
       "category": "sub-13",
       "round": 15,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Coquimbo Unido",
-      "away_team": "Deportes Copiapó",
+      "date": "2026-10-08",
+      "time": "12:00 pm",
+      "home_team": "Deportes La Serena",
+      "away_team": "Deportes Iquique",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Complejo Deportivo El Milagro",
       "status": "pending"
     },
     {
       "category": "sub-13",
       "round": 15,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Deportes La Serena",
-      "away_team": "Deportes Iquique",
+      "date": "2026-10-10",
+      "time": "4:00 pm",
+      "home_team": "Coquimbo Unido",
+      "away_team": "Deportes Copiapó",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Complejos Las Rosas",
       "status": "pending"
     },
     {
@@ -8481,10 +8481,10 @@
       "time": "11:00 am",
       "home_team": "Audax Italiano",
       "away_team": "Palestino",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 2,
       "stadium": "Complejo Ciudad de Campeones",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8493,10 +8493,10 @@
       "time": "11:15 am",
       "home_team": "Santiago City",
       "away_team": "Deportes Recoleta",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Estadio Municipal de La Pintana – Cancha 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8505,10 +8505,10 @@
       "time": "11:45 am",
       "home_team": "Universidad Católica",
       "away_team": "Cobresal",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 1,
       "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8517,10 +8517,10 @@
       "time": "12:00 pm",
       "home_team": "Atlético Colina",
       "away_team": "Trasandino",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 5,
+      "away_score": 0,
       "stadium": "Estadio Victoria de Chacabuco",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8529,10 +8529,10 @@
       "time": "12:00 pm",
       "home_team": "Universidad de Chile",
       "away_team": "Magallanes",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "CDA – Paño FF Norte",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8541,10 +8541,10 @@
       "time": "1:00 pm",
       "home_team": "Colchagua",
       "away_team": "Real San Joaquín",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 3,
       "stadium": "Estadio Municipal De Pichidegua",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8553,10 +8553,10 @@
       "time": "3:30 pm",
       "home_team": "Santiago Morning",
       "away_team": "Deportes Limache",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 2,
       "stadium": "Coplejo Santiago Morning Quilicura",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8565,10 +8565,10 @@
       "time": "4:00 pm",
       "home_team": "O'Higgins",
       "away_team": "Unión Española",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 3,
       "stadium": "Monasterio Celeste",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8577,10 +8577,10 @@
       "time": "12:00 pm",
       "home_team": "San Luis",
       "away_team": "Unión San Felipe",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 0,
       "stadium": "Complejo San Luis",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8589,10 +8589,10 @@
       "time": "4:00 pm",
       "home_team": "Santiago Wanderers",
       "away_team": "Everton",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 0,
       "stadium": "Complejo Mantagua",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8601,10 +8601,10 @@
       "time": "4:30 pm",
       "home_team": "Cobreloa",
       "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Estadio Robert Kennedy",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8613,10 +8613,10 @@
       "time": "5:30 pm",
       "home_team": "Unión La Calera",
       "away_team": "Deportes Rengo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 1,
       "stadium": "Estadio Pueblo Nuevo",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -8693,13 +8693,49 @@
     {
       "category": "sub-13",
       "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Unión San Felipe",
-      "away_team": "Unión La Calera",
+      "date": "2026-10-10",
+      "time": "10:45 am",
+      "home_team": "Cobresal",
+      "away_team": "O'Higgins",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Estadio Municipal de Puente Alto",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 17,
+      "date": "2026-10-10",
+      "time": "11:00 am",
+      "home_team": "Cobreloa",
+      "away_team": "Unión Española",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Robert Kennedy",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 17,
+      "date": "2026-10-10",
+      "time": "3:00 pm",
+      "home_team": "Everton",
+      "away_team": "Audax Italiano",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Centro de entrenamiento Everton",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 17,
+      "date": "2026-10-10",
+      "time": "4:30 pm",
+      "home_team": "Universidad Católica",
+      "away_team": "Universidad de Chile",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
       "status": "pending"
     },
     {
@@ -8709,42 +8745,6 @@
       "time": "12:00 am",
       "home_team": "San Luis",
       "away_team": "Colchagua",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Trasandino",
-      "away_team": "Real San Joaquín",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Deportes Limache",
-      "away_team": "Santiago City",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Deportes Recoleta",
-      "away_team": "Atlético Colina",
       "home_score": null,
       "away_score": null,
       "stadium": "",
@@ -8767,30 +8767,6 @@
       "round": 17,
       "date": "2026-10-11",
       "time": "12:00 am",
-      "home_team": "Cobresal",
-      "away_team": "O'Higgins",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Universidad Católica",
-      "away_team": "Universidad de Chile",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
       "home_team": "Palestino",
       "away_team": "Magallanes",
       "home_score": null,
@@ -8802,36 +8778,60 @@
       "category": "sub-13",
       "round": 17,
       "date": "2026-10-11",
-      "time": "12:00 am",
+      "time": "12:00 pm",
+      "home_team": "Unión San Felipe",
+      "away_team": "Unión La Calera",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo Deportivo Unión San Felipe",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 17,
+      "date": "2026-10-11",
+      "time": "12:00 pm",
+      "home_team": "Deportes Recoleta",
+      "away_team": "Atlético Colina",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de La Pintana – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 17,
+      "date": "2026-10-11",
+      "time": "12:30 pm",
+      "home_team": "Trasandino",
+      "away_team": "Real San Joaquín",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de Calle Larga",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 17,
+      "date": "2026-10-11",
+      "time": "12:45 pm",
+      "home_team": "Deportes Limache",
+      "away_team": "Santiago City",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de Olmué",
+      "status": "pending"
+    },
+    {
+      "category": "sub-13",
+      "round": 17,
+      "date": "2026-10-11",
+      "time": "1:15 pm",
       "home_team": "Colo Colo",
       "away_team": "Santiago Wanderers",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Everton",
-      "away_team": "Audax Italiano",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-13",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Cobreloa",
-      "away_team": "Unión Española",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
+      "stadium": "Estadio Monumental – Cancha 2",
       "status": "pending"
     },
     {
@@ -10265,18 +10265,6 @@
     {
       "category": "sub-14",
       "round": 3,
-      "date": null,
-      "time": null,
-      "home_team": "Trasandino",
-      "away_team": "Deportes Limache",
-      "home_score": 0,
-      "away_score": 0,
-      "stadium": "",
-      "status": "played"
-    },
-    {
-      "category": "sub-14",
-      "round": 3,
       "date": "2026-07-15",
       "time": "9:00 am",
       "home_team": "Coquimbo Unido",
@@ -10480,6 +10468,18 @@
     },
     {
       "category": "sub-14",
+      "round": 3,
+      "date": "2026-10-07",
+      "time": "10:30 am",
+      "home_team": "Trasandino",
+      "away_team": "Deportes Limache",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de Calle Larga",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
       "round": 4,
       "date": null,
       "time": null,
@@ -10497,18 +10497,6 @@
       "time": null,
       "home_team": "Deportes Antofagasta",
       "away_team": "Deportes Iquique",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 4,
-      "date": null,
-      "time": null,
-      "home_team": "Universidad Católica",
-      "away_team": "Unión Española",
       "home_score": null,
       "away_score": null,
       "stadium": "",
@@ -10705,6 +10693,18 @@
       "away_score": 1,
       "stadium": "Complejo Costanera",
       "status": "played"
+    },
+    {
+      "category": "sub-14",
+      "round": 4,
+      "date": "2026-10-07",
+      "time": "2:30 pm",
+      "home_team": "Universidad Católica",
+      "away_team": "Unión Española",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
+      "status": "pending"
     },
     {
       "category": "sub-14",
@@ -11157,10 +11157,10 @@
       "time": "9:30 am",
       "home_team": "Universidad de Chile",
       "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 2,
       "stadium": "CDA-Cancha Leonel Sánchez",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -11385,10 +11385,10 @@
       "time": "1:00 pm",
       "home_team": "Ñublense",
       "away_team": "Curicó Unido",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 3,
       "stadium": "Cancha ANFA Chillán",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -11753,18 +11753,6 @@
     {
       "category": "sub-14",
       "round": 9,
-      "date": "2026-08-29",
-      "time": "1:00 pm",
-      "home_team": "U. de Concepción",
-      "away_team": "Deportes Temuco",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "Complejo Universidad de Concepción",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 9,
       "date": "2026-08-30",
       "time": "12:00 pm",
       "home_team": "Ñublense",
@@ -11817,10 +11805,10 @@
       "time": "9:30 am",
       "home_team": "Deportes Iquique",
       "away_team": "Deportes Antofagasta",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 1,
       "stadium": "Miniestadio Tierra de Campeones",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -11829,9 +11817,21 @@
       "time": "11:00 am",
       "home_team": "Audax Italiano",
       "away_team": "Cobreloa",
+      "home_score": 1,
+      "away_score": 1,
+      "stadium": "Complejo Ciudad de Campeones",
+      "status": "played"
+    },
+    {
+      "category": "sub-14",
+      "round": 9,
+      "date": "2026-10-07",
+      "time": "1:00 pm",
+      "home_team": "U. de Concepción",
+      "away_team": "Deportes Temuco",
       "home_score": null,
       "away_score": null,
-      "stadium": "Complejo Ciudad de Campeones",
+      "stadium": "Complejo Universidad de Concepción",
       "status": "pending"
     },
     {
@@ -12501,10 +12501,10 @@
       "time": "9:00 am",
       "home_team": "Deportes La Serena",
       "away_team": "San Marcos de Arica",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 4,
+      "away_score": 1,
       "stadium": "Complejo Deportivo El Milagro",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -12513,10 +12513,10 @@
       "time": "2:00 pm",
       "home_team": "Colo Colo",
       "away_team": "Cobresal",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "Estadio Monumental – Cancha 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -12705,10 +12705,10 @@
       "time": "10:00 am",
       "home_team": "Huachipato",
       "away_team": "U. de Concepción",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 0,
       "stadium": "Estadio Huachipato-Cancha 4",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -12717,10 +12717,10 @@
       "time": "10:00 am",
       "home_team": "Deportes Concepción",
       "away_team": "Deportes Puerto Montt",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 1,
       "stadium": "Campos Deportivos Ricardo Keller",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -12729,10 +12729,10 @@
       "time": "10:00 am",
       "home_team": "Santa Cruz",
       "away_team": "Curicó Unido",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 8,
       "stadium": "Estadio Municipal Santa Ana",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -12741,10 +12741,10 @@
       "time": "9:30 am",
       "home_team": "Deportes Temuco",
       "away_team": "Rangers",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 0,
       "stadium": "Complejo Labranza M11",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -12777,7 +12777,7 @@
       "time": "9:00 am",
       "home_team": "Santiago City",
       "away_team": "Colchagua",
-      "home_score": 0,
+      "home_score": 3,
       "away_score": 0,
       "stadium": "Complejo BSC Sport",
       "status": "played"
@@ -12897,10 +12897,10 @@
       "time": "9:00 am",
       "home_team": "Deportes Antofagasta",
       "away_team": "Deportes Iquique",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Estadio Regional Calvo y Bascuñan – Cancha 5",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -12909,10 +12909,10 @@
       "time": "5:00 pm",
       "home_team": "San Marcos de Arica",
       "away_team": "Coquimbo Unido",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "Complejo Valle Nuevo",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -12921,57 +12921,57 @@
       "time": "2:00 pm",
       "home_team": "Deportes Copiapó",
       "away_team": "Deportes La Serena",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 3,
       "stadium": "Estadio Universidad de Atacama",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
       "round": 14,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "U. de Concepción",
-      "away_team": "Ñublense",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 14,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Deportes Puerto Montt",
-      "away_team": "Huachipato",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 14,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Curicó Unido",
-      "away_team": "Deportes Concepción",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 14,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-10",
+      "time": "9:30 am",
       "home_team": "Deportes Temuco",
       "away_team": "Santa Cruz",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Complejo Labranza M11",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 14,
+      "date": "2026-10-10",
+      "time": "10:00 am",
+      "home_team": "Deportes Puerto Montt",
+      "away_team": "Huachipato",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Antonio Varas",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 14,
+      "date": "2026-10-10",
+      "time": "12:00 pm",
+      "home_team": "Curicó Unido",
+      "away_team": "Deportes Concepción",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo Deportivo Curicó Unido",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 14,
+      "date": "2026-10-10",
+      "time": "2:00 pm",
+      "home_team": "U. de Concepción",
+      "away_team": "Ñublense",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo Universidad de Concepción",
       "status": "pending"
     },
     {
@@ -12981,10 +12981,10 @@
       "time": null,
       "home_team": "Palestino",
       "away_team": "Santiago Wanderers",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 2,
       "stadium": "",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -13121,25 +13121,25 @@
     {
       "category": "sub-14",
       "round": 15,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Coquimbo Unido",
-      "away_team": "Deportes Copiapó",
+      "date": "2026-10-08",
+      "time": "10:00 am",
+      "home_team": "Deportes La Serena",
+      "away_team": "Deportes Iquique",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Complejo Deportivo El Milagro",
       "status": "pending"
     },
     {
       "category": "sub-14",
       "round": 15,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Deportes La Serena",
-      "away_team": "Deportes Iquique",
+      "date": "2026-10-10",
+      "time": "2:00 pm",
+      "home_team": "Coquimbo Unido",
+      "away_team": "Deportes Copiapó",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Complejos Las Rosas",
       "status": "pending"
     },
     {
@@ -13209,10 +13209,10 @@
       "time": "9:00 am",
       "home_team": "Audax Italiano",
       "away_team": "Palestino",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 0,
       "stadium": "Complejo Ciudad de Campeones",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -13221,10 +13221,10 @@
       "time": "9:00 am",
       "home_team": "Santiago City",
       "away_team": "Deportes Recoleta",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 0,
       "stadium": "Estadio Municipal de La Pintana – Cancha 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -13233,10 +13233,10 @@
       "time": "9:30 am",
       "home_team": "Universidad Católica",
       "away_team": "Cobresal",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 2,
       "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -13257,10 +13257,10 @@
       "time": "10:00 am",
       "home_team": "Atlético Colina",
       "away_team": "Trasandino",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 4,
+      "away_score": 2,
       "stadium": "Estadio Victoria de Chacabuco",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -13269,10 +13269,10 @@
       "time": "11:00 am",
       "home_team": "Colchagua",
       "away_team": "Real San Joaquín",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 3,
       "stadium": "Estadio Municipal De Pichidegua",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -13281,10 +13281,10 @@
       "time": "1:30 pm",
       "home_team": "Santiago Morning",
       "away_team": "Deportes Limache",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "Coplejo Santiago Morning Quilicura",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -13293,10 +13293,10 @@
       "time": "2:00 pm",
       "home_team": "O'Higgins",
       "away_team": "Unión Española",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 2,
       "stadium": "Monasterio Celeste",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -13305,10 +13305,10 @@
       "time": "10:00 am",
       "home_team": "San Luis",
       "away_team": "Unión San Felipe",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 0,
       "stadium": "Complejo San Luis",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -13317,10 +13317,10 @@
       "time": "2:00 pm",
       "home_team": "Santiago Wanderers",
       "away_team": "Everton",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 0,
       "stadium": "Complejo Mantagua",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -13329,10 +13329,10 @@
       "time": "2:30 pm",
       "home_team": "Cobreloa",
       "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 3,
       "stadium": "Estadio Robert Kennedy",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -13341,10 +13341,10 @@
       "time": "3:30 pm",
       "home_team": "Unión La Calera",
       "away_team": "Deportes Rengo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 4,
       "stadium": "Estadio Pueblo Nuevo",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -13433,25 +13433,49 @@
     {
       "category": "sub-14",
       "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-10",
+      "time": "9:00 am",
       "home_team": "Cobresal",
       "away_team": "O'Higgins",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Estadio Municipal de Puente Alto",
       "status": "pending"
     },
     {
       "category": "sub-14",
       "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-10",
+      "time": "9:00 am",
+      "home_team": "Cobreloa",
+      "away_team": "Unión Española",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Robert Kennedy",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 17,
+      "date": "2026-10-10",
+      "time": "1:00 pm",
+      "home_team": "Everton",
+      "away_team": "Audax Italiano",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Centro de entrenamiento Everton",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 17,
+      "date": "2026-10-10",
+      "time": "2:30 pm",
       "home_team": "Universidad Católica",
       "away_team": "Universidad de Chile",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
       "status": "pending"
     },
     {
@@ -13461,54 +13485,6 @@
       "time": "12:00 am",
       "home_team": "Palestino",
       "away_team": "Magallanes",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Colo Colo",
-      "away_team": "Santiago Wanderers",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Everton",
-      "away_team": "Audax Italiano",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Cobreloa",
-      "away_team": "Unión Española",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Unión San Felipe",
-      "away_team": "Unión La Calera",
       "home_score": null,
       "away_score": null,
       "stadium": "",
@@ -13531,47 +13507,71 @@
       "round": 17,
       "date": "2026-10-11",
       "time": "12:00 am",
-      "home_team": "Trasandino",
-      "away_team": "Real San Joaquín",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Deportes Limache",
-      "away_team": "Santiago City",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Deportes Recoleta",
-      "away_team": "Atlético Colina",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-14",
-      "round": 17,
-      "date": "2026-10-11",
-      "time": "12:00 am",
       "home_team": "Santiago Morning",
       "away_team": "Deportes Rengo",
       "home_score": null,
       "away_score": null,
       "stadium": "",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 17,
+      "date": "2026-10-11",
+      "time": "10:00 am",
+      "home_team": "Unión San Felipe",
+      "away_team": "Unión La Calera",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo Deportivo Unión San Felipe",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 17,
+      "date": "2026-10-11",
+      "time": "10:00 am",
+      "home_team": "Deportes Limache",
+      "away_team": "Santiago City",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de Olmué",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 17,
+      "date": "2026-10-11",
+      "time": "10:00 am",
+      "home_team": "Deportes Recoleta",
+      "away_team": "Atlético Colina",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de La Pintana – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 17,
+      "date": "2026-10-11",
+      "time": "10:30 am",
+      "home_team": "Trasandino",
+      "away_team": "Real San Joaquín",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de Calle Larga",
+      "status": "pending"
+    },
+    {
+      "category": "sub-14",
+      "round": 17,
+      "date": "2026-10-11",
+      "time": "11:00 am",
+      "home_team": "Colo Colo",
+      "away_team": "Santiago Wanderers",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Monumental – Cancha 2",
       "status": "pending"
     },
     {
@@ -14997,10 +14997,10 @@
       "time": "1:00 pm",
       "home_team": "Palestino",
       "away_team": "Deportes Recoleta",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 2,
       "stadium": "Estadio Municipal de La Cisterna – Cancha 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-15",
@@ -15009,10 +15009,10 @@
       "time": "1:15 pm",
       "home_team": "Santiago Wanderers",
       "away_team": "O'Higgins",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 1,
       "stadium": "Complejo Mantagua",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-15",
@@ -15021,18 +15021,6 @@
       "time": null,
       "home_team": "Colo Colo",
       "away_team": "Everton",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-15",
-      "round": 6,
-      "date": null,
-      "time": null,
-      "home_team": "Universidad Católica",
-      "away_team": "Universidad de Concepción",
       "home_score": null,
       "away_score": null,
       "stadium": "",
@@ -15109,6 +15097,18 @@
       "away_score": 3,
       "stadium": "Complejos Las Rosas",
       "status": "played"
+    },
+    {
+      "category": "sub-15",
+      "round": 6,
+      "date": "2026-10-07",
+      "time": "11:45 am",
+      "home_team": "Universidad Católica",
+      "away_team": "Universidad de Concepción",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
+      "status": "pending"
     },
     {
       "category": "sub-15",
@@ -15393,10 +15393,10 @@
       "time": "5:15 pm",
       "home_team": "Audax Italiano",
       "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Complejo Ciudad de Campeones",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-15",
@@ -15501,10 +15501,10 @@
       "time": "11:15 am",
       "home_team": "Deportes Temuco",
       "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 5,
       "stadium": "Complejo Labranza M11",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-15",
@@ -15513,10 +15513,10 @@
       "time": "12:00 pm",
       "home_team": "Universidad de Chile",
       "away_team": "Deportes Recoleta",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 7,
+      "away_score": 1,
       "stadium": "CDA-Cancha Leonel Sánchez",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-15",
@@ -15525,10 +15525,10 @@
       "time": "12:15 pm",
       "home_team": "Santiago Wanderers",
       "away_team": "Cobreloa",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "Complejo Mantagua",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-15",
@@ -15537,10 +15537,10 @@
       "time": "1:30 pm",
       "home_team": "Palestino",
       "away_team": "Everton",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 2,
       "stadium": "Estadio Municipal de La Cisterna – Cancha 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-15",
@@ -15549,10 +15549,10 @@
       "time": "11:15 am",
       "home_team": "Audax Italiano",
       "away_team": "Universidad de Concepción",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 3,
       "stadium": "Complejo Ciudad de Campeones",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-15",
@@ -15561,10 +15561,10 @@
       "time": "12:00 pm",
       "home_team": "Coquimbo Unido",
       "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 4,
       "stadium": "Complejos Las Rosas",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-15",
@@ -15573,10 +15573,10 @@
       "time": "12:45 pm",
       "home_team": "O'Higgins",
       "away_team": "Unión Española",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Monasterio Celeste",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-15",
@@ -15593,97 +15593,97 @@
     {
       "category": "sub-15",
       "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Everton",
-      "away_team": "Deportes Iquique",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-15",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Huachipato",
-      "away_team": "Audax Italiano",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-15",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Deportes Recoleta",
-      "away_team": "Deportes Temuco",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-15",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-08",
+      "time": "1:45 pm",
       "home_team": "Cobreloa",
       "away_team": "Universidad de Chile",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Centro de Entrenamiento de Cobreloa",
       "status": "pending"
     },
     {
       "category": "sub-15",
       "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Colo Colo",
-      "away_team": "Santiago Wanderers",
+      "date": "2026-10-09",
+      "time": "11:30 am",
+      "home_team": "Everton",
+      "away_team": "Deportes Iquique",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Centro de entrenamiento Everton",
       "status": "pending"
     },
     {
       "category": "sub-15",
       "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Unión Española",
-      "away_team": "Coquimbo Unido",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-15",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Universidad de Concepción",
-      "away_team": "O'Higgins",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-15",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-10",
+      "time": "11:15 am",
       "home_team": "Universidad Católica",
       "away_team": "Palestino",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-15",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "11:30 am",
+      "home_team": "Deportes Recoleta",
+      "away_team": "Deportes Temuco",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de La Pintana – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-15",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "12:00 pm",
+      "home_team": "Huachipato",
+      "away_team": "Audax Italiano",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Huachipato",
+      "status": "pending"
+    },
+    {
+      "category": "sub-15",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "1:30 pm",
+      "home_team": "Colo Colo",
+      "away_team": "Santiago Wanderers",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Monumental – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-15",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "4:30 pm",
+      "home_team": "Unión Española",
+      "away_team": "Coquimbo Unido",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Santa Laura – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-15",
+      "round": 12,
+      "date": "2026-10-11",
+      "time": "11:45 am",
+      "home_team": "Universidad de Concepción",
+      "away_team": "O'Higgins",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo Universidad de Concepción",
       "status": "pending"
     },
     {
@@ -16449,10 +16449,10 @@
       "time": "11:00 am",
       "home_team": "Santiago Wanderers",
       "away_team": "O'Higgins",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 1,
       "stadium": "Complejo Mantagua",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-16",
@@ -16461,18 +16461,6 @@
       "time": null,
       "home_team": "Colo Colo",
       "away_team": "Everton",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-16",
-      "round": 6,
-      "date": null,
-      "time": null,
-      "home_team": "Universidad Católica",
-      "away_team": "Universidad de Concepción",
       "home_score": null,
       "away_score": null,
       "stadium": "",
@@ -16549,6 +16537,18 @@
       "away_score": 1,
       "stadium": "Complejos Las Rosas",
       "status": "played"
+    },
+    {
+      "category": "sub-16",
+      "round": 6,
+      "date": "2026-10-07",
+      "time": "9:30 am",
+      "home_team": "Universidad Católica",
+      "away_team": "Universidad de Concepción",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
+      "status": "pending"
     },
     {
       "category": "sub-16",
@@ -16833,10 +16833,10 @@
       "time": "3:00 pm",
       "home_team": "Audax Italiano",
       "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Complejo Ciudad de Campeones",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-16",
@@ -16941,10 +16941,10 @@
       "time": "9:00 am",
       "home_team": "Deportes Temuco",
       "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 2,
       "stadium": "Complejo Labranza M11",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-16",
@@ -16953,10 +16953,10 @@
       "time": "9:30 am",
       "home_team": "Universidad de Chile",
       "away_team": "Deportes Recoleta",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 1,
       "stadium": "CDA-Cancha Leonel Sánchez",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-16",
@@ -16965,10 +16965,10 @@
       "time": "10:00 am",
       "home_team": "Santiago Wanderers",
       "away_team": "Cobreloa",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 6,
+      "away_score": 1,
       "stadium": "Complejo Mantagua",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-16",
@@ -16977,10 +16977,10 @@
       "time": "11:00 am",
       "home_team": "Palestino",
       "away_team": "Everton",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Estadio Municipal de La Cisterna – Cancha 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-16",
@@ -16989,10 +16989,10 @@
       "time": "9:00 am",
       "home_team": "Audax Italiano",
       "away_team": "Universidad de Concepción",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 6,
+      "away_score": 0,
       "stadium": "Complejo Ciudad de Campeones",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-16",
@@ -17001,10 +17001,10 @@
       "time": "9:30 am",
       "home_team": "Coquimbo Unido",
       "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 0,
       "stadium": "Complejos Las Rosas",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-16",
@@ -17013,10 +17013,10 @@
       "time": "10:30 am",
       "home_team": "O'Higgins",
       "away_team": "Unión Española",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "Monasterio Celeste",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-16",
@@ -17033,97 +17033,97 @@
     {
       "category": "sub-16",
       "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Everton",
-      "away_team": "Deportes Iquique",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-16",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Huachipato",
-      "away_team": "Audax Italiano",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-16",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Deportes Recoleta",
-      "away_team": "Deportes Temuco",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-16",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-08",
+      "time": "11:30 am",
       "home_team": "Cobreloa",
       "away_team": "Universidad de Chile",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Centro de Entrenamiento de Cobreloa",
       "status": "pending"
     },
     {
       "category": "sub-16",
       "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Colo Colo",
-      "away_team": "Santiago Wanderers",
+      "date": "2026-10-09",
+      "time": "9:00 am",
+      "home_team": "Everton",
+      "away_team": "Deportes Iquique",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Centro de entrenamiento Everton",
       "status": "pending"
     },
     {
       "category": "sub-16",
       "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Unión Española",
-      "away_team": "Coquimbo Unido",
+      "date": "2026-10-10",
+      "time": "9:00 am",
+      "home_team": "Deportes Recoleta",
+      "away_team": "Deportes Temuco",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Estadio Municipal de La Pintana – Cancha 2",
       "status": "pending"
     },
     {
       "category": "sub-16",
       "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Universidad de Concepción",
-      "away_team": "O'Higgins",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-16",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-10",
+      "time": "9:00 am",
       "home_team": "Universidad Católica",
       "away_team": "Palestino",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-16",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "9:30 am",
+      "home_team": "Huachipato",
+      "away_team": "Audax Italiano",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Huachipato",
+      "status": "pending"
+    },
+    {
+      "category": "sub-16",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "11:00 am",
+      "home_team": "Colo Colo",
+      "away_team": "Santiago Wanderers",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Monumental – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-16",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "2:00 pm",
+      "home_team": "Unión Española",
+      "away_team": "Coquimbo Unido",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Santa Laura – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-16",
+      "round": 12,
+      "date": "2026-10-11",
+      "time": "9:30 am",
+      "home_team": "Universidad de Concepción",
+      "away_team": "O'Higgins",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo Universidad de Concepción",
       "status": "pending"
     },
     {
@@ -17697,10 +17697,10 @@
       "time": "11:45 am",
       "home_team": "Universidad de Concepción",
       "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 4,
+      "away_score": 1,
       "stadium": "Cancha El Mercado Hualpen",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-18",
@@ -17801,18 +17801,6 @@
     {
       "category": "sub-18",
       "round": 5,
-      "date": null,
-      "time": null,
-      "home_team": "O'Higgins",
-      "away_team": "Santiago Wanderers",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-18",
-      "round": 5,
       "date": "2026-08-13",
       "time": "11:45 am",
       "home_team": "Deportes Temuco",
@@ -17893,6 +17881,18 @@
       "away_score": 0,
       "stadium": "CDA-Cancha Leonel Sánchez",
       "status": "played"
+    },
+    {
+      "category": "sub-18",
+      "round": 5,
+      "date": "2026-10-07",
+      "time": "3:30 pm",
+      "home_team": "O'Higgins",
+      "away_team": "Santiago Wanderers",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Monasterio Celeste",
+      "status": "pending"
     },
     {
       "category": "sub-18",
@@ -18187,18 +18187,6 @@
       "round": 9,
       "date": null,
       "time": null,
-      "home_team": "Colo Colo",
-      "away_team": "Audax Italiano",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-18",
-      "round": 9,
-      "date": null,
-      "time": null,
       "home_team": "Deportes Temuco",
       "away_team": "Santiago Wanderers",
       "home_score": null,
@@ -18277,6 +18265,18 @@
       "away_score": 1,
       "stadium": "Estadio Huachipato-Cancha 4",
       "status": "played"
+    },
+    {
+      "category": "sub-18",
+      "round": 9,
+      "date": "2026-10-07",
+      "time": "11:30 am",
+      "home_team": "Colo Colo",
+      "away_team": "Audax Italiano",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Monumental – Cancha Sintética",
+      "status": "pending"
     },
     {
       "category": "sub-18",
@@ -18381,10 +18381,10 @@
       "time": "11:15 am",
       "home_team": "Deportes Recoleta",
       "away_team": "Universidad de Chile",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 4,
       "stadium": "Complejo Mirador Viejo",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-18",
@@ -18393,10 +18393,10 @@
       "time": "1:30 pm",
       "home_team": "Everton",
       "away_team": "Palestino",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Centro Deportivo Everton",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-18",
@@ -18405,10 +18405,10 @@
       "time": "4:30 pm",
       "home_team": "Unión Española",
       "away_team": "O'Higgins",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 4,
+      "away_score": 1,
       "stadium": "Estadio Santa Laura – Cancha 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-18",
@@ -18417,10 +18417,10 @@
       "time": "11:30 am",
       "home_team": "Colo Colo",
       "away_team": "Coquimbo Unido",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 0,
       "stadium": "Estadio Monumental – Cancha 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-18",
@@ -18429,10 +18429,10 @@
       "time": "11:45 am",
       "home_team": "Universidad Católica",
       "away_team": "Deportes Temuco",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 1,
       "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-18",
@@ -18441,10 +18441,10 @@
       "time": "1:15 pm",
       "home_team": "Cobreloa",
       "away_team": "Santiago Wanderers",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 2,
       "stadium": "Centro de Entrenamiento de Cobreloa",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-18",
@@ -18453,10 +18453,10 @@
       "time": "11:45 am",
       "home_team": "Universidad de Concepción",
       "away_team": "Audax Italiano",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Complejo Universidad de Concepción",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-18",
@@ -18473,37 +18473,73 @@
     {
       "category": "sub-18",
       "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Deportes Iquique",
-      "away_team": "Everton",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-18",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Audax Italiano",
-      "away_team": "Huachipato",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-18",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-09",
+      "time": "11:45 am",
       "home_team": "Deportes Temuco",
       "away_team": "Deportes Recoleta",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Complejo Labranza M11",
+      "status": "pending"
+    },
+    {
+      "category": "sub-18",
+      "round": 12,
+      "date": "2026-10-09",
+      "time": "12:30 pm",
+      "home_team": "Deportes Iquique",
+      "away_team": "Everton",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Miniestadio Tierra de Campeones",
+      "status": "pending"
+    },
+    {
+      "category": "sub-18",
+      "round": 12,
+      "date": "2026-10-09",
+      "time": "12:45 pm",
+      "home_team": "Coquimbo Unido",
+      "away_team": "Unión Española",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejos Las Rosas",
+      "status": "pending"
+    },
+    {
+      "category": "sub-18",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "12:00 pm",
+      "home_team": "Palestino",
+      "away_team": "Universidad Católica",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de La Cisterna – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-18",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "12:30 pm",
+      "home_team": "O'Higgins",
+      "away_team": "Universidad de Concepción",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Monasterio Celeste",
+      "status": "pending"
+    },
+    {
+      "category": "sub-18",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "1:15 pm",
+      "home_team": "Santiago Wanderers",
+      "away_team": "Colo Colo",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo Mantagua",
       "status": "pending"
     },
     {
@@ -18522,48 +18558,12 @@
       "category": "sub-18",
       "round": 12,
       "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Santiago Wanderers",
-      "away_team": "Colo Colo",
+      "time": "11:15 am",
+      "home_team": "Audax Italiano",
+      "away_team": "Huachipato",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-18",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Coquimbo Unido",
-      "away_team": "Unión Española",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-18",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "O'Higgins",
-      "away_team": "Universidad de Concepción",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-18",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Palestino",
-      "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
+      "stadium": "Complejo Ciudad de Campeones",
       "status": "pending"
     },
     {
@@ -19137,10 +19137,10 @@
       "time": "9:30 am",
       "home_team": "Universidad de Concepción",
       "away_team": "Colo Colo",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 0,
       "stadium": "Cancha El Mercado Hualpen",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-20",
@@ -19241,18 +19241,6 @@
     {
       "category": "sub-20",
       "round": 5,
-      "date": null,
-      "time": null,
-      "home_team": "O'Higgins",
-      "away_team": "Santiago Wanderers",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-20",
-      "round": 5,
       "date": "2026-08-13",
       "time": "9:30 am",
       "home_team": "Deportes Temuco",
@@ -19333,6 +19321,18 @@
       "away_score": 0,
       "stadium": "CDA-Cancha Leonel Sánchez",
       "status": "played"
+    },
+    {
+      "category": "sub-20",
+      "round": 5,
+      "date": "2026-10-07",
+      "time": "1:00 pm",
+      "home_team": "O'Higgins",
+      "away_team": "Santiago Wanderers",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Monasterio Celeste",
+      "status": "pending"
     },
     {
       "category": "sub-20",
@@ -19627,18 +19627,6 @@
       "round": 9,
       "date": null,
       "time": null,
-      "home_team": "Colo Colo",
-      "away_team": "Audax Italiano",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-20",
-      "round": 9,
-      "date": null,
-      "time": null,
       "home_team": "Deportes Temuco",
       "away_team": "Santiago Wanderers",
       "home_score": null,
@@ -19717,6 +19705,18 @@
       "away_score": 1,
       "stadium": "Estadio Huachipato-Cancha 4",
       "status": "played"
+    },
+    {
+      "category": "sub-20",
+      "round": 9,
+      "date": "2026-10-07",
+      "time": "9:00 am",
+      "home_team": "Colo Colo",
+      "away_team": "Audax Italiano",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Monumental – Cancha Sintética",
+      "status": "pending"
     },
     {
       "category": "sub-20",
@@ -19821,10 +19821,10 @@
       "time": "9:00 am",
       "home_team": "Deportes Recoleta",
       "away_team": "Universidad de Chile",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 3,
       "stadium": "Complejo Mirador Viejo",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-20",
@@ -19833,10 +19833,10 @@
       "time": "11:00 am",
       "home_team": "Everton",
       "away_team": "Palestino",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 2,
       "stadium": "Centro Deportivo Everton",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-20",
@@ -19845,10 +19845,10 @@
       "time": "2:00 pm",
       "home_team": "Unión Española",
       "away_team": "O'Higgins",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 2,
       "stadium": "Estadio Santa Laura – Cancha 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-20",
@@ -19857,10 +19857,10 @@
       "time": "9:00 am",
       "home_team": "Colo Colo",
       "away_team": "Coquimbo Unido",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stadium": "Estadio Monumental – Cancha 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-20",
@@ -19869,10 +19869,10 @@
       "time": "9:30 am",
       "home_team": "Universidad Católica",
       "away_team": "Deportes Temuco",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 5,
+      "away_score": 2,
       "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-20",
@@ -19893,10 +19893,10 @@
       "time": "9:30 am",
       "home_team": "Universidad de Concepción",
       "away_team": "Audax Italiano",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 4,
       "stadium": "Complejo Universidad de Concepción",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-20",
@@ -19913,37 +19913,73 @@
     {
       "category": "sub-20",
       "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Deportes Iquique",
-      "away_team": "Everton",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-20",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Audax Italiano",
-      "away_team": "Huachipato",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-20",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
+      "date": "2026-10-09",
+      "time": "9:30 am",
       "home_team": "Deportes Temuco",
       "away_team": "Deportes Recoleta",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Complejo Labranza M11",
+      "status": "pending"
+    },
+    {
+      "category": "sub-20",
+      "round": 12,
+      "date": "2026-10-09",
+      "time": "10:00 am",
+      "home_team": "Deportes Iquique",
+      "away_team": "Everton",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Miniestadio Tierra de Campeones",
+      "status": "pending"
+    },
+    {
+      "category": "sub-20",
+      "round": 12,
+      "date": "2026-10-09",
+      "time": "10:30 am",
+      "home_team": "Coquimbo Unido",
+      "away_team": "Unión Española",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejos Las Rosas",
+      "status": "pending"
+    },
+    {
+      "category": "sub-20",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "9:30 am",
+      "home_team": "Palestino",
+      "away_team": "Universidad Católica",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Estadio Municipal de La Cisterna – Cancha 2",
+      "status": "pending"
+    },
+    {
+      "category": "sub-20",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "10:00 am",
+      "home_team": "O'Higgins",
+      "away_team": "Universidad de Concepción",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Monasterio Celeste",
+      "status": "pending"
+    },
+    {
+      "category": "sub-20",
+      "round": 12,
+      "date": "2026-10-10",
+      "time": "11:00 am",
+      "home_team": "Santiago Wanderers",
+      "away_team": "Colo Colo",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Complejo Mantagua",
       "status": "pending"
     },
     {
@@ -19962,48 +19998,12 @@
       "category": "sub-20",
       "round": 12,
       "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Santiago Wanderers",
-      "away_team": "Colo Colo",
+      "time": "9:00 am",
+      "home_team": "Audax Italiano",
+      "away_team": "Huachipato",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-20",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Coquimbo Unido",
-      "away_team": "Unión Española",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-20",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "O'Higgins",
-      "away_team": "Universidad de Concepción",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-20",
-      "round": 12,
-      "date": "2026-10-11",
-      "time": "12:00 am",
-      "home_team": "Palestino",
-      "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
+      "stadium": "Complejo Ciudad de Campeones",
       "status": "pending"
     },
     {
