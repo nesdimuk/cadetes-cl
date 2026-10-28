@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T12:35:16.344957+00:00",
+  "updated_at": "2026-10-28T22:28:00.915752+00:00",
   "total": 1691,
   "matches": [
     {
@@ -9630,12 +9630,12 @@
       "category": "sub-13",
       "round": 21,
       "date": "2026-11-01",
-      "time": "12:00 am",
+      "time": "12:00 pm",
       "home_team": "Deportes Rengo",
       "away_team": "Deportes Recoleta",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Estadio Nacional de Rosario",
       "status": "pending"
     },
     {
@@ -14370,12 +14370,12 @@
       "category": "sub-14",
       "round": 21,
       "date": "2026-11-01",
-      "time": "12:00 am",
+      "time": "10:00 am",
       "home_team": "Deportes Rengo",
       "away_team": "Deportes Recoleta",
       "home_score": null,
       "away_score": null,
-      "stadium": "",
+      "stadium": "Estadio Nacional de Rosario",
       "status": "pending"
     },
     {
@@ -15389,13 +15389,13 @@
     {
       "category": "sub-15",
       "round": 9,
-      "date": "2026-10-30",
-      "time": "4:30 pm",
+      "date": "2026-10-31",
+      "time": "12:00 pm",
       "home_team": "Universidad de Chile",
       "away_team": "Universidad Católica",
       "home_score": null,
       "away_score": null,
-      "stadium": "Centro Deportivo Azul",
+      "stadium": "CDA-Cancha Leonel Sánchez",
       "status": "pending"
     },
     {
@@ -16829,13 +16829,13 @@
     {
       "category": "sub-16",
       "round": 9,
-      "date": "2026-10-30",
-      "time": "2:00 pm",
+      "date": "2026-10-31",
+      "time": "9:30 am",
       "home_team": "Universidad de Chile",
       "away_team": "Universidad Católica",
       "home_score": null,
       "away_score": null,
-      "stadium": "Centro Deportivo Azul",
+      "stadium": "CDA-Cancha Leonel Sánchez",
       "status": "pending"
     },
     {
