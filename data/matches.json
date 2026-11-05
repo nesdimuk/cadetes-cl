@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T23:30:17.773615+00:00",
+  "updated_at": "2026-11-05T14:28:10.434514+00:00",
   "total": 1691,
   "matches": [
     {
@@ -4521,10 +4521,10 @@
       "time": "3:00 pm",
       "home_team": "Santiago Morning",
       "away_team": "Santiago Wanderers",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 7,
       "stadium": "Complejo Deportivo Santiago Morning",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -4533,10 +4533,10 @@
       "time": "4:45 pm",
       "home_team": "Deportes Santa Cruz",
       "away_team": "Lautaro de Buin",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 4,
+      "away_score": 0,
       "stadium": "Estadio Municipal Santa Ana",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-12",
@@ -5721,10 +5721,10 @@
       "time": "11:00 am",
       "home_team": "Deportes Copiapó",
       "away_team": "Deportes Antofagasta",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 0,
       "stadium": "Estadio Eladio Rojas",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -6165,8 +6165,8 @@
       "time": "12:00 pm",
       "home_team": "Cobresal",
       "away_team": "Universidad Católica",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 3,
+      "away_score": 1,
       "stadium": "Complejo Amador Donoso",
       "status": "played"
     },
@@ -8901,10 +8901,10 @@
       "time": "12:15 pm",
       "home_team": "Deportes Limache",
       "away_team": "Santiago City",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 3,
       "stadium": "Complejo Costanera",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-13",
@@ -10917,10 +10917,10 @@
       "time": "10:00 am",
       "home_team": "Cobresal",
       "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "Complejo Amador Donoso",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-14",
@@ -14625,10 +14625,10 @@
       "time": "1:15 pm",
       "home_team": "Santiago Wanderers",
       "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "Complejo Mantagua",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-15",
@@ -15585,10 +15585,10 @@
       "time": "11:30 am",
       "home_team": "Deportes Iquique",
       "away_team": "Huachipato",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stadium": "Miniestadio Tierra de Campeones",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-15",
@@ -16065,10 +16065,10 @@
       "time": "11:00 am",
       "home_team": "Santiago Wanderers",
       "away_team": "Universidad Católica",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 4,
       "stadium": "Complejo Mantagua",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-16",
@@ -17025,10 +17025,10 @@
       "time": "9:30 am",
       "home_team": "Deportes Iquique",
       "away_team": "Huachipato",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 1,
       "stadium": "Miniestadio Tierra de Campeones",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-16",
@@ -17505,8 +17505,8 @@
       "time": "1:15 pm",
       "home_team": "Universidad Católica",
       "away_team": "Santiago Wanderers",
-      "home_score": 2,
-      "away_score": 0,
+      "home_score": 3,
+      "away_score": 1,
       "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
       "status": "played"
     },
@@ -18081,10 +18081,10 @@
       "time": "12:15 pm",
       "home_team": "Deportes Temuco",
       "away_team": "Everton",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 4,
       "stadium": "Complejo Labranza M11",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-18",
@@ -18465,10 +18465,10 @@
       "time": "12:00 pm",
       "home_team": "Huachipato",
       "away_team": "Deportes Iquique",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 0,
       "stadium": "Estadio Huachipato-Cancha 4",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-18",
@@ -18945,10 +18945,10 @@
       "time": "11:00 am",
       "home_team": "Universidad Católica",
       "away_team": "Santiago Wanderers",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 0,
       "stadium": "San Carlos de Apoquindo – Cancha Gatorade 2",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-20",
@@ -19521,10 +19521,10 @@
       "time": "10:00 am",
       "home_team": "Deportes Temuco",
       "away_team": "Everton",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 0,
+      "away_score": 2,
       "stadium": "Complejo Labranza M11",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-20",
@@ -19905,10 +19905,10 @@
       "time": "9:30 am",
       "home_team": "Huachipato",
       "away_team": "Deportes Iquique",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 3,
+      "away_score": 2,
       "stadium": "Estadio Huachipato-Cancha 4",
-      "status": "pending"
+      "status": "played"
     },
     {
       "category": "sub-20",
