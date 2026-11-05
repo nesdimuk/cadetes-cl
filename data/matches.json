@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T14:28:10.434514+00:00",
+  "updated_at": "2026-11-05T23:30:52.323022+00:00",
   "total": 1691,
   "matches": [
     {
@@ -15930,24 +15930,24 @@
       "category": "sub-15",
       "round": 15,
       "date": "2026-11-08",
-      "time": "12:00 am",
-      "home_team": "Deportes Iquique",
-      "away_team": "Audax Italiano",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-15",
-      "round": 15,
-      "date": "2026-11-08",
       "time": "11:15 am",
       "home_team": "Santiago Wanderers",
       "away_team": "Huachipato",
       "home_score": null,
       "away_score": null,
       "stadium": "Complejo Mantagua",
+      "status": "pending"
+    },
+    {
+      "category": "sub-15",
+      "round": 15,
+      "date": "2026-11-08",
+      "time": "12:30 pm",
+      "home_team": "Deportes Iquique",
+      "away_team": "Audax Italiano",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Miniestadio Tierra de Campeones",
       "status": "pending"
     },
     {
@@ -17370,24 +17370,24 @@
       "category": "sub-16",
       "round": 15,
       "date": "2026-11-08",
-      "time": "12:00 am",
-      "home_team": "Deportes Iquique",
-      "away_team": "Audax Italiano",
-      "home_score": null,
-      "away_score": null,
-      "stadium": "",
-      "status": "pending"
-    },
-    {
-      "category": "sub-16",
-      "round": 15,
-      "date": "2026-11-08",
       "time": "9:00 am",
       "home_team": "Santiago Wanderers",
       "away_team": "Huachipato",
       "home_score": null,
       "away_score": null,
       "stadium": "Complejo Mantagua",
+      "status": "pending"
+    },
+    {
+      "category": "sub-16",
+      "round": 15,
+      "date": "2026-11-08",
+      "time": "10:00 am",
+      "home_team": "Deportes Iquique",
+      "away_team": "Audax Italiano",
+      "home_score": null,
+      "away_score": null,
+      "stadium": "Miniestadio Tierra de Campeones",
       "status": "pending"
     },
     {
