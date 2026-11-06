@@ -252,13 +252,13 @@ function plan(){
     let tm=Math.max(now+15,match-240); if(out!=null&&out>now+30) tm=Math.min(tm,out-30);
     if(snk) tm=Math.max(tm,ateT+90);
     if(!meal) add(tm,'Comida principal',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*6,50))}`,'Poco aceite, sin frituras ni crema'].filter(Boolean),'3 a 4 horas antes: tiempo de sobra para digerir.');
-    const tc=meal?Math.max(match-150,ateT+120,now+5):match-150;
+    const tc=meal?Math.max(match-150,ateT+90,now+5):match-150;
     if(meal?tc<=match-60:tc>=tm+75) add(tc,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),meal?yaComio:'Recarga liviana, se digiere rápido.');
   } else if(H>=120){
     const p=PROTS[v('prot')];
     if(meal){
       mode='Ya comió: solo colación';
-      const t=Math.max(now+10,ateT+120);
+      const t=Math.max(now+10,ateT+90);
       if(match-t>=60) add(t,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),yaComio);
     } else {
       mode='Comida liviana';
@@ -266,7 +266,7 @@ function plan(){
     }
   } else if(H>=60){
     mode=(meal||snk)?'Ya comió: solo agua y lo último':'Solo colación';
-    const t=Math.max(now+5,meal?ateT+120:snk?ateT+60:0);
+    const t=Math.max(now+5,meal?ateT+90:snk?ateT+60:0);
     if(match-t>=45) add(t,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),meal?yaComio:'Falta poco: algo rápido de digerir.');
     else add(now,'Agua',[`Agua: ${ml(250)} en sorbos`],'Ya comiste hace poco: solo toma agua.');
   } else {
