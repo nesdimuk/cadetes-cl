@@ -57,6 +57,9 @@ button:hover{filter:brightness(1.08)}
 textarea{position:absolute;left:-9999px}
 .note{font-size:.85rem;color:var(--muted)}
 @media (prefers-reduced-motion:no-preference){.ev{animation:in .25s ease both}@keyframes in{from{transform:translateY(4px)}to{transform:none}}}
+.guide{background:var(--accent-soft);border-color:transparent}
+.steps,.tips{margin:0;padding-left:22px;display:grid;gap:8px;font-size:1.05rem}
+.tips{list-style:none;padding-left:0}
 </style>
 </head>
 <body>
@@ -67,14 +70,31 @@ textarea{position:absolute;left:-9999px}
     <p class="lead">Pon tus datos, la hora del partido y lo que tienes en casa. Te sale qué comer, cuánto y a qué hora.</p>
   </header>
 
+  <section class="panel guide" aria-label="Cómo usar">
+    <p class="sub">Cómo usar esto (3 pasos)</p>
+    <ol class="steps">
+      <li><b>Escribe el peso</b> del jugador y <b>a qué hora es el partido</b>.</li>
+      <li>Escribe <b>qué hora es ahora</b> y <b>a qué hora salen de la casa</b>.</li>
+      <li>Abajo aparece <b>qué comer, cuánto y a qué hora</b>. Con el botón verde lo mandas por WhatsApp.</li>
+    </ol>
+    <p class="sub">Para recordar</p>
+    <ul class="tips">
+      <li>🍝 <b>Comida de verdad 3 a 4 horas antes:</b> fideos, arroz o papas, con un poco de carne, pollo o huevo.</li>
+      <li>🍌 <b>Algo liviano y dulce</b> (fruta, pan con mermelada) 1 a 2 horas antes.</li>
+      <li>💧 <b>Tomar agua</b> en sorbos desde la mañana, no todo junto.</li>
+      <li>🚫 <b>Nada nuevo</b> el día del partido: solo lo que ya conoce y le cae bien.</li>
+      <li>🥛 <b>Después del partido:</b> leche o yogur y algo de pan.</li>
+    </ul>
+  </section>
+
   <section class="panel" aria-label="Tus datos">
     <p class="sub">Tus datos</p>
     <div class="grid">
-      <label for="kg">Peso (kg)<input id="kg" type="number" inputmode="decimal" min="30" max="120" value="65"></label>
-      <label for="cm">Estatura (cm)<input id="cm" type="number" inputmode="decimal" min="120" max="210" value="172.6"></label>
-      <label for="now">Hora actual<input id="now" type="time" value="10:15"></label>
-      <label for="out">Salida de casa<input id="out" type="time" value="13:00"></label>
-      <label for="match">Hora del partido<input id="match" type="time" value="15:00"></label>
+      <label for="kg">Peso del jugador (kg)<input id="kg" type="number" inputmode="decimal" min="30" max="120" placeholder="Ej: 65"></label>
+      <label for="cm">Estatura (cm) · opcional<input id="cm" type="number" inputmode="decimal" min="120" max="210" placeholder="Ej: 170"></label>
+      <label for="now">Hora actual<input id="now" type="time"></label>
+      <label for="out">Salida de casa<input id="out" type="time"></label>
+      <label for="match">Hora del partido<input id="match" type="time"></label>
     </div>
 
     <p class="sub">Comida principal</p>
@@ -182,7 +202,6 @@ const LAST={
 const fill=(id,obj)=>{$(id).innerHTML=Object.entries(obj).map(([k,v])=>`<option value="${k}">${v.l}</option>`).join('')};
 fill('carb',CARBS);fill('prot',PROTS);fill('side',SIDES);fill('col',COLS);fill('fruit',FRUITS);fill('last',LAST);
 $('col').value='merm';
-try{const d=new Date();$('now').value=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')}catch(e){}
 
 function carbText(k,kg,f){
   const c=CARBS[k]; const g=r(kg*1.4*f/c.d,c.d>.4?10:25); const n=half(g/c.u[1]);
@@ -198,10 +217,11 @@ function protText(k,kg,f){
 function plan(){
   const kg=parseFloat($('kg').value), now=toMin($('now').value), out=toMin($('out').value), match=toMin($('match').value);
   const v=id=>$(id).value; const club=v('club'), pre=$('pre').checked;
-  if(!(kg>=30&&kg<=120)) return {err:'Ingresa un peso entre 30 y 120 kg.'};
-  if(now==null||match==null) return {err:'Completa la hora actual y la del partido.'};
+  if(isNaN(kg)&&!$('now').value&&!$('match').value) return {err:'Llena los datos de arriba y aquí te aparece el plan.',info:true};
+  if(!(kg>=30&&kg<=120)) return {err:'Escribe el peso del jugador (entre 30 y 120 kg).'};
+  if(now==null||match==null) return {err:'Falta la hora de ahora y la hora del partido.'};
   const H=match-now;
-  if(H<=0) return {err:'La hora del partido debe ser después de la hora actual.'};
+  if(H<=0) return {err:'La hora del partido tiene que ser más tarde que la hora de ahora.'};
   const pan=kg<50?'½ pan':(kg>80?'1 ½ panes':'1 pan');
   const fruit=FRUITS[v('fruit')].f(kg);
   const colItems=extra=>[COLS[v('col')].f(pan,kg),fruit,...extra].filter(Boolean);
@@ -241,7 +261,8 @@ function plan(){
 let lastText='';
 function render(){
   const p=plan(); const tl=$('tl'); const sum=$('sum');
-  if(p.err){tl.innerHTML=`<li class="err">${p.err}</li>`;sum.innerHTML='';lastText='';return}
+  if(p.err){tl.innerHTML=`<li class="${p.info?'note':'err'}">${p.err}</li>`;sum.innerHTML='';lastText='';$('copy').hidden=true;return}
+  $('copy').hidden=false;
   const h=Math.floor(p.H/60), m=p.H%60;
   sum.innerHTML=`<span class="chip">Faltan ${h} h${m?' '+m+' min':''}</span><span class="chip">${p.mode}</span><span class="chip">${p.kg} kg</span>`;
   tl.innerHTML=p.ev.map(e=>`<li class="ev ${e.kind}"><div class="time">${fmt(e.t)}</div><div class="body"><h3>${e.title}${e.bolso?'<span class="tag'+(e.kind==='club'?' c':'')+'">'+(e.kind==='club'?'en el club':'llevar en el bolso')+'</span>':''}</h3><ul>${e.items.map(i=>`<li>${i}</li>`).join('')}</ul>${e.why?`<div class="why">${e.why}</div>`:''}</div></li>`).join('');
