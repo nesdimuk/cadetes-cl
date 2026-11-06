@@ -57,6 +57,7 @@ button:hover{filter:brightness(1.08)}
 textarea{position:absolute;left:-9999px}
 .note{font-size:.85rem;color:var(--muted)}
 @media (prefers-reduced-motion:no-preference){.ev{animation:in .25s ease both}@keyframes in{from{transform:translateY(4px)}to{transform:none}}}
+.mini{justify-self:start;font-size:.85rem;font-weight:600;padding:6px 12px;background:var(--accent-soft);color:var(--accent);text-transform:none;letter-spacing:0}
 .go{width:100%;font-size:1.2rem;padding:15px 18px}
 .guide{background:var(--accent-soft);border-color:transparent}
 .steps,.tips{margin:0;padding-left:22px;display:grid;gap:8px;font-size:1.05rem}
@@ -75,7 +76,7 @@ textarea{position:absolute;left:-9999px}
     <p class="sub">Cómo usar esto (3 pasos)</p>
     <ol class="steps">
       <li><b>Escribe el peso</b> del jugador y <b>a qué hora es el partido</b>.</li>
-      <li>Escribe <b>qué hora es ahora</b> y <b>a qué hora salen de la casa</b>.</li>
+      <li>Escribe <b>desde qué hora quieres el plan</b> (puede ser ahora u otra hora que tú elijas) y <b>a qué hora salen de la casa</b>.</li>
       <li>Aprieta el botón verde <b>«Crear mi plan»</b>. Te muestra <b>qué comer, cuánto y a qué hora</b>, y lo puedes mandar por WhatsApp.</li>
     </ol>
     <p class="sub">Para recordar</p>
@@ -93,7 +94,7 @@ textarea{position:absolute;left:-9999px}
     <div class="grid">
       <label for="kg">Peso del jugador (kg)<input id="kg" type="number" inputmode="decimal" min="30" max="120" placeholder="Ej: 65"></label>
       <label for="cm">Estatura (cm) · opcional<input id="cm" type="number" inputmode="decimal" min="120" max="210" placeholder="Ej: 170"></label>
-      <label for="now">Hora actual<input id="now" type="time"></label>
+      <label for="now">Hora de inicio (ahora u otra)<input id="now" type="time"><button id="nowbtn" type="button" class="mini">Poner la hora de ahora</button></label>
       <label for="out">Salida de casa<input id="out" type="time"></label>
       <label for="match">Hora del partido<input id="match" type="time"></label>
     </div>
@@ -277,6 +278,7 @@ $('copy').addEventListener('click',()=>{
   const fallback=()=>{const b=$('buf');b.value=lastText;b.select();try{document.execCommand('copy');ok()}catch(e){}};
   try{navigator.clipboard.writeText(lastText).then(ok,fallback)}catch(e){fallback()}
 });
+$('nowbtn').addEventListener('click',()=>{const d=new Date();$('now').value=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');render()});
 $('go').addEventListener('click',()=>{shown=true;render();$('res').scrollIntoView({behavior:'smooth',block:'start'})});
 render();
 </script>
