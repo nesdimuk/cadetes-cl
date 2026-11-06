@@ -76,6 +76,7 @@ textarea{position:absolute;left:-9999px}
     <p class="sub">Cómo usar esto (3 pasos)</p>
     <ol class="steps">
       <li><b>Escribe el peso</b> del jugador y <b>a qué hora es el partido</b>.</li>
+      <li>Si ya comió algo hoy, marca <b>qué comió y a qué hora</b>.</li>
       <li>Escribe <b>desde qué hora quieres el plan</b> (puede ser ahora u otra hora que tú elijas) y <b>a qué hora salen de la casa</b>.</li>
       <li>Aprieta el botón verde <b>«Crear mi plan»</b>. Te muestra <b>qué comer, cuánto y a qué hora</b>, y lo puedes mandar por WhatsApp.</li>
     </ol>
@@ -97,6 +98,15 @@ textarea{position:absolute;left:-9999px}
       <label for="now">Hora de inicio (ahora u otra)<input id="now" type="time"><button id="nowbtn" type="button" class="mini">Poner la hora de ahora</button></label>
       <label for="out">Salida de casa<input id="out" type="time"></label>
       <label for="match">Hora del partido<input id="match" type="time"></label>
+    </div>
+
+    <p class="sub">Lo que ya comió hoy</p>
+    <div class="grid">
+      <label for="ate">¿Ya comió algo hoy? (comida completa = almuerzo o desayuno grande; liviano = fruta, pan, galletas)<select id="ate">
+        <option value="nada">No, todavía nada</option>
+        <option value="meal">Sí, comida completa</option>
+        <option value="snack">Sí, algo liviano</option></select></label>
+      <label for="ateAt">¿A qué hora?<input id="ateAt" type="time"></label>
     </div>
 
     <p class="sub">Comida principal</p>
@@ -231,20 +241,34 @@ function plan(){
   const side=SIDES[v('side')].t;
   const ev=[]; const add=(t,title,items,why,kind='')=>ev.push({t,title,items,why,kind});
   let mode;
+  const ateK=v('ate'), ateT=toMin($('ateAt').value);
+  const okAte=ateT!=null&&ateT<=now;
+  const meal=ateK==='meal'&&okAte&&now-ateT<240;
+  const snk=ateK==='snack'&&okAte&&now-ateT<90;
+  const yaComio=`Ya comiste a las ${fmt(ateT)}, por eso no repetimos la comida grande.`;
   if(H>=210){
-    mode='Comida completa';
-    let tm=Math.max(now+15,match-240); if(out!=null&&out>now+30) tm=Math.min(tm,out-30);
+    mode=meal?'Ya comió: solo colaciones':'Comida completa';
     add(now,'Agua',[ml(250)],'Empieza a hidratarte desde ya.');
-    add(tm,'Comida principal',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*6,50))}`,'Poco aceite, sin frituras ni crema'].filter(Boolean),'3 a 4 horas antes: tiempo de sobra para digerir.');
-    const tc=match-150;
-    if(tc>=tm+75) add(tc,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),'Recarga liviana, se digiere rápido.');
+    let tm=Math.max(now+15,match-240); if(out!=null&&out>now+30) tm=Math.min(tm,out-30);
+    if(snk) tm=Math.max(tm,ateT+90);
+    if(!meal) add(tm,'Comida principal',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*6,50))}`,'Poco aceite, sin frituras ni crema'].filter(Boolean),'3 a 4 horas antes: tiempo de sobra para digerir.');
+    const tc=meal?Math.max(match-150,ateT+120,now+5):match-150;
+    if(meal?tc<=match-60:tc>=tm+75) add(tc,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),meal?yaComio:'Recarga liviana, se digiere rápido.');
   } else if(H>=120){
-    mode='Comida liviana';
     const p=PROTS[v('prot')];
-    add(now+10,'Comida liviana',[carbText(v('carb'),kg,.6),p.m?'Proteína: poca o nada esta vez':protText(v('prot'),kg,.6),`Agua: ${ml(r(kg*5,50))}`],'Queda poco tiempo: menos cantidad y menos proteína.');
+    if(meal){
+      mode='Ya comió: solo colación';
+      const t=Math.max(now+10,ateT+120);
+      if(match-t>=60) add(t,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),yaComio);
+    } else {
+      mode='Comida liviana';
+      add(snk?Math.max(now+10,ateT+90):now+10,'Comida liviana',[carbText(v('carb'),kg,.6),p.m?'Proteína: poca o nada esta vez':protText(v('prot'),kg,.6),`Agua: ${ml(r(kg*5,50))}`],'Queda poco tiempo: menos cantidad y menos proteína.');
+    }
   } else if(H>=60){
-    mode='Solo colación';
-    add(now+5,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),'Falta poco: algo rápido de digerir.');
+    mode=(meal||snk)?'Ya comió: solo agua y lo último':'Solo colación';
+    const t=Math.max(now+5,meal?ateT+120:snk?ateT+60:0);
+    if(match-t>=45) add(t,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),meal?yaComio:'Falta poco: algo rápido de digerir.');
+    else add(now,'Agua',[`Agua: ${ml(250)} en sorbos`],'Ya comiste hace poco: solo toma agua.');
   } else {
     mode='Último momento';
     add(now,'Algo rápido',[LAST[v('last')].f(kg),`Agua: ${ml(200)}`],'Menos de 1 hora: solo algo dulce y sorbos de agua.');
@@ -272,7 +296,7 @@ function render(){
   tl.innerHTML=p.ev.map(e=>`<li class="ev ${e.kind}"><div class="time">${fmt(e.t)}</div><div class="body"><h3>${e.title}${e.bolso?'<span class="tag'+(e.kind==='club'?' c':'')+'">'+(e.kind==='club'?'en el club':'llevar en el bolso')+'</span>':''}</h3><ul>${e.items.map(i=>`<li>${i}</li>`).join('')}</ul>${e.why?`<div class="why">${e.why}</div>`:''}</div></li>`).join('');
   lastText='⚽ PLAN PRE-PARTIDO ('+p.kg+' kg)\n\n'+p.ev.map(e=>`🕐 ${fmt(e.t)} · ${e.title}${e.bolso?' (llevar)':''}\n`+e.items.map(i=>'• '+i).join('\n')).join('\n\n')+'\n\n🚫 Evitar: frituras, comida rápida, legumbres, integrales, bebidas con gas o energéticas.';
 }
-['kg','cm','now','out','match','carb','prot','side','col','fruit','club','last','pre'].forEach(id=>{$(id).addEventListener('input',render);$(id).addEventListener('change',render)});
+['kg','cm','now','out','match','ate','ateAt','carb','prot','side','col','fruit','club','last','pre'].forEach(id=>{$(id).addEventListener('input',render);$(id).addEventListener('change',render)});
 $('copy').addEventListener('click',()=>{
   const ok=()=>{$('copied').hidden=false;setTimeout(()=>$('copied').hidden=true,1800)};
   const fallback=()=>{const b=$('buf');b.value=lastText;b.select();try{document.execCommand('copy');ok()}catch(e){}};
