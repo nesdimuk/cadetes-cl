@@ -57,6 +57,7 @@ button:hover{filter:brightness(1.08)}
 textarea{position:absolute;left:-9999px}
 .note{font-size:.85rem;color:var(--muted)}
 @media (prefers-reduced-motion:no-preference){.ev{animation:in .25s ease both}@keyframes in{from{transform:translateY(4px)}to{transform:none}}}
+.go{width:100%;font-size:1.2rem;padding:15px 18px}
 .guide{background:var(--accent-soft);border-color:transparent}
 .steps,.tips{margin:0;padding-left:22px;display:grid;gap:8px;font-size:1.05rem}
 .tips{list-style:none;padding-left:0}
@@ -75,7 +76,7 @@ textarea{position:absolute;left:-9999px}
     <ol class="steps">
       <li><b>Escribe el peso</b> del jugador y <b>a qué hora es el partido</b>.</li>
       <li>Escribe <b>qué hora es ahora</b> y <b>a qué hora salen de la casa</b>.</li>
-      <li>Abajo aparece <b>qué comer, cuánto y a qué hora</b>. Con el botón verde lo mandas por WhatsApp.</li>
+      <li>Aprieta el botón verde <b>«Crear mi plan»</b>. Te muestra <b>qué comer, cuánto y a qué hora</b>, y lo puedes mandar por WhatsApp.</li>
     </ol>
     <p class="sub">Para recordar</p>
     <ul class="tips">
@@ -114,9 +115,10 @@ textarea{position:absolute;left:-9999px}
       <label for="last">Si el club no da nada<select id="last"></select></label>
     </div>
     <label class="check" for="pre"><input id="pre" type="checkbox" checked> Comer algo 30 min antes del partido</label>
+    <button id="go" type="button" class="go">Crear mi plan</button>
   </section>
 
-  <section class="panel" aria-live="polite">
+  <section class="panel" id="res" aria-live="polite">
     <div class="sum" id="sum"></div>
     <ol class="tl" id="tl"></ol>
     <div class="avoid"><strong>Evitar el día del partido</strong>
@@ -258,8 +260,9 @@ function plan(){
   return {ev,mode,H,kg};
 }
 
-let lastText='';
+let lastText='',shown=false;
 function render(){
+  if(!shown){$('tl').innerHTML='<li class="note">Llena los datos y aprieta «Crear mi plan».</li>';$('sum').innerHTML='';lastText='';$('copy').hidden=true;return}
   const p=plan(); const tl=$('tl'); const sum=$('sum');
   if(p.err){tl.innerHTML=`<li class="${p.info?'note':'err'}">${p.err}</li>`;sum.innerHTML='';lastText='';$('copy').hidden=true;return}
   $('copy').hidden=false;
@@ -274,6 +277,7 @@ $('copy').addEventListener('click',()=>{
   const fallback=()=>{const b=$('buf');b.value=lastText;b.select();try{document.execCommand('copy');ok()}catch(e){}};
   try{navigator.clipboard.writeText(lastText).then(ok,fallback)}catch(e){fallback()}
 });
+$('go').addEventListener('click',()=>{shown=true;render();$('res').scrollIntoView({behavior:'smooth',block:'start'})});
 render();
 </script>
 </body>
