@@ -120,6 +120,12 @@ export default function Landing() {
             >
               Tabla de posiciones →
             </Link>
+            <a
+              href="/comida-pre-partido"
+              className="bg-white/15 text-white font-bold px-8 py-3 rounded-xl hover:bg-white/25 transition-colors text-base border border-white/30"
+            >
+              Comida pre-partido →
+            </a>
             <button
               onClick={() => setShowSubscribe(true)}
               className="border-2 border-white/60 text-white font-semibold px-8 py-3 rounded-xl hover:bg-white/10 transition-colors text-base"

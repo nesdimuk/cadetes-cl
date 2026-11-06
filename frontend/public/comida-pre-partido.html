@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Comida Pre-Partido</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: planilla de camarín — formulario arriba, línea de tiempo vertical con horas tipo marcador */
+:root{
+  --bg:#f3f6f2; --card:#ffffff; --fg:#17201a; --muted:#5d6b61; --line:#d9e2da;
+  --accent:#1c7048; --accent-soft:#e2f1e8; --snack:#b86e12; --snack-soft:#fbeedb; --club:#2b5fa8; --club-soft:#e3ecf8; --warn:#a8382b; --warn-soft:#f8e6e3;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121814; --card:#1a221d; --fg:#e7eee8; --muted:#9aa89e; --line:#2c3830;
+  --accent:#5cc28d; --accent-soft:#1d3327; --snack:#e5a24f; --snack-soft:#3a2b17; --club:#7fa8e6; --club-soft:#1d2a3d; --warn:#ec8a7c; --warn-soft:#3a1f1b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121814; --card:#1a221d; --fg:#e7eee8; --muted:#9aa89e; --line:#2c3830;
+  --accent:#5cc28d; --accent-soft:#1d3327; --snack:#e5a24f; --snack-soft:#3a2b17; --club:#7fa8e6; --club-soft:#1d2a3d; --warn:#ec8a7c; --warn-soft:#3a1f1b; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:720px;margin:0 auto;padding-block:24px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:20px}
+h1{font-family:var(--display);font-weight:700;font-size:2.4rem;line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.lead{color:var(--muted);margin:6px 0 0}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+label{display:grid;gap:4px;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+input,select{font:inherit;font-size:1rem;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:100%;box-sizing:border-box;text-transform:none;letter-spacing:0}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.check{display:flex;align-items:center;gap:10px;font-size:.95rem;text-transform:none;letter-spacing:0;color:var(--fg);font-weight:500}
+.check input{width:20px;height:20px;accent-color:var(--accent)}
+.sub{font-family:var(--display);font-size:1.15rem;text-transform:uppercase;letter-spacing:.04em;margin:0;color:var(--accent)}
+.sum{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:4px 12px;font-weight:600;font-size:.85rem}
+.tl{list-style:none;margin:0;padding:0;display:grid}
+.ev{display:grid;grid-template-columns:72px 1fr;gap:14px;position:relative;padding-bottom:18px}
+.ev::before{content:"";position:absolute;left:35px;top:34px;bottom:0;width:2px;background:var(--line)}
+.ev:last-child::before{display:none}
+.time{font-family:var(--display);font-weight:700;font-size:1.5rem;font-variant-numeric:tabular-nums;background:var(--accent);color:var(--card);border-radius:8px;text-align:center;padding:2px 0;height:fit-content}
+.ev.snack .time{background:var(--snack)} .ev.club .time{background:var(--club)} .ev.out .time{background:var(--muted)}
+.body{min-width:0}
+.ev h3{margin:2px 0 4px;font-size:1.05rem}
+.ev ul{margin:0;padding-left:18px;display:grid;gap:2px}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:1px 8px;border-radius:6px;margin-left:6px;vertical-align:2px;background:var(--snack-soft);color:var(--snack)}
+.tag.c{background:var(--club-soft);color:var(--club)}
+.why{color:var(--muted);font-size:.88rem;margin-top:4px}
+.avoid{background:var(--warn-soft);border-radius:10px;padding:12px 14px}
+.avoid strong{color:var(--warn);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+.avoid p{margin:4px 0 0;font-size:.92rem}
+.err{color:var(--warn);font-weight:600}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button{font:inherit;font-weight:700;background:var(--accent);color:var(--card);border:0;border-radius:10px;padding:11px 18px;cursor:pointer}
+button:hover{filter:brightness(1.08)}
+#copied{color:var(--accent);font-weight:600}
+textarea{position:absolute;left:-9999px}
+.note{font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.ev{animation:in .25s ease both}@keyframes in{from{transform:translateY(4px)}to{transform:none}}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>Comida pre-partido</h1>
+    <p class="lead">Pon tus datos, la hora del partido y lo que tienes en casa. Te sale qué comer, cuánto y a qué hora.</p>
+  </header>
+
+  <section class="panel" aria-label="Tus datos">
+    <p class="sub">Tus datos</p>
+    <div class="grid">
+      <label for="kg">Peso (kg)<input id="kg" type="number" inputmode="decimal" min="30" max="120" value="65"></label>
+      <label for="cm">Estatura (cm)<input id="cm" type="number" inputmode="decimal" min="120" max="210" value="172.6"></label>
+      <label for="now">Hora actual<input id="now" type="time" value="10:15"></label>
+      <label for="out">Salida de casa<input id="out" type="time" value="13:00"></label>
+      <label for="match">Hora del partido<input id="match" type="time" value="15:00"></label>
+    </div>
+
+    <p class="sub">Comida principal</p>
+    <div class="grid">
+      <label for="carb">Base (energía)<select id="carb"></select></label>
+      <label for="prot">Acompañar con<select id="prot"></select></label>
+      <label for="side">Extra<select id="side"></select></label>
+    </div>
+
+    <p class="sub">Colaciones</p>
+    <div class="grid">
+      <label for="col">Colación<select id="col"></select></label>
+      <label for="fruit">Fruta<select id="fruit"></select></label>
+      <label for="club">El club entrega<select id="club">
+        <option value="nada">Nada</option><option value="platano">Plátano</option>
+        <option value="otro">Otra cosa (barra, galletas)</option></select></label>
+      <label for="last">Si el club no da nada<select id="last"></select></label>
+    </div>
+    <label class="check" for="pre"><input id="pre" type="checkbox" checked> Comer algo 30 min antes del partido</label>
+  </section>
+
+  <section class="panel" aria-live="polite">
+    <div class="sum" id="sum"></div>
+    <ol class="tl" id="tl"></ol>
+    <div class="avoid"><strong>Evitar el día del partido</strong>
+      <p>Frituras, completos, pizza, comida rápida, legumbres (porotos, lentejas), panes y fideos integrales, mucha palta o mayonesa, bebidas energéticas y bebidas con gas.</p></div>
+    <div class="row"><button id="copy" type="button">Copiar plan para WhatsApp</button><span id="copied" hidden>Copiado</span></div>
+    <p class="note">Guía general para deportistas adolescentes sanos. Las cantidades se calculan por peso. Si hay alergias, diabetes u otra condición, consultar con su nutricionista o médico.</p>
+  </section>
+</div>
+<textarea id="buf" aria-hidden="true" tabindex="-1"></textarea>
+
+<script>
+const $=id=>document.getElementById(id);
+const toMin=v=>{if(!v)return null;const[h,m]=v.split(':').map(Number);return h*60+m};
+const fmt=m=>{m=Math.round(m/5)*5;m=((m%1440)+1440)%1440;return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')};
+const r=(x,s)=>Math.max(s,Math.round(x/s)*s);
+const half=x=>{const v=Math.max(.5,Math.round(x*2)/2);return v%1?(Math.floor(v)?Math.floor(v)+' ½':'½'):String(v)};
+const ml=x=>`${x} ml (${half(x/250)} vaso${x>375?'s':''})`;
+
+/* Carbohidratos: d = g de carbohidrato por g de alimento listo; u = unidad casera [nombre, g] */
+const CARBS={
+  fideos:{l:'Fideos',d:.30,u:['tazas',150],t:'cocidos'},
+  arroz:{l:'Arroz blanco',d:.28,u:['tazas',160],t:'cocido'},
+  papas:{l:'Papas cocidas',d:.17,u:['papas medianas',150],t:''},
+  pure:{l:'Puré de papas',d:.15,u:['tazas',210],t:''},
+  camote:{l:'Camote cocido',d:.20,u:['camotes medianos',150],t:''},
+  quinoa:{l:'Quinoa',d:.21,u:['tazas',185],t:'cocida'},
+  cuscus:{l:'Cuscús',d:.23,u:['tazas',160],t:'cocido'},
+  noquis:{l:'Ñoquis',d:.30,u:['tazas',150],t:'cocidos'},
+  marraqueta:{l:'Marraqueta / hallulla',d:.55,u:['panes',90],t:''},
+  molde:{l:'Pan de molde blanco',d:.47,u:['rebanadas',25],t:''},
+  tortilla:{l:'Tortillas de trigo',d:.50,u:['tortillas',40],t:''},
+  avena:{l:'Avena con leche',d:.60,u:['tazas de avena cruda',80],t:'(con 1 vaso de leche)'}
+};
+/* Proteínas: m = carne (g crudos por peso) o texto fijo */
+const PROTS={
+  carne:{l:'Carne molida magra',m:true,x:'en salsa de tomate (½ a ¾ taza)'},
+  pollo:{l:'Pollo sin piel',m:true,x:'a la plancha o cocido'},
+  pavo:{l:'Pavo',m:true,x:'a la plancha o cocido'},
+  pescado:{l:'Pescado blanco (merluza, reineta)',m:true,x:'al horno o a la plancha'},
+  atun:{l:'Atún en agua',f:kg=>`Atún en agua: ${kg<55?'½':'1'} lata escurrida`},
+  huevo:{l:'Huevos',f:(kg,f)=>`Huevos: ${kg<55||f<1?1:2} (cocidos o revueltos, sin freír)`},
+  jamon:{l:'Jamón de pavo',f:kg=>`Jamón de pavo: ${kg<55?2:3} láminas`},
+  quesillo:{l:'Quesillo / queso fresco',f:kg=>`Quesillo o queso fresco: ${kg<55?1:2} láminas`},
+  yogur:{l:'Yogur',f:()=>'Yogur: 1 unidad (normal o proteico)'}
+};
+const SIDES={
+  nada:{l:'Nada'},
+  tomate:{l:'Tomate o zanahoria cocida',t:'Ensalada chica de tomate o zanahoria cocida (poca cantidad)'},
+  choclo:{l:'Choclo',t:'Choclo: ½ taza de granos'},
+  queso:{l:'Queso rallado',t:'Queso rallado: 1 cucharada'},
+  jugo:{l:'Jugo natural',t:'Jugo natural: 1 vaso chico (200 ml)'},
+  postre:{l:'Fruta de postre',t:'Postre: 1 fruta (mandarina, durazno o pera)'}
+};
+const COLS={
+  merm:{l:'Pan con mermelada',f:p=>`${p} con mermelada`},
+  miel:{l:'Pan con miel',f:p=>`${p} con miel`},
+  manjar:{l:'Pan con manjar (poco)',f:p=>`${p} con una capa delgada de manjar`},
+  pavo:{l:'Pan con jamón de pavo',f:p=>`${p} con 2 láminas de jamón de pavo`},
+  quesillo:{l:'Pan con quesillo',f:p=>`${p} con quesillo`},
+  galletas:{l:'Galletas de agua o arroz',f:(p,kg)=>`${kg<50?4:6} galletas de agua o de arroz con mermelada`},
+  yogur:{l:'Yogur con avena',f:()=>'1 yogur con 3 cucharadas de avena'},
+  cereal:{l:'Leche con cereal',f:()=>'1 vaso de leche semidescremada con ½ taza de cereal (no integral)'},
+  barra:{l:'Barra de cereal',f:()=>'1 barra de cereal'}
+};
+const FRUITS={
+  mandarina:{l:'Mandarina',f:kg=>`${kg<50?1:2} mandarina${kg<50?'':'s'}`},
+  manzana:{l:'Manzana',f:()=>'1 manzana'},
+  platano:{l:'Plátano',f:kg=>`${kg<50?'½':'1'} plátano`},
+  pera:{l:'Pera',f:()=>'1 pera'},
+  durazno:{l:'Durazno',f:()=>'1 durazno'},
+  uvas:{l:'Uvas',f:()=>'1 taza de uvas'},
+  nada:{l:'Sin fruta',f:()=>null}
+};
+const LAST={
+  mandarina:{l:'Mandarina',f:kg=>`${kg<50?1:2} mandarina${kg<50?'':'s'}`},
+  platano:{l:'Plátano',f:()=>'½ a 1 plátano'},
+  pasas:{l:'Pasas',f:()=>'1 puñado de pasas (2 cucharadas)'},
+  compota:{l:'Compota',f:()=>'1 compota de fruta'},
+  jugo:{l:'Jugo natural',f:()=>'1 vaso chico de jugo natural (200 ml)'},
+  galletas:{l:'Galletas de agua',f:()=>'3 galletas de agua o de arroz'},
+  uvas:{l:'Uvas',f:()=>'1 taza de uvas'}
+};
+const fill=(id,obj)=>{$(id).innerHTML=Object.entries(obj).map(([k,v])=>`<option value="${k}">${v.l}</option>`).join('')};
+fill('carb',CARBS);fill('prot',PROTS);fill('side',SIDES);fill('col',COLS);fill('fruit',FRUITS);fill('last',LAST);
+$('col').value='merm';
+try{const d=new Date();$('now').value=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')}catch(e){}
+
+function carbText(k,kg,f){
+  const c=CARBS[k]; const g=r(kg*1.4*f/c.d,c.d>.4?10:25); const n=half(g/c.u[1]);
+  if(c.d>.4) return `${c.l}: ${n} ${c.u[0]}${c.t?' '+c.t:''}`;
+  return `${c.l}: ${g} g ${c.t} (≈ ${n} ${c.u[0]})`;
+}
+function protText(k,kg,f){
+  const p=PROTS[k];
+  if(p.m){const g=Math.min(120,Math.max(50,r(kg*1.4*f,10)));return `${p.l}: ${g} g crudos, ${p.x}`}
+  return p.f(kg,f);
+}
+
+function plan(){
+  const kg=parseFloat($('kg').value), now=toMin($('now').value), out=toMin($('out').value), match=toMin($('match').value);
+  const v=id=>$(id).value; const club=v('club'), pre=$('pre').checked;
+  if(!(kg>=30&&kg<=120)) return {err:'Ingresa un peso entre 30 y 120 kg.'};
+  if(now==null||match==null) return {err:'Completa la hora actual y la del partido.'};
+  const H=match-now;
+  if(H<=0) return {err:'La hora del partido debe ser después de la hora actual.'};
+  const pan=kg<50?'½ pan':(kg>80?'1 ½ panes':'1 pan');
+  const fruit=FRUITS[v('fruit')].f(kg);
+  const colItems=extra=>[COLS[v('col')].f(pan,kg),fruit,...extra].filter(Boolean);
+  const side=SIDES[v('side')].t;
+  const ev=[]; const add=(t,title,items,why,kind='')=>ev.push({t,title,items,why,kind});
+  let mode;
+  if(H>=210){
+    mode='Comida completa';
+    let tm=Math.max(now+15,match-240); if(out!=null&&out>now+30) tm=Math.min(tm,out-30);
+    add(now,'Agua',[ml(250)],'Empieza a hidratarte desde ya.');
+    add(tm,'Comida principal',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*6,50))}`,'Poco aceite, sin frituras ni crema'].filter(Boolean),'3 a 4 horas antes: tiempo de sobra para digerir.');
+    const tc=match-150;
+    if(tc>=tm+75) add(tc,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),'Recarga liviana, se digiere rápido.');
+  } else if(H>=120){
+    mode='Comida liviana';
+    const p=PROTS[v('prot')];
+    add(now+10,'Comida liviana',[carbText(v('carb'),kg,.6),p.m?'Proteína: poca o nada esta vez':protText(v('prot'),kg,.6),`Agua: ${ml(r(kg*5,50))}`],'Queda poco tiempo: menos cantidad y menos proteína.');
+  } else if(H>=60){
+    mode='Solo colación';
+    add(now+5,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),'Falta poco: algo rápido de digerir.');
+  } else {
+    mode='Último momento';
+    add(now,'Algo rápido',[LAST[v('last')].f(kg),`Agua: ${ml(200)}`],'Menos de 1 hora: solo algo dulce y sorbos de agua.');
+  }
+  if(out!=null&&out>now&&out<match-20) add(out,'Salida',['Botella de agua de 500–750 ml','Sorbos de 150–200 ml cada 20–30 min','Orina clara = bien hidratado'],'','out');
+  if(pre&&H>=45){
+    const items= club==='platano'?['½ a 1 plátano del club']: club==='otro'?['Lo que entregue el club, en porción chica (½ barra o 2–3 galletas)']:[LAST[v('last')].f(kg)];
+    add(match-30,'30 min antes',[...items,`Agua: ${ml(r(kg*3,50))}`],'Azúcar rápida para empezar con energía.',club==='nada'?'snack':'club');
+  }
+  add(match,'Partido',['Sorbos de agua en el entretiempo'],'','out');
+  add(match+90,'Después del partido (dentro de 1 h)',['1–2 vasos de leche semidescremada o 1 yogur','Pan con huevo, pavo o quesillo','Agua hasta que la orina vuelva a estar clara'],'Recupera músculo y energía.');
+  ev.sort((a,b)=>a.t-b.t);
+  ev.forEach(e=>{e.bolso= out!=null&&out>now&&e.t>out&&e.t<match&&e.title!=='Salida'});
+  return {ev,mode,H,kg};
+}
+
+let lastText='';
+function render(){
+  const p=plan(); const tl=$('tl'); const sum=$('sum');
+  if(p.err){tl.innerHTML=`<li class="err">${p.err}</li>`;sum.innerHTML='';lastText='';return}
+  const h=Math.floor(p.H/60), m=p.H%60;
+  sum.innerHTML=`<span class="chip">Faltan ${h} h${m?' '+m+' min':''}</span><span class="chip">${p.mode}</span><span class="chip">${p.kg} kg</span>`;
+  tl.innerHTML=p.ev.map(e=>`<li class="ev ${e.kind}"><div class="time">${fmt(e.t)}</div><div class="body"><h3>${e.title}${e.bolso?'<span class="tag'+(e.kind==='club'?' c':'')+'">'+(e.kind==='club'?'en el club':'llevar en el bolso')+'</span>':''}</h3><ul>${e.items.map(i=>`<li>${i}</li>`).join('')}</ul>${e.why?`<div class="why">${e.why}</div>`:''}</div></li>`).join('');
+  lastText='⚽ PLAN PRE-PARTIDO ('+p.kg+' kg)\n\n'+p.ev.map(e=>`🕐 ${fmt(e.t)} · ${e.title}${e.bolso?' (llevar)':''}\n`+e.items.map(i=>'• '+i).join('\n')).join('\n\n')+'\n\n🚫 Evitar: frituras, comida rápida, legumbres, integrales, bebidas con gas o energéticas.';
+}
+['kg','cm','now','out','match','carb','prot','side','col','fruit','club','last','pre'].forEach(id=>{$(id).addEventListener('input',render);$(id).addEventListener('change',render)});
+$('copy').addEventListener('click',()=>{
+  const ok=()=>{$('copied').hidden=false;setTimeout(()=>$('copied').hidden=true,1800)};
+  const fallback=()=>{const b=$('buf');b.value=lastText;b.select();try{document.execCommand('copy');ok()}catch(e){}};
+  try{navigator.clipboard.writeText(lastText).then(ok,fallback)}catch(e){fallback()}
+});
+render();
+</script>
+</body>
+</html>
