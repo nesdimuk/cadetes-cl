@@ -61,6 +61,9 @@ textarea{position:absolute;left:-9999px}
 .go{width:100%;font-size:1.2rem;padding:15px 18px}
 .hydr{background:var(--club-soft)}
 .hydr strong{color:var(--club)}
+.alt{background:var(--accent-soft);color:var(--accent)}
+.dayh{list-style:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-size:1.25rem;margin:2px 0 10px}
+@media print{.guide,[aria-label="Tus datos"],.row,.go{display:none!important}body{background:#fff;color:#000}}
 .guide{background:var(--accent-soft);border-color:transparent}
 .steps,.tips{margin:0;padding-left:22px;display:grid;gap:8px;font-size:1.05rem}
 .tips{list-style:none;padding-left:0}
@@ -77,9 +80,9 @@ textarea{position:absolute;left:-9999px}
   <section class="panel guide" aria-label="Cómo usar">
     <p class="sub">Cómo usar esto (3 pasos)</p>
     <ol class="steps">
-      <li><b>Escribe el peso</b> del jugador y <b>a qué hora es el partido</b>.</li>
-      <li>Si ya comió algo hoy, marca <b>qué comió y a qué hora</b>.</li>
+      <li><b>Escribe el peso</b> del jugador, si el partido es <b>hoy o mañana</b> y <b>a qué hora</b>.</li>
       <li>Escribe <b>desde qué hora quieres el plan</b> (puede ser ahora u otra hora que tú elijas) y <b>a qué hora salen de la casa</b>.</li>
+      <li>Si ya comió algo hoy, marca <b>qué comió y a qué hora</b>.</li>
       <li>Aprieta el botón verde <b>«Crear mi plan»</b>. Te muestra <b>qué comer, cuánto y a qué hora</b>, y lo puedes mandar por WhatsApp.</li>
     </ol>
     <p class="sub">Para recordar</p>
@@ -99,6 +102,7 @@ textarea{position:absolute;left:-9999px}
       <label for="cm">Estatura (cm) · opcional<input id="cm" type="number" inputmode="decimal" min="120" max="210" placeholder="Ej: 170"></label>
       <label for="now">Hora de inicio (ahora u otra)<input id="now" type="time"><button id="nowbtn" type="button" class="mini">Poner la hora de ahora</button></label>
       <label for="out">Salida de casa<input id="out" type="time"></label>
+      <label for="day">¿Cuándo juega?<select id="day"><option value="0">Hoy</option><option value="1">Mañana</option></select></label>
       <label for="match">Hora del partido<input id="match" type="time"></label>
     </div>
 
@@ -138,7 +142,7 @@ textarea{position:absolute;left:-9999px}
       <p>Frituras, completos, pizza, comida rápida, legumbres (porotos, lentejas), panes y fideos integrales, mucha palta o mayonesa, bebidas energéticas y bebidas con gas.</p></div>
     <div class="avoid hydr"><strong>Hidratación</strong>
       <p>Un vaso de agua cada hora, de a sorbos (no todo junto). Durante el partido, sorbos en cada pausa. La orina clara, como limonada suave, indica que va bien; si sale oscura, falta agua. Si hace calor o suda mucho, que tome un poco más.</p></div>
-    <div class="row"><button id="copy" type="button">Copiar plan para WhatsApp</button><span id="copied" hidden>Copiado</span></div>
+    <div class="row"><button id="copy" type="button">Copiar plan para WhatsApp</button><button id="pdf" type="button" class="alt">Descargar PDF</button><span id="copied" hidden>Copiado</span></div>
     <p class="note">Guía general para deportistas adolescentes sanos. Las cantidades se calculan por peso. Si hay alergias, diabetes u otra condición, consultar con su nutricionista o médico.</p>
   </section>
 </div>
@@ -233,17 +237,19 @@ function protText(k,kg,f){
 
 function plan(){
   const kg=parseFloat($('kg').value), now=toMin($('now').value), out=toMin($('out').value), match=toMin($('match').value);
-  const v=id=>$(id).value; const club=v('club'), pre=$('pre').checked;
+  const v=id=>$(id).value; const club=v('club'), pre=$('pre').checked, day=v('day')==='1'?1:0;
   if(isNaN(kg)&&!$('now').value&&!$('match').value) return {err:'Llena los datos de arriba y aquí te aparece el plan.',info:true};
   if(!(kg>=30&&kg<=120)) return {err:'Escribe el peso del jugador (entre 30 y 120 kg).'};
   if(now==null||match==null) return {err:'Falta la hora de ahora y la hora del partido.'};
-  const H=match-now;
+  const M=match+1440*day, O=out!=null?out+1440*day:null, H=M-now;
   if(H<=0) return {err:'La hora del partido tiene que ser más tarde que la hora de ahora.'};
   const pan=kg<50?'½ pan':(kg>80?'1 ½ panes':'1 pan');
   const fruit=FRUITS[v('fruit')].f(kg);
   const colItems=extra=>[COLS[v('col')].f(pan,kg),fruit,...extra].filter(Boolean);
   const side=SIDES[v('side')].t;
   const ev=[]; const add=(t,title,items,why,kind='')=>ev.push({t,title,items,why,kind});
+  const gen=(now,match,out)=>{
+  const H=match-now;
   let mode;
   const ateK=v('ate'), ateT=toMin($('ateAt').value);
   const okAte=ateT!=null&&ateT<=now;
@@ -256,8 +262,9 @@ function plan(){
     let tm=Math.max(now+15,match-240); if(out!=null&&out>now+30) tm=Math.min(tm,out-30);
     if(snk) tm=Math.max(tm,ateT+90);
     if(!meal) add(tm,'Comida principal',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*6,50))}`,'Poco aceite, sin frituras ni crema'].filter(Boolean),'3 a 4 horas antes: tiempo de sobra para digerir.');
-    const tc=meal?Math.max(match-150,ateT+90,now+5):match-150;
-    if(meal?tc<=match-60:tc>=tm+75) add(tc,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),meal?yaComio:'Recarga liviana, se digiere rápido.');
+    let tc=meal?Math.max(match-150,ateT+90,now+5):Math.max(match-150,tm+90);
+    if(!meal&&out!=null&&out>now&&tc>out-5&&out-5>=tm+75) tc=out-5;
+    if(tc<=match-60) add(tc,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),meal?yaComio:'Recarga liviana, se digiere rápido.');
   } else if(H>=120){
     const p=PROTS[v('prot')];
     if(meal){
@@ -284,30 +291,77 @@ function plan(){
   }
   add(match,'Partido',['Sorbos de agua en el entretiempo'],'','out');
   add(match+90,'Después del partido (dentro de 1 h)',['1–2 vasos de leche semidescremada o 1 yogur','Pan con huevo, pavo o quesillo','Agua hasta que la orina vuelva a estar clara'],'Recupera músculo y energía.');
-  const antes=ev.filter(e=>e.t<match).sort((a,b)=>a.t-b.t);
+  const antes=ev.filter(e=>e.t<match&&e.t>=now).sort((a,b)=>a.t-b.t);
   const times=[...antes.map(e=>e.t),match];
   antes.forEach((e,i)=>{for(let t=e.t+60;times[i+1]-t>=40;t+=60)add(t,'Agua',[`${ml(250)} en sorbos`],'Un vaso cada hora, de a sorbos.','out')});
+  return mode;
+  };
+  let mode;
+  if(day===0) mode=gen(now,match,out);
+  else{
+    if(now<1200) add(now,'Resto del día de hoy',['Come normal y variado, sin cosas nuevas ni frituras','Toma agua durante el día: un vaso cada hora, de a sorbos'],'Hoy no hay que comer de más: lo importante es no probar cosas raras.');
+    if(now<=1230) add(Math.max(1200,now+15),'Cena',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*4,50))}`,'Poco aceite, sin frituras ni comida rápida'].filter(Boolean),'Una cena normal con carbohidrato (fideos, arroz o papas) deja energía para mañana.');
+    add(Math.max(1290,now+15),'Antes de dormir',['1 vaso de agua','Acostarse temprano: dormir bien ayuda a rendir'],'');
+    const wake=match-420>=60?420:match-90;
+    if(match>=870) add(1440+450,'Desayuno',colItems(['1 vaso de leche, yogur o agua']),'Algo liviano al levantarse (suponemos que se levanta a las 7:00).');
+    mode=gen(1440+wake,M,O);
+  }
   ev.sort((a,b)=>a.t-b.t);
-  ev.forEach(e=>{e.bolso= out!=null&&out>now&&e.t>out&&e.t<match&&e.title!=='Salida'});
-  return {ev,mode,H,kg};
+  ev.forEach(e=>{e.bolso= O!=null&&O>now&&e.t>O&&e.t<M&&e.title!=='Salida'});
+  return {ev,mode,H,kg,day,match};
 }
 
-let lastText='',shown=false;
+let lastText='',lastPlan=null,shown=false;
 function render(){
-  if(!shown){$('tl').innerHTML='<li class="note">Llena los datos y aprieta «Crear mi plan».</li>';$('sum').innerHTML='';lastText='';$('copy').hidden=true;return}
+  if(!shown){$('tl').innerHTML='<li class="note">Llena los datos y aprieta «Crear mi plan».</li>';$('sum').innerHTML='';lastText='';lastPlan=null;$('copy').hidden=true;$('pdf').hidden=true;return}
   const p=plan(); const tl=$('tl'); const sum=$('sum');
-  if(p.err){tl.innerHTML=`<li class="${p.info?'note':'err'}">${p.err}</li>`;sum.innerHTML='';lastText='';$('copy').hidden=true;return}
-  $('copy').hidden=false;
+  if(p.err){tl.innerHTML=`<li class="${p.info?'note':'err'}">${p.err}</li>`;sum.innerHTML='';lastText='';lastPlan=null;$('copy').hidden=true;$('pdf').hidden=true;return}
+  $('copy').hidden=false;$('pdf').hidden=false;lastPlan=p;
   const h=Math.floor(p.H/60), m=p.H%60;
-  sum.innerHTML=`<span class="chip">Faltan ${h} h${m?' '+m+' min':''}</span><span class="chip">${p.mode}</span><span class="chip">${p.kg} kg</span>`;
-  tl.innerHTML=p.ev.map(e=>`<li class="ev ${e.kind}"><div class="time">${fmt(e.t)}</div><div class="body"><h3>${e.title}${e.bolso?'<span class="tag'+(e.kind==='club'?' c':'')+'">'+(e.kind==='club'?'en el club':'llevar en el bolso')+'</span>':''}</h3><ul>${e.items.map(i=>`<li>${i}</li>`).join('')}</ul>${e.why?`<div class="why">${e.why}</div>`:''}</div></li>`).join('');
-  lastText='⚽ PLAN PRE-PARTIDO ('+p.kg+' kg)\n\n'+p.ev.map(e=>`🕐 ${fmt(e.t)} · ${e.title}${e.bolso?' (llevar)':''}\n`+e.items.map(i=>'• '+i).join('\n')).join('\n\n')+'\n\n🚫 Evitar: frituras, comida rápida, legumbres, integrales, bebidas con gas o energéticas.';
+  sum.innerHTML=`<span class="chip">Faltan ${h} h${m?' '+m+' min':''}</span><span class="chip">Partido ${p.day?'mañana':'hoy'} ${fmt(p.match)}</span><span class="chip">${p.mode}</span><span class="chip">${p.kg} kg</span>`;
+  let ld=-1;
+  tl.innerHTML=p.ev.map(e=>{const d=e.t>=1440?1:0;let hd='';if(p.day&&d!==ld){ld=d;hd=`<li class="dayh">${d?'Mañana · día del partido':'Hoy'}</li>`}return hd+`<li class="ev ${e.kind}"><div class="time">${fmt(e.t)}</div><div class="body"><h3>${e.title}${e.bolso?'<span class="tag'+(e.kind==='club'?' c':'')+'">'+(e.kind==='club'?'en el club':'llevar en el bolso')+'</span>':''}</h3><ul>${e.items.map(i=>`<li>${i}</li>`).join('')}</ul>${e.why?`<div class="why">${e.why}</div>`:''}</div></li>`}).join('');
+  let lt=-1;
+  lastText='⚽ PLAN PRE-PARTIDO ('+p.kg+' kg) · partido '+(p.day?'mañana':'hoy')+' '+fmt(p.match)+'\n\n'+p.ev.map(e=>{const d=e.t>=1440?1:0;let hd='';if(p.day&&d!==lt){lt=d;hd=(d?'📅 MAÑANA (día del partido)':'📅 HOY')+'\n\n'}return hd+`🕐 ${fmt(e.t)} · ${e.title}${e.bolso?' (llevar)':''}\n`+e.items.map(i=>'• '+i).join('\n')}).join('\n\n')+'\n\n🚫 Evitar: frituras, comida rápida, legumbres, integrales, bebidas con gas o energéticas.';
 }
-['kg','cm','now','out','match','ate','ateAt','carb','prot','side','col','fruit','club','last','pre'].forEach(id=>{$(id).addEventListener('input',render);$(id).addEventListener('change',render)});
+['kg','cm','now','out','match','day','ate','ateAt','carb','prot','side','col','fruit','club','last','pre'].forEach(id=>{$(id).addEventListener('input',render);$(id).addEventListener('change',render)});
 $('copy').addEventListener('click',()=>{
   const ok=()=>{$('copied').hidden=false;setTimeout(()=>$('copied').hidden=true,1800)};
   const fallback=()=>{const b=$('buf');b.value=lastText;b.select();try{document.execCommand('copy');ok()}catch(e){}};
   try{navigator.clipboard.writeText(lastText).then(ok,fallback)}catch(e){fallback()}
+});
+const clean=t=>String(t).replace(/≈/g,'aprox.').replace(/[–—]/g,'-').replace(/<[^>]*>/g,'');
+function buildPdf(p){
+  const d=new window.jspdf.jsPDF({unit:'mm',format:'a4'});
+  const m=16,mw=178; let y=20;
+  const line=(txt,size,style,col,ind=0,gap=1)=>{d.setFont('helvetica',style);d.setFontSize(size);d.setTextColor(col[0],col[1],col[2]);
+    d.splitTextToSize(clean(txt),mw-ind).forEach(l=>{if(y+size*.5>284){d.addPage();y=20}d.text(l,m+ind,y);y+=size*.5});y+=gap};
+  const G=[28,112,72],K=[23,32,26],Y=[93,107,97];
+  line('Plan pre-partido',22,'bold',G,0,1);
+  line(p.kg+' kg · Partido '+(p.day?'mañana':'hoy')+' a las '+fmt(p.match),12,'normal',Y,0,5);
+  let ld=-1;
+  p.ev.forEach(e=>{
+    const dd=e.t>=1440?1:0;
+    if(p.day&&dd!==ld){ld=dd;line(dd?'MAÑANA - DÍA DEL PARTIDO':'HOY',14,'bold',G,0,3)}
+    if(y>262){d.addPage();y=20}
+    line(fmt(e.t)+'   '+e.title+(e.bolso?'  (llevar en el bolso)':''),13,'bold',K,0,1);
+    e.items.forEach(i=>line('- '+i,11,'normal',K,6,0));
+    if(e.why)line(e.why,10,'italic',Y,6,0);
+    y+=4;
+  });
+  if(y>240){d.addPage();y=20}
+  line('Evitar el día del partido',12,'bold',[168,56,43],0,1);
+  line('Frituras, completos, pizza, comida rápida, legumbres (porotos, lentejas), panes y fideos integrales, mucha palta o mayonesa, bebidas energéticas y bebidas con gas.',10.5,'normal',K,0,4);
+  line('Hidratación',12,'bold',[43,95,168],0,1);
+  line('Un vaso de agua cada hora, de a sorbos. Durante el partido, sorbos en cada pausa. Orina clara, como limonada suave, indica que va bien; si sale oscura, falta agua.',10.5,'normal',K,0,4);
+  line('Guía general para deportistas adolescentes sanos. Las cantidades se calculan por peso. Si hay alergias, diabetes u otra condición, consultar con su nutricionista o médico. cadetes.cl/comida-pre-partido',9,'normal',Y,0,0);
+  return d;
+}
+function loadPdfLib(){return window.jspdf?Promise.resolve():new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s)})}
+$('pdf').addEventListener('click',()=>{
+  if(!lastPlan)return;
+  const b=$('pdf'),t=b.textContent;b.textContent='Preparando…';
+  loadPdfLib().then(()=>buildPdf(lastPlan).save('plan-pre-partido.pdf')).catch(()=>window.print()).finally(()=>{b.textContent=t});
 });
 $('nowbtn').addEventListener('click',()=>{const d=new Date();$('now').value=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');render()});
 $('go').addEventListener('click',()=>{shown=true;render();$('res').scrollIntoView({behavior:'smooth',block:'start'})});
