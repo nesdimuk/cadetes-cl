@@ -101,7 +101,7 @@ textarea{position:absolute;left:-9999px}
   </header>
 
   <section class="panel guide" aria-label="Cómo usar">
-    <p class="sub">Cómo usar esto (3 pasos)</p>
+    <p class="sub">Cómo usar esto</p>
     <ol class="steps">
       <li><b>Escribe el peso</b> del jugador y <b>a qué hora es el partido</b>. Elige si juega <b>hoy o mañana</b>.</li>
       <li><b>Toca los dibujos</b> de lo que tienen en casa.</li>
@@ -134,26 +134,19 @@ textarea{position:absolute;left:-9999px}
       <label for="now">🕐 Hora de inicio · opcional<input id="now" type="time"><span class="hint">Si lo dejas vacío, usamos la hora de ahora.</span><button id="nowbtn" type="button" class="mini">Poner la hora de ahora</button></label>
     </div>
 
-    <p class="sub">2 · ¿Qué ha comido hoy?</p>
-    <div class="field"><div class="pick" id="eaten">
-        <button type="button" class="opt" data-k="bk" aria-pressed="false"><span class="em">🥣</span><span>Desayuno</span></button>
-        <button type="button" class="opt" data-k="lunch" aria-pressed="false"><span class="em">🍽️</span><span>Almuerzo</span></button>
-        <button type="button" class="opt" data-k="snack" aria-pressed="false"><span class="em">🍎</span><span>Once o colación</span></button>
-      </div>
-      <span class="hint">Toca todo lo que ya comió hoy. Si todavía no comió nada, no toques nada.</span>
-      <select id="ate" hidden><option value="nada">Todavía nada</option><option value="meal">Comida completa</option><option value="snack">Algo liviano</option></select></div>
-    <label for="ateAt" id="ateAtWrap">¿A qué hora fue la última comida?<input id="ateAt" type="time"></label>
+    <select id="ate" hidden><option value="nada">nada</option><option value="meal">meal</option><option value="snack">snack</option></select>
+    <input id="ateAt" type="time" hidden>
 
-    <p class="sub">3 · Comida principal (3 a 4 horas antes)</p>
+    <p class="sub">2 · Comida principal (3 a 4 horas antes)</p>
     <div class="field"><span class="fl">Para tener energía</span><select id="carb" hidden></select><div class="pick"></div></div>
     <div class="field"><span class="fl">Para acompañar</span><select id="prot" hidden></select><div class="pick"></div></div>
     <div class="field"><span class="fl">Extra</span><select id="side" hidden></select><div class="pick"></div></div>
 
-    <p class="sub">4 · Colación (1 a 2 horas antes)</p>
+    <p class="sub">3 · Colación (1 a 2 horas antes)</p>
     <div class="field"><span class="fl">Para comer</span><select id="col" hidden></select><div class="pick"></div></div>
     <div class="field"><span class="fl">Fruta</span><select id="fruit" hidden></select><div class="pick"></div></div>
 
-    <p class="sub">5 · ⏰ Justo antes del partido</p>
+    <p class="sub">4 · ⏰ Justo antes del partido</p>
     <label class="check bigcheck" for="pre"><input id="pre" type="checkbox" checked> Comer algo 30 minutos antes del partido (recomendado)</label>
     <div class="box30" id="box30">
       <div class="field"><span class="fl">¿El club entrega algo?</span><select id="club" hidden>
@@ -295,14 +288,8 @@ function pick(id){
   sel.addEventListener('change',sync);sync();
 }
 ['where','day','carb','prot','side','col','fruit','club','last'].forEach(pick);
-const vis=()=>{$('ateAtWrap').hidden=$('ate').value==='nada';$('box30').hidden=!$('pre').checked;$('wakeWrap').hidden=$('day').value!=='1';$('awayHint').hidden=$('where').value!=='1'};
-['ate','pre','day','where'].forEach(i=>$(i).addEventListener('change',vis));vis();
-const refreshAte=()=>{
-  const on=k=>document.querySelector(`#eaten .opt[data-k="${k}"]`).getAttribute('aria-pressed')==='true';
-  $('ate').value=on('lunch')?'meal':(on('bk')||on('snack'))?'snack':'nada';
-  $('ate').dispatchEvent(new Event('change'));
-};
-$('eaten').addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;b.setAttribute('aria-pressed',String(b.getAttribute('aria-pressed')!=='true'));refreshAte()});
+const vis=()=>{$('box30').hidden=!$('pre').checked;$('wakeWrap').hidden=$('day').value!=='1';$('awayHint').hidden=$('where').value!=='1'};
+['pre','day','where'].forEach(i=>$(i).addEventListener('change',vis));vis();
 
 function carbText(k,kg,f){
   const c=CARBS[k]; const g=r(kg*1.4*f/c.d,c.d>.4?10:25); const n=half(g/c.u[1]);
@@ -447,7 +434,7 @@ $('redo').addEventListener('click',()=>{
   Object.values(done).forEach(x=>{if(x.kind&&(!best||x.at>best.at))best=x});
   $('now').value=hm(n);
   if($('day').value==='1'&&createdDate&&createdDate!==new Date().toDateString()){$('day').value='0';$('day').dispatchEvent(new Event('change'))}
-  if(best){document.querySelectorAll('#eaten .opt').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===(best.kind==='meal'?'lunch':'snack'))));refreshAte();$('ateAt').value=hm(best.at)}
+  if(best){$('ate').value=best.kind;$('ateAt').value=hm(best.at)}
   Object.keys(done).forEach(k=>delete done[k]);
   createdAt=hm(n);createdDate=new Date().toDateString();
   render();$('res').scrollIntoView({behavior:'smooth',block:'start'});
