@@ -134,13 +134,15 @@ textarea{position:absolute;left:-9999px}
       <label for="now">🕐 Hora de inicio · opcional<input id="now" type="time"><span class="hint">Si lo dejas vacío, usamos la hora de ahora.</span><button id="nowbtn" type="button" class="mini">Poner la hora de ahora</button></label>
     </div>
 
-    <p class="sub">2 · ¿Ya comió algo hoy?</p>
-    <div class="field"><select id="ate" hidden>
-        <option value="nada">Todavía nada</option>
-        <option value="meal">Comida completa</option>
-        <option value="snack">Algo liviano</option></select><div class="pick"></div>
-      <span class="hint">Comida completa = almuerzo o desayuno grande. Algo liviano = fruta, pan o galletas.</span></div>
-    <label for="ateAt" id="ateAtWrap">¿A qué hora comió?<input id="ateAt" type="time"></label>
+    <p class="sub">2 · ¿Qué ha comido hoy?</p>
+    <div class="field"><div class="pick" id="eaten">
+        <button type="button" class="opt" data-k="bk" aria-pressed="false"><span class="em">🥣</span><span>Desayuno</span></button>
+        <button type="button" class="opt" data-k="lunch" aria-pressed="false"><span class="em">🍽️</span><span>Almuerzo</span></button>
+        <button type="button" class="opt" data-k="snack" aria-pressed="false"><span class="em">🍎</span><span>Once o colación</span></button>
+      </div>
+      <span class="hint">Toca todo lo que ya comió hoy. Si todavía no comió nada, no toques nada.</span>
+      <select id="ate" hidden><option value="nada">Todavía nada</option><option value="meal">Comida completa</option><option value="snack">Algo liviano</option></select></div>
+    <label for="ateAt" id="ateAtWrap">¿A qué hora fue la última comida?<input id="ateAt" type="time"></label>
 
     <p class="sub">3 · Comida principal (3 a 4 horas antes)</p>
     <div class="field"><span class="fl">Para tener energía</span><select id="carb" hidden></select><div class="pick"></div></div>
@@ -292,9 +294,15 @@ function pick(id){
   box.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;sel.value=b.dataset.v;sel.dispatchEvent(new Event('change'));sync()});
   sel.addEventListener('change',sync);sync();
 }
-['where','day','ate','carb','prot','side','col','fruit','club','last'].forEach(pick);
+['where','day','carb','prot','side','col','fruit','club','last'].forEach(pick);
 const vis=()=>{$('ateAtWrap').hidden=$('ate').value==='nada';$('box30').hidden=!$('pre').checked;$('wakeWrap').hidden=$('day').value!=='1';$('awayHint').hidden=$('where').value!=='1'};
 ['ate','pre','day','where'].forEach(i=>$(i).addEventListener('change',vis));vis();
+const refreshAte=()=>{
+  const on=k=>document.querySelector(`#eaten .opt[data-k="${k}"]`).getAttribute('aria-pressed')==='true';
+  $('ate').value=on('lunch')?'meal':(on('bk')||on('snack'))?'snack':'nada';
+  $('ate').dispatchEvent(new Event('change'));
+};
+$('eaten').addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;b.setAttribute('aria-pressed',String(b.getAttribute('aria-pressed')!=='true'));refreshAte()});
 
 function carbText(k,kg,f){
   const c=CARBS[k]; const g=r(kg*1.4*f/c.d,c.d>.4?10:25); const n=half(g/c.u[1]);
@@ -383,9 +391,9 @@ function plan(){
   if(day===0) mode=gen(now,match,out);
   else{
     if(now<1200) add(now,'Resto del día de hoy',['Come normal y variado, sin cosas nuevas ni frituras','Toma agua durante el día: un vaso cada hora, de a sorbos',...(away?['Arma el bolso del viaje: comida del camino, colación, algo para 30 min antes y 2 botellas de agua']:[])],'Hoy no hay que comer de más: lo importante es no probar cosas raras.');
-    const aT=toMin($('ateAt').value), yaCena=v('ate')==='meal'&&aT!=null&&aT<=now&&now-aT<300;
-    if(now<=1230&&!yaCena) add(Math.max(1200,now+15),'Cena',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*4,50))}`,'Poco aceite, sin frituras ni comida rápida'].filter(Boolean),'Una cena normal con carbohidrato (fideos, arroz o papas) deja energía para mañana.');
-    add(Math.max(1290,now+15),'Antes de dormir',['1 vaso de agua',...(away?['Deja el bolso del viaje armado y listo en la puerta']:[]),'Acostarse temprano: dormir bien ayuda a rendir'],'');
+    const aT=toMin($('ateAt').value), tcena=Math.max(1200,now+15), yaCena=v('ate')==='meal'&&aT!=null&&aT<=now&&tcena-aT<150;
+    if(now<=1230&&!yaCena) add(tcena,'Cena',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*4,50))}`,'Poco aceite, sin frituras ni comida rápida'].filter(Boolean),'Una cena normal con carbohidrato (fideos, arroz o papas) deja energía para mañana.');
+    add(Math.max(1290,now+15),'Antes de dormir',['1 vaso de agua',...(yaCena?['Comiste hace poco: si queda con hambre, algo liviano (fruta, yogur o pan)']:[]),...(away?['Deja el bolso del viaje armado y listo en la puerta']:[]),'Acostarse temprano: dormir bien ayuda a rendir'],'');
     const wk=toMin($('wake').value);
     const wake=wk!=null?wk:(away&&out!=null?Math.min(420,out-60):(match-420>=60?420:match-90));
     if(!away&&match>=870) add(1440+450,'Desayuno',colItems(['1 vaso de leche, yogur o agua']),'Algo liviano al levantarse (suponemos que se levanta a las 7:00).');
@@ -439,7 +447,7 @@ $('redo').addEventListener('click',()=>{
   Object.values(done).forEach(x=>{if(x.kind&&(!best||x.at>best.at))best=x});
   $('now').value=hm(n);
   if($('day').value==='1'&&createdDate&&createdDate!==new Date().toDateString()){$('day').value='0';$('day').dispatchEvent(new Event('change'))}
-  if(best){$('ate').value=best.kind;$('ate').dispatchEvent(new Event('change'));$('ateAt').value=hm(best.at)}
+  if(best){document.querySelectorAll('#eaten .opt').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===(best.kind==='meal'?'lunch':'snack'))));refreshAte();$('ateAt').value=hm(best.at)}
   Object.keys(done).forEach(k=>delete done[k]);
   createdAt=hm(n);createdDate=new Date().toDateString();
   render();$('res').scrollIntoView({behavior:'smooth',block:'start'});
