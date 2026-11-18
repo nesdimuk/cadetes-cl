@@ -25,7 +25,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px
 h1{font-family:var(--display);font-weight:700;font-size:2.4rem;line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
 .lead{color:var(--muted);margin:6px 0 0}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.grid{align-items:start;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
 label{display:grid;gap:4px;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 input,select{font:inherit;font-size:1rem;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:100%;box-sizing:border-box;text-transform:none;letter-spacing:0}
 input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -63,7 +63,30 @@ textarea{position:absolute;left:-9999px}
 .hydr strong{color:var(--club)}
 .alt{background:var(--accent-soft);color:var(--accent)}
 .dayh{list-style:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-size:1.25rem;margin:2px 0 10px}
-@media print{.guide,[aria-label="Tus datos"],.row,.go{display:none!important}body{background:#fff;color:#000}}
+@media print{.guide,[aria-label="Tus datos"],.row,.go,.chk,.redo{display:none!important}body{background:#fff;color:#000}}
+[hidden]{display:none!important}
+.field{display:grid;gap:8px}
+.fl{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.hint{font-size:.78rem;font-weight:500;text-transform:none;letter-spacing:0;color:var(--muted)}
+.pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.opt{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:2px;background:var(--bg);color:var(--fg);border:2px solid var(--line);border-radius:12px;padding:8px 4px;font-weight:600;font-size:.84rem;line-height:1.2;text-align:center}
+.opt .em{font-size:1.9rem;line-height:1.1}
+.opt:hover{filter:none;border-color:var(--accent)}
+.opt[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.bigcheck{background:var(--snack-soft);border:2px solid var(--snack);border-radius:12px;padding:12px 14px;font-weight:700;font-size:1rem}
+.box30{display:grid;gap:14px;border-left:4px solid var(--snack);padding-left:12px}
+.alert30{background:var(--snack-soft);border:2px solid var(--snack);border-radius:12px;padding:14px;font-size:1.05rem}
+.alert30 strong{color:var(--snack);display:block;font-family:var(--display);font-size:1.35rem;text-transform:uppercase;letter-spacing:.04em}
+.how{background:var(--accent-soft);border-radius:12px;padding:14px;display:grid;gap:8px;font-size:1.02rem}
+.how strong{font-family:var(--display);font-size:1.2rem;text-transform:uppercase;letter-spacing:.04em;color:var(--accent)}
+.how ol{margin:0;padding-left:22px;display:grid;gap:6px}
+.how .redo{background:var(--card);color:var(--accent);border:2px solid var(--accent);justify-self:start}
+.chk{margin-top:8px;background:var(--bg);color:var(--accent);border:2px solid var(--accent);padding:7px 14px;font-size:.95rem}
+.chk[aria-pressed="true"]{background:var(--accent);color:var(--card)}
+.ev.done .body{opacity:.6}
+.ev.done h3{text-decoration:line-through}
+.ev.alert .body{background:var(--snack-soft);border:2px solid var(--snack);border-radius:10px;padding:8px 12px}
+.tag.urgent{background:var(--warn);color:var(--card);margin-left:0;display:inline-block;margin-bottom:4px}
 .guide{background:var(--accent-soft);border-color:transparent}
 .steps,.tips{margin:0;padding-left:22px;display:grid;gap:8px;font-size:1.05rem}
 .tips{list-style:none;padding-left:0}
@@ -80,10 +103,10 @@ textarea{position:absolute;left:-9999px}
   <section class="panel guide" aria-label="Cómo usar">
     <p class="sub">Cómo usar esto (3 pasos)</p>
     <ol class="steps">
-      <li><b>Escribe el peso</b> del jugador, si el partido es <b>hoy o mañana</b> y <b>a qué hora</b>.</li>
-      <li>Escribe <b>desde qué hora quieres el plan</b> (puede ser ahora u otra hora que tú elijas) y <b>a qué hora salen de la casa</b>.</li>
-      <li>Si ya comió algo hoy, marca <b>qué comió y a qué hora</b>.</li>
-      <li>Aprieta el botón verde <b>«Crear mi plan»</b>. Te muestra <b>qué comer, cuánto y a qué hora</b>, y lo puedes mandar por WhatsApp.</li>
+      <li><b>Escribe el peso</b> del jugador y <b>a qué hora es el partido</b>. Elige si juega <b>hoy o mañana</b>.</li>
+      <li><b>Toca los dibujos</b> de lo que tienen en casa.</li>
+      <li>Aprieta el botón verde <b>«Crear mi plan»</b>.</li>
+      <li><b>Sigue el plan</b> de arriba hacia abajo y toca <b>«✔ Ya lo hice»</b> cuando comas. Si te saltas algo, toca <b>«🔄 Rehacer mi plan»</b>.</li>
     </ol>
     <p class="sub">Para recordar</p>
     <ul class="tips">
@@ -96,47 +119,55 @@ textarea{position:absolute;left:-9999px}
   </section>
 
   <section class="panel" aria-label="Tus datos">
-    <p class="sub">Tus datos</p>
+    <p class="sub">1 · El jugador y el partido</p>
     <div class="grid">
-      <label for="kg">Peso del jugador (kg)<input id="kg" type="number" inputmode="decimal" min="30" max="120" placeholder="Ej: 65"></label>
-      <label for="cm">Estatura (cm) · opcional<input id="cm" type="number" inputmode="decimal" min="120" max="210" placeholder="Ej: 170"></label>
-      <label for="now">Hora de inicio (ahora u otra)<input id="now" type="time"><button id="nowbtn" type="button" class="mini">Poner la hora de ahora</button></label>
-      <label for="out">Salida de casa<input id="out" type="time"></label>
-      <label for="day">¿Cuándo juega?<select id="day"><option value="0">Hoy</option><option value="1">Mañana</option></select></label>
-      <label for="match">Hora del partido<input id="match" type="time"></label>
+      <label for="kg">⚖️ Peso del jugador (kg)<input id="kg" type="number" inputmode="decimal" min="30" max="120" placeholder="Ej: 65"></label>
+      <label for="match">⚽ Hora del partido<input id="match" type="time"></label>
+    </div>
+    <div class="field"><span class="fl">📅 ¿Cuándo juega?</span><select id="day" hidden><option value="0">Hoy</option><option value="1">Mañana</option></select><div class="pick"></div></div>
+    <div class="grid">
+      <label for="out">🚗 Salida de la casa · opcional<input id="out" type="time"></label>
+      <label for="now">🕐 Hora de inicio · opcional<input id="now" type="time"><span class="hint">Si lo dejas vacío, usamos la hora de ahora.</span><button id="nowbtn" type="button" class="mini">Poner la hora de ahora</button></label>
     </div>
 
-    <p class="sub">Lo que ya comió hoy</p>
-    <div class="grid">
-      <label for="ate">¿Ya comió algo hoy? (comida completa = almuerzo o desayuno grande; liviano = fruta, pan, galletas)<select id="ate">
-        <option value="nada">No, todavía nada</option>
-        <option value="meal">Sí, comida completa</option>
-        <option value="snack">Sí, algo liviano</option></select></label>
-      <label for="ateAt">¿A qué hora?<input id="ateAt" type="time"></label>
-    </div>
+    <p class="sub">2 · ¿Ya comió algo hoy?</p>
+    <div class="field"><select id="ate" hidden>
+        <option value="nada">Todavía nada</option>
+        <option value="meal">Comida completa</option>
+        <option value="snack">Algo liviano</option></select><div class="pick"></div>
+      <span class="hint">Comida completa = almuerzo o desayuno grande. Algo liviano = fruta, pan o galletas.</span></div>
+    <label for="ateAt" id="ateAtWrap">¿A qué hora comió?<input id="ateAt" type="time"></label>
 
-    <p class="sub">Comida principal</p>
-    <div class="grid">
-      <label for="carb">Base (energía)<select id="carb"></select></label>
-      <label for="prot">Acompañar con<select id="prot"></select></label>
-      <label for="side">Extra<select id="side"></select></label>
-    </div>
+    <p class="sub">3 · Comida principal (3 a 4 horas antes)</p>
+    <div class="field"><span class="fl">Para tener energía</span><select id="carb" hidden></select><div class="pick"></div></div>
+    <div class="field"><span class="fl">Para acompañar</span><select id="prot" hidden></select><div class="pick"></div></div>
+    <div class="field"><span class="fl">Extra</span><select id="side" hidden></select><div class="pick"></div></div>
 
-    <p class="sub">Colaciones</p>
-    <div class="grid">
-      <label for="col">Colación<select id="col"></select></label>
-      <label for="fruit">Fruta<select id="fruit"></select></label>
-      <label for="club">El club entrega<select id="club">
+    <p class="sub">4 · Colación (1 a 2 horas antes)</p>
+    <div class="field"><span class="fl">Para comer</span><select id="col" hidden></select><div class="pick"></div></div>
+    <div class="field"><span class="fl">Fruta</span><select id="fruit" hidden></select><div class="pick"></div></div>
+
+    <p class="sub">5 · ⏰ Justo antes del partido</p>
+    <label class="check bigcheck" for="pre"><input id="pre" type="checkbox" checked> Comer algo 30 minutos antes del partido (recomendado)</label>
+    <div class="box30" id="box30">
+      <div class="field"><span class="fl">¿El club entrega algo?</span><select id="club" hidden>
         <option value="nada">Nada</option><option value="platano">Plátano</option>
-        <option value="otro">Otra cosa (barra, galletas)</option></select></label>
-      <label for="last">Si el club no da nada<select id="last"></select></label>
+        <option value="otro">Otra cosa</option></select><div class="pick"></div></div>
+      <div class="field"><span class="fl">Si el club no da nada, llevamos</span><select id="last" hidden></select><div class="pick"></div></div>
     </div>
-    <label class="check" for="pre"><input id="pre" type="checkbox" checked> Comer algo 30 min antes del partido</label>
     <button id="go" type="button" class="go">Crear mi plan</button>
   </section>
 
   <section class="panel" id="res" aria-live="polite">
     <div class="sum" id="sum"></div>
+    <div class="alert30" id="alert30" hidden></div>
+    <div class="how" id="how" hidden><strong>📋 Cómo seguir tu plan</strong>
+      <ol>
+        <li>Este plan se hizo a las <b id="madeAt"></b>. Síguelo <b>de arriba hacia abajo</b>.</li>
+        <li>Cuando comas o tomes algo, toca <b>«✔ Ya lo hice»</b>.</li>
+        <li><b>Si te saltaste una comida o no alcanzaste a comer algo: NO comas el doble después.</b> Toca el botón de abajo y el plan se arregla solo.</li>
+      </ol>
+      <button id="redo" type="button" class="redo">🔄 Rehacer mi plan desde ahora</button></div>
     <ol class="tl" id="tl"></ol>
     <div class="avoid"><strong>Evitar el día del partido</strong>
       <p>Frituras, completos, pizza, comida rápida, legumbres (porotos, lentejas), panes y fideos integrales, mucha palta o mayonesa, bebidas energéticas y bebidas con gas.</p></div>
@@ -169,7 +200,9 @@ const CARBS={
   marraqueta:{l:'Marraqueta / hallulla',d:.55,u:['panes',90],t:''},
   molde:{l:'Pan de molde blanco',d:.47,u:['rebanadas',25],t:''},
   tortilla:{l:'Tortillas de trigo',d:.50,u:['tortillas',40],t:''},
-  avena:{l:'Avena con leche',d:.60,u:['tazas de avena cruda',80],t:'(con 1 vaso de leche)'}
+  avena:{l:'Avena con leche',d:.60,u:['tazas de avena cruda',80],t:'(con 1 vaso de leche)'},
+  pita:{l:'Pan pita',d:.55,u:['panes pita',60],t:''},
+  mote:{l:'Mote',d:.22,u:['tazas',170],t:'cocido'}
 };
 /* Proteínas: m = carne (g crudos por peso) o texto fijo */
 const PROTS={
@@ -181,7 +214,9 @@ const PROTS={
   huevo:{l:'Huevos',f:(kg,f)=>`Huevos: ${kg<55||f<1?1:2} (cocidos o revueltos, sin freír)`},
   jamon:{l:'Jamón de pavo',f:kg=>`Jamón de pavo: ${kg<55?2:3} láminas`},
   quesillo:{l:'Quesillo / queso fresco',f:kg=>`Quesillo o queso fresco: ${kg<55?1:2} láminas`},
-  yogur:{l:'Yogur',f:()=>'Yogur: 1 unidad (normal o proteico)'}
+  yogur:{l:'Yogur',f:()=>'Yogur: 1 unidad (normal o proteico)'},
+  cerdo:{l:'Cerdo magro (lomo)',m:true,x:'a la plancha o al horno, sin grasa'},
+  albondigas:{l:'Albóndigas',m:true,x:'al horno o en salsa, sin freír'}
 };
 const SIDES={
   nada:{l:'Nada'},
@@ -189,7 +224,9 @@ const SIDES={
   choclo:{l:'Choclo',t:'Choclo: ½ taza de granos'},
   queso:{l:'Queso rallado',t:'Queso rallado: 1 cucharada'},
   jugo:{l:'Jugo natural',t:'Jugo natural: 1 vaso chico (200 ml)'},
-  postre:{l:'Fruta de postre',t:'Postre: 1 fruta (mandarina, durazno o pera)'}
+  postre:{l:'Fruta de postre',t:'Postre: 1 fruta (mandarina, durazno o pera)'},
+  zapallo:{l:'Zapallo cocido',t:'Zapallo cocido: ½ taza'},
+  yogurpostre:{l:'Yogur de postre',t:'Postre: 1 yogur'}
 };
 const COLS={
   merm:{l:'Pan con mermelada',f:p=>`${p} con mermelada`},
@@ -200,7 +237,11 @@ const COLS={
   galletas:{l:'Galletas de agua o arroz',f:(p,kg)=>`${kg<50?4:6} galletas de agua o de arroz con mermelada`},
   yogur:{l:'Yogur con avena',f:()=>'1 yogur con 3 cucharadas de avena'},
   cereal:{l:'Leche con cereal',f:()=>'1 vaso de leche semidescremada con ½ taza de cereal (no integral)'},
-  barra:{l:'Barra de cereal',f:()=>'1 barra de cereal'}
+  barra:{l:'Barra de cereal',f:()=>'1 barra de cereal'},
+  phuevo:{l:'Pan con huevo',f:p=>`${p} con 1 huevo duro`},
+  pplatano:{l:'Pan con plátano',f:p=>`${p} con medio plátano en rodajas`},
+  batido:{l:'Batido de plátano',f:()=>'1 vaso de leche licuada con ½ plátano'},
+  queque:{l:'Queque casero',f:()=>'1 trozo chico de queque casero (sin crema ni relleno)'}
 };
 const FRUITS={
   mandarina:{l:'Mandarina',f:kg=>`${kg<50?1:2} mandarina${kg<50?'':'s'}`},
@@ -208,6 +249,10 @@ const FRUITS={
   platano:{l:'Plátano',f:kg=>`${kg<50?'½':'1'} plátano`},
   pera:{l:'Pera',f:()=>'1 pera'},
   durazno:{l:'Durazno',f:()=>'1 durazno'},
+  naranja:{l:'Naranja',f:()=>'1 naranja'},
+  kiwi:{l:'Kiwi',f:kg=>`${kg<50?1:2} kiwi${kg<50?'':'s'}`},
+  sandia:{l:'Sandía o melón',f:()=>'1 taza de sandía o melón en cubos'},
+  frutillas:{l:'Frutillas',f:()=>'1 taza de frutillas'},
   uvas:{l:'Uvas',f:()=>'1 taza de uvas'},
   nada:{l:'Sin fruta',f:()=>null}
 };
@@ -218,11 +263,34 @@ const LAST={
   compota:{l:'Compota',f:()=>'1 compota de fruta'},
   jugo:{l:'Jugo natural',f:()=>'1 vaso chico de jugo natural (200 ml)'},
   galletas:{l:'Galletas de agua',f:()=>'3 galletas de agua o de arroz'},
-  uvas:{l:'Uvas',f:()=>'1 taza de uvas'}
+  uvas:{l:'Uvas',f:()=>'1 taza de uvas'},
+  naranja:{l:'Naranja',f:()=>'1 naranja en gajos'},
+  datiles:{l:'Dátiles',f:()=>'3 dátiles'},
+  barra:{l:'Barra de cereal',f:()=>'1 barra de cereal chica'},
+  panmerm:{l:'Pan con mermelada (chico)',f:()=>'½ pan con mermelada'}
 };
 const fill=(id,obj)=>{$(id).innerHTML=Object.entries(obj).map(([k,v])=>`<option value="${k}">${v.l}</option>`).join('')};
 fill('carb',CARBS);fill('prot',PROTS);fill('side',SIDES);fill('col',COLS);fill('fruit',FRUITS);fill('last',LAST);
 $('col').value='merm';
+const EMO={
+  day:{0:'☀️',1:'🌙'},ate:{nada:'🚫',meal:'🍽️',snack:'🍎'},club:{nada:'🚫',platano:'🍌',otro:'🍫'},
+  carb:{fideos:'🍝',arroz:'🍚',papas:'🥔',pure:'🥔',camote:'🍠',quinoa:'🌱',cuscus:'🌾',noquis:'🥟',marraqueta:'🥖',molde:'🍞',tortilla:'🌯',avena:'🥣',pita:'🥙',mote:'🌾'},
+  prot:{carne:'🥩',pollo:'🍗',pavo:'🦃',pescado:'🐟',atun:'🐟',huevo:'🥚',jamon:'🍖',quesillo:'🧀',yogur:'🥛',cerdo:'🐷',albondigas:'🧆'},
+  side:{nada:'🚫',tomate:'🍅',choclo:'🌽',queso:'🧀',jugo:'🧃',postre:'🍎',zapallo:'🎃',yogurpostre:'🥛'},
+  col:{merm:'🍓',miel:'🍯',manjar:'🍮',pavo:'🥪',quesillo:'🧀',galletas:'🍘',yogur:'🥣',cereal:'🥛',barra:'🍫',phuevo:'🥚',pplatano:'🍌',batido:'🥤',queque:'🍰'},
+  fruit:{mandarina:'🍊',manzana:'🍎',platano:'🍌',pera:'🍐',durazno:'🍑',naranja:'🍊',kiwi:'🥝',sandia:'🍉',frutillas:'🍓',uvas:'🍇',nada:'🚫'},
+  last:{mandarina:'🍊',platano:'🍌',pasas:'🍇',compota:'🥫',jugo:'🧃',galletas:'🍘',uvas:'🍇',naranja:'🍊',datiles:'🌴',barra:'🍫',panmerm:'🍞'}
+};
+function pick(id){
+  const sel=$(id), box=sel.parentElement.querySelector('.pick');
+  box.innerHTML=[...sel.options].map(o=>`<button type="button" class="opt" data-v="${o.value}" aria-pressed="false"><span class="em">${(EMO[id]||{})[o.value]||'🍽️'}</span><span>${o.text}</span></button>`).join('');
+  const sync=()=>box.querySelectorAll('.opt').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===sel.value)));
+  box.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;sel.value=b.dataset.v;sel.dispatchEvent(new Event('change'));sync()});
+  sel.addEventListener('change',sync);sync();
+}
+['day','ate','carb','prot','side','col','fruit','club','last'].forEach(pick);
+const vis=()=>{$('ateAtWrap').hidden=$('ate').value==='nada';$('box30').hidden=!$('pre').checked};
+$('ate').addEventListener('change',vis);$('pre').addEventListener('change',vis);vis();
 
 function carbText(k,kg,f){
   const c=CARBS[k]; const g=r(kg*1.4*f/c.d,c.d>.4?10:25); const n=half(g/c.u[1]);
@@ -287,7 +355,7 @@ function plan(){
   if(out!=null&&out>now&&out<match-20) add(out,'Salida',['Botella de agua de 500–750 ml','Sorbos de 150–200 ml cada 20–30 min','Orina clara = bien hidratado'],'','out');
   if(pre&&H>=45){
     const items= club==='platano'?['½ a 1 plátano del club']: club==='otro'?['Lo que entregue el club, en porción chica (½ barra o 2–3 galletas)']:[LAST[v('last')].f(kg)];
-    add(match-30,'30 min antes',[...items,`Agua: ${ml(r(kg*3,50))}`],'Azúcar rápida para empezar con energía.',club==='nada'?'snack':'club');
+    add(match-30,'30 min antes',[...items,`Agua: ${ml(r(kg*3,50))}`],'Come esto justo antes de entrar a la cancha: es liviano y da energía rápida.',club==='nada'?'snack':'club');
   }
   add(match,'Partido',['Sorbos de agua en el entretiempo'],'','out');
   add(match+90,'Después del partido (dentro de 1 h)',['1–2 vasos de leche semidescremada o 1 yogur','Pan con huevo, pavo o quesillo','Agua hasta que la orina vuelva a estar clara'],'Recupera músculo y energía.');
@@ -300,7 +368,8 @@ function plan(){
   if(day===0) mode=gen(now,match,out);
   else{
     if(now<1200) add(now,'Resto del día de hoy',['Come normal y variado, sin cosas nuevas ni frituras','Toma agua durante el día: un vaso cada hora, de a sorbos'],'Hoy no hay que comer de más: lo importante es no probar cosas raras.');
-    if(now<=1230) add(Math.max(1200,now+15),'Cena',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*4,50))}`,'Poco aceite, sin frituras ni comida rápida'].filter(Boolean),'Una cena normal con carbohidrato (fideos, arroz o papas) deja energía para mañana.');
+    const aT=toMin($('ateAt').value), yaCena=v('ate')==='meal'&&aT!=null&&aT<=now&&now-aT<300;
+    if(now<=1230&&!yaCena) add(Math.max(1200,now+15),'Cena',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*4,50))}`,'Poco aceite, sin frituras ni comida rápida'].filter(Boolean),'Una cena normal con carbohidrato (fideos, arroz o papas) deja energía para mañana.');
     add(Math.max(1290,now+15),'Antes de dormir',['1 vaso de agua','Acostarse temprano: dormir bien ayuda a rendir'],'');
     const wake=match-420>=60?420:match-90;
     if(match>=870) add(1440+450,'Desayuno',colItems(['1 vaso de leche, yogur o agua']),'Algo liviano al levantarse (suponemos que se levanta a las 7:00).');
@@ -311,20 +380,55 @@ function plan(){
   return {ev,mode,H,kg,day,match};
 }
 
-let lastText='',lastPlan=null,shown=false;
-function render(){
-  if(!shown){$('tl').innerHTML='<li class="note">Llena los datos y aprieta «Crear mi plan».</li>';$('sum').innerHTML='';lastText='';lastPlan=null;$('copy').hidden=true;$('pdf').hidden=true;return}
-  const p=plan(); const tl=$('tl'); const sum=$('sum');
-  if(p.err){tl.innerHTML=`<li class="${p.info?'note':'err'}">${p.err}</li>`;sum.innerHTML='';lastText='';lastPlan=null;$('copy').hidden=true;$('pdf').hidden=true;return}
-  $('copy').hidden=false;$('pdf').hidden=false;lastPlan=p;
-  const h=Math.floor(p.H/60), m=p.H%60;
-  sum.innerHTML=`<span class="chip">Faltan ${h} h${m?' '+m+' min':''}</span><span class="chip">Partido ${p.day?'mañana':'hoy'} ${fmt(p.match)}</span><span class="chip">${p.mode}</span><span class="chip">${p.kg} kg</span>`;
-  let ld=-1;
-  tl.innerHTML=p.ev.map(e=>{const d=e.t>=1440?1:0;let hd='';if(p.day&&d!==ld){ld=d;hd=`<li class="dayh">${d?'Mañana · día del partido':'Hoy'}</li>`}return hd+`<li class="ev ${e.kind}"><div class="time">${fmt(e.t)}</div><div class="body"><h3>${e.title}${e.bolso?'<span class="tag'+(e.kind==='club'?' c':'')+'">'+(e.kind==='club'?'en el club':'llevar en el bolso')+'</span>':''}</h3><ul>${e.items.map(i=>`<li>${i}</li>`).join('')}</ul>${e.why?`<div class="why">${e.why}</div>`:''}</div></li>`}).join('');
-  let lt=-1;
-  lastText='⚽ PLAN PRE-PARTIDO ('+p.kg+' kg) · partido '+(p.day?'mañana':'hoy')+' '+fmt(p.match)+'\n\n'+p.ev.map(e=>{const d=e.t>=1440?1:0;let hd='';if(p.day&&d!==lt){lt=d;hd=(d?'📅 MAÑANA (día del partido)':'📅 HOY')+'\n\n'}return hd+`🕐 ${fmt(e.t)} · ${e.title}${e.bolso?' (llevar)':''}\n`+e.items.map(i=>'• '+i).join('\n')}).join('\n\n')+'\n\n🚫 Evitar: frituras, comida rápida, legumbres, integrales, bebidas con gas o energéticas.';
+let lastText='',lastPlan=null,shown=false,createdAt='',createdDate='';
+const done={};
+const hm=m=>String(Math.floor(m/60)%24).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
+const nowMin=()=>{const d=new Date();return d.getHours()*60+d.getMinutes()};
+const kindOf=t=>/^(Comida|Cena)/.test(t)?'meal':/^(Colación|Desayuno|Algo rápido|30 min antes)/.test(t)?'snack':null;
+const keyOf=e=>e.t+'|'+e.title;
+function empty(msg,cls){
+  $('tl').innerHTML=`<li class="${cls}">${msg}</li>`;$('sum').innerHTML='';lastText='';lastPlan=null;
+  ['copy','pdf'].forEach(i=>$(i).hidden=true);$('alert30').hidden=true;$('how').hidden=true;
 }
-['kg','cm','now','out','match','day','ate','ateAt','carb','prot','side','col','fruit','club','last','pre'].forEach(id=>{$(id).addEventListener('input',render);$(id).addEventListener('change',render)});
+function render(){
+  if(!shown){empty('Llena los datos y aprieta «Crear mi plan».','note');return}
+  const p=plan();
+  if(p.err){empty(p.err,p.info?'note':'err');return}
+  ['copy','pdf'].forEach(i=>$(i).hidden=false);$('how').hidden=false;lastPlan=p;$('madeAt').textContent=createdAt;
+  const h=Math.floor(p.H/60), m=p.H%60;
+  $('sum').innerHTML=`<span class="chip">Faltan ${h} h${m?' '+m+' min':''}</span><span class="chip">Partido ${p.day?'mañana':'hoy'} ${fmt(p.match)}</span><span class="chip">${p.mode}</span><span class="chip">${p.kg} kg</span>`;
+  const a=p.ev.find(e=>e.title==='30 min antes');
+  if(a){$('alert30').hidden=false;$('alert30').innerHTML=`<strong>⏰ Aviso importante</strong>A las <b>${fmt(a.t)}</b>, 30 minutos antes del partido, <b>tiene que comer</b>: ${a.items[0]}. ¡No te lo saltes!`}
+  else $('alert30').hidden=true;
+  let ld=-1;
+  $('tl').innerHTML=p.ev.map(e=>{
+    const d=e.t>=1440?1:0; let hd='';
+    if(p.day&&d!==ld){ld=d;hd=`<li class="dayh">${d?'Mañana · día del partido':'Hoy'}</li>`}
+    const k=keyOf(e), isDone=!!done[k], al=e.title==='30 min antes', canCheck=!!kindOf(e.title)||e.title==='Agua';
+    return hd+`<li class="ev ${e.kind}${al?' alert':''}${isDone?' done':''}"><div class="time">${fmt(e.t)}</div><div class="body"><h3>${al?'⏰ 30 minutos antes del partido':e.title}${e.bolso?'<span class="tag'+(e.kind==='club'?' c':'')+'">'+(e.kind==='club'?'en el club':'llevar en el bolso')+'</span>':''}</h3>${al?'<span class="tag urgent">No te lo saltes</span>':''}<ul>${e.items.map(i=>`<li>${i}</li>`).join('')}</ul>${e.why?`<div class="why">${e.why}</div>`:''}${canCheck?`<button type="button" class="chk" data-k="${k}" aria-pressed="${isDone}">${isDone?'✅ Listo':'✔ Ya lo hice'}</button>`:''}</div></li>`;
+  }).join('');
+  let lt=-1;
+  lastText='⚽ PLAN PRE-PARTIDO ('+p.kg+' kg) · partido '+(p.day?'mañana':'hoy')+' '+fmt(p.match)+'\n\n'+p.ev.map(e=>{const d=e.t>=1440?1:0;let hd='';if(p.day&&d!==lt){lt=d;hd=(d?'📅 MAÑANA (día del partido)':'📅 HOY')+'\n\n'}
+    const al=e.title==='30 min antes';
+    return hd+`🕐 ${fmt(e.t)} · ${al?'⏰ 30 MIN ANTES DEL PARTIDO (NO TE LO SALTES)':e.title}${e.bolso?' (llevar)':''}\n`+e.items.map(i=>'• '+i).join('\n')}).join('\n\n')+'\n\n🚫 Evitar: frituras, comida rápida, legumbres, integrales, bebidas con gas o energéticas.\n\n✅ Sigue el plan de arriba hacia abajo. Si te saltas una comida, NO comas el doble: rehaz el plan desde ahora en cadetes.cl/comida-pre-partido';
+}
+$('tl').addEventListener('click',e=>{
+  const b=e.target.closest('.chk'); if(!b) return;
+  const k=b.dataset.k;
+  if(done[k]) delete done[k]; else done[k]={kind:kindOf(k.split('|')[1]),at:nowMin()};
+  render();
+});
+$('redo').addEventListener('click',()=>{
+  const n=nowMin(); let best=null;
+  Object.values(done).forEach(x=>{if(x.kind&&(!best||x.at>best.at))best=x});
+  $('now').value=hm(n);
+  if($('day').value==='1'&&createdDate&&createdDate!==new Date().toDateString()){$('day').value='0';$('day').dispatchEvent(new Event('change'))}
+  if(best){$('ate').value=best.kind;$('ate').dispatchEvent(new Event('change'));$('ateAt').value=hm(best.at)}
+  Object.keys(done).forEach(k=>delete done[k]);
+  createdAt=hm(n);createdDate=new Date().toDateString();
+  render();$('res').scrollIntoView({behavior:'smooth',block:'start'});
+});
+['kg','now','out','match','day','ate','ateAt','carb','prot','side','col','fruit','club','last','pre'].forEach(id=>{$(id).addEventListener('input',render);$(id).addEventListener('change',render)});
 $('copy').addEventListener('click',()=>{
   const ok=()=>{$('copied').hidden=false;setTimeout(()=>$('copied').hidden=true,1800)};
   const fallback=()=>{const b=$('buf');b.value=lastText;b.select();try{document.execCommand('copy');ok()}catch(e){}};
@@ -344,7 +448,7 @@ function buildPdf(p){
     const dd=e.t>=1440?1:0;
     if(p.day&&dd!==ld){ld=dd;line(dd?'MAÑANA - DÍA DEL PARTIDO':'HOY',14,'bold',G,0,3)}
     if(y>262){d.addPage();y=20}
-    line(fmt(e.t)+'   '+e.title+(e.bolso?'  (llevar en el bolso)':''),13,'bold',K,0,1);
+    line(fmt(e.t)+'   '+(e.title==='30 min antes'?'30 min antes del partido - ¡NO TE LO SALTES!':e.title)+(e.bolso?'  (llevar en el bolso)':''),13,'bold',e.title==='30 min antes'?[168,56,43]:K,0,1);
     e.items.forEach(i=>line('- '+i,11,'normal',K,6,0));
     if(e.why)line(e.why,10,'italic',Y,6,0);
     y+=4;
@@ -354,6 +458,9 @@ function buildPdf(p){
   line('Frituras, completos, pizza, comida rápida, legumbres (porotos, lentejas), panes y fideos integrales, mucha palta o mayonesa, bebidas energéticas y bebidas con gas.',10.5,'normal',K,0,4);
   line('Hidratación',12,'bold',[43,95,168],0,1);
   line('Un vaso de agua cada hora, de a sorbos. Durante el partido, sorbos en cada pausa. Orina clara, como limonada suave, indica que va bien; si sale oscura, falta agua.',10.5,'normal',K,0,4);
+  line('Cómo seguir el plan',12,'bold',G,0,1);
+  line('1. Síguelo de arriba hacia abajo, desde la hora en que se hizo.',10.5,'normal',K,3,0);
+  line('2. Si te saltaste una comida o no alcanzaste a comer algo, NO comas el doble después: vuelve a cadetes.cl/comida-pre-partido y rehaz el plan desde ahora.',10.5,'normal',K,3,4);
   line('Guía general para deportistas adolescentes sanos. Las cantidades se calculan por peso. Si hay alergias, diabetes u otra condición, consultar con su nutricionista o médico. cadetes.cl/comida-pre-partido',9,'normal',Y,0,0);
   return d;
 }
@@ -364,7 +471,7 @@ $('pdf').addEventListener('click',()=>{
   loadPdfLib().then(()=>buildPdf(lastPlan).save('plan-pre-partido.pdf')).catch(()=>window.print()).finally(()=>{b.textContent=t});
 });
 $('nowbtn').addEventListener('click',()=>{const d=new Date();$('now').value=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');render()});
-$('go').addEventListener('click',()=>{shown=true;render();$('res').scrollIntoView({behavior:'smooth',block:'start'})});
+$('go').addEventListener('click',()=>{if(!$('now').value)$('now').value=hm(nowMin());shown=true;createdAt=hm(nowMin());createdDate=new Date().toDateString();render();$('res').scrollIntoView({behavior:'smooth',block:'start'})});
 render();
 </script>
 </body>
