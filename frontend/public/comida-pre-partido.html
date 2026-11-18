@@ -114,6 +114,7 @@ textarea{position:absolute;left:-9999px}
       <li>🍌 <b>Algo liviano y dulce</b> (fruta, pan con mermelada) 1 a 2 horas antes.</li>
       <li>💧 <b>Tomar agua</b> en sorbos desde la mañana, no todo junto.</li>
       <li>🚫 <b>Nada nuevo</b> el día del partido: solo lo que ya conoce y le cae bien.</li>
+      <li>🚌 <b>Si viajan:</b> lleven la comida armada en el bolso y 2 botellas de agua. No dependan de lo que encuentren en el camino.</li>
       <li>🥛 <b>Después del partido:</b> leche o yogur y algo de pan.</li>
     </ul>
   </section>
@@ -124,8 +125,11 @@ textarea{position:absolute;left:-9999px}
       <label for="kg">⚖️ Peso del jugador (kg)<input id="kg" type="number" inputmode="decimal" min="30" max="120" placeholder="Ej: 65"></label>
       <label for="match">⚽ Hora del partido<input id="match" type="time"></label>
     </div>
+    <div class="field"><span class="fl">📍 ¿Dónde juega?</span><select id="where" hidden><option value="0">En casa</option><option value="1">De visita (viajan)</option></select><div class="pick"></div>
+      <span class="hint" id="awayHint" hidden>🚌 De visita: el plan reparte las comidas antes y durante el viaje, y te dice qué llevar en el bolso. Pon la hora de salida de la casa.</span></div>
     <div class="field"><span class="fl">📅 ¿Cuándo juega?</span><select id="day" hidden><option value="0">Hoy</option><option value="1">Mañana</option></select><div class="pick"></div></div>
     <div class="grid">
+      <label for="wake" id="wakeWrap">🛏️ Hora en que se levanta<input id="wake" type="time"><span class="hint">Si lo dejas vacío, usamos las 7:00 (o 1 hora antes de salir si viajan).</span></label>
       <label for="out">🚗 Salida de la casa · opcional<input id="out" type="time"></label>
       <label for="now">🕐 Hora de inicio · opcional<input id="now" type="time"><span class="hint">Si lo dejas vacío, usamos la hora de ahora.</span><button id="nowbtn" type="button" class="mini">Poner la hora de ahora</button></label>
     </div>
@@ -273,7 +277,7 @@ const fill=(id,obj)=>{$(id).innerHTML=Object.entries(obj).map(([k,v])=>`<option 
 fill('carb',CARBS);fill('prot',PROTS);fill('side',SIDES);fill('col',COLS);fill('fruit',FRUITS);fill('last',LAST);
 $('col').value='merm';
 const EMO={
-  day:{0:'☀️',1:'🌙'},ate:{nada:'🚫',meal:'🍽️',snack:'🍎'},club:{nada:'🚫',platano:'🍌',otro:'🍫'},
+  day:{0:'☀️',1:'🌙'},where:{0:'🏠',1:'🚌'},ate:{nada:'🚫',meal:'🍽️',snack:'🍎'},club:{nada:'🚫',platano:'🍌',otro:'🍫'},
   carb:{fideos:'🍝',arroz:'🍚',papas:'🥔',pure:'🥔',camote:'🍠',quinoa:'🌱',cuscus:'🌾',noquis:'🥟',marraqueta:'🥖',molde:'🍞',tortilla:'🌯',avena:'🥣',pita:'🥙',mote:'🌾'},
   prot:{carne:'🥩',pollo:'🍗',pavo:'🦃',pescado:'🐟',atun:'🐟',huevo:'🥚',jamon:'🍖',quesillo:'🧀',yogur:'🥛',cerdo:'🐷',albondigas:'🧆'},
   side:{nada:'🚫',tomate:'🍅',choclo:'🌽',queso:'🧀',jugo:'🧃',postre:'🍎',zapallo:'🎃',yogurpostre:'🥛'},
@@ -288,14 +292,16 @@ function pick(id){
   box.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;sel.value=b.dataset.v;sel.dispatchEvent(new Event('change'));sync()});
   sel.addEventListener('change',sync);sync();
 }
-['day','ate','carb','prot','side','col','fruit','club','last'].forEach(pick);
-const vis=()=>{$('ateAtWrap').hidden=$('ate').value==='nada';$('box30').hidden=!$('pre').checked};
-$('ate').addEventListener('change',vis);$('pre').addEventListener('change',vis);vis();
+['where','day','ate','carb','prot','side','col','fruit','club','last'].forEach(pick);
+const vis=()=>{$('ateAtWrap').hidden=$('ate').value==='nada';$('box30').hidden=!$('pre').checked;$('wakeWrap').hidden=$('day').value!=='1';$('awayHint').hidden=$('where').value!=='1'};
+['ate','pre','day','where'].forEach(i=>$(i).addEventListener('change',vis));vis();
 
 function carbText(k,kg,f){
   const c=CARBS[k]; const g=r(kg*1.4*f/c.d,c.d>.4?10:25); const n=half(g/c.u[1]);
-  if(c.d>.4) return `${c.l}: ${n} ${c.u[0]}${c.t?' '+c.t:''}`;
-  return `${c.l}: ${g} g ${c.t} (≈ ${n} ${c.u[0]})`;
+  const SING={'tazas':'taza','papas medianas':'papa mediana','camotes medianos':'camote mediano','panes':'pan','rebanadas':'rebanada','tortillas':'tortilla','tazas de avena cruda':'taza de avena cruda','panes pita':'pan pita'};
+  const un=(n==='1'||n==='½')?(SING[c.u[0]]||c.u[0]):c.u[0];
+  if(c.d>.4) return `${c.l}: ${n} ${un}${c.t?' '+c.t:''}`;
+  return `${c.l}: ${g} g ${c.t} (≈ ${n} ${un})`;
 }
 function protText(k,kg,f){
   const p=PROTS[k];
@@ -305,7 +311,7 @@ function protText(k,kg,f){
 
 function plan(){
   const kg=parseFloat($('kg').value), now=toMin($('now').value), out=toMin($('out').value), match=toMin($('match').value);
-  const v=id=>$(id).value; const club=v('club'), pre=$('pre').checked, day=v('day')==='1'?1:0;
+  const v=id=>$(id).value; const club=v('club'), pre=$('pre').checked, day=v('day')==='1'?1:0, away=v('where')==='1';
   if(isNaN(kg)&&!$('now').value&&!$('match').value) return {err:'Llena los datos de arriba y aquí te aparece el plan.',info:true};
   if(!(kg>=30&&kg<=120)) return {err:'Escribe el peso del jugador (entre 30 y 120 kg).'};
   if(now==null||match==null) return {err:'Falta la hora de ahora y la hora del partido.'};
@@ -329,9 +335,18 @@ function plan(){
     add(now,'Agua',[ml(250)],'Empieza a hidratarte desde ya.');
     let tm=Math.max(now+15,match-240); if(out!=null&&out>now+30) tm=Math.min(tm,out-30);
     if(snk) tm=Math.max(tm,ateT+90);
-    if(!meal) add(tm,'Comida principal',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*6,50))}`,'Poco aceite, sin frituras ni crema'].filter(Boolean),'3 a 4 horas antes: tiempo de sobra para digerir.');
-    let tc=meal?Math.max(match-150,ateT+90,now+5):Math.max(match-150,tm+90);
-    if(!meal&&out!=null&&out>now&&tc>out-5&&out-5>=tm+75) tc=out-5;
+    const viaje=away&&!meal&&out!=null&&out>now+10;
+    let tBase=tm;
+    if(viaje){
+      mode='Partido de visita';
+      const t1=Math.max(now+5,Math.min(Math.max(now+15,match-240),out-30));
+      tBase=t1;
+      add(t1,'Comida antes de viajar',[carbText(v('carb'),kg,.6),protText(v('prot'),kg,.6),`Agua: ${ml(r(kg*4,50))}`,'Liviana: poco aceite, sin frituras ni crema'].filter(Boolean),'Antes de salir comes algo más liviano, para que el viaje no te caiga pesado.');
+      const t2=Math.max(match-180,t1+120);
+      if(t2<=match-100){tBase=t2;add(t2,out<t2?'Comida en el camino':'Comida liviana',[carbText(v('carb'),kg,.5),protText(v('prot'),kg,.5),side,`Agua: ${ml(r(kg*4,50))}`].filter(Boolean),'Llévala armada en el bolso: así no dependes de dónde paren.')}
+    } else if(!meal) add(tm,'Comida principal',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*6,50))}`,'Poco aceite, sin frituras ni crema'].filter(Boolean),'3 a 4 horas antes: tiempo de sobra para digerir.');
+    let tc=meal?Math.max(match-150,ateT+90,now+5):Math.max(match-150,tBase+90);
+    if(!meal&&!viaje&&out!=null&&out>now&&tc>out-5&&out-5>=tm+75) tc=out-5;
     if(tc<=match-60) add(tc,'Colación',colItems([`Agua: ${ml(r(kg*4,50))}`]),meal?yaComio:'Recarga liviana, se digiere rápido.');
   } else if(H>=120){
     const p=PROTS[v('prot')];
@@ -352,13 +367,13 @@ function plan(){
     mode='Último momento';
     add(now,'Algo rápido',[LAST[v('last')].f(kg),`Agua: ${ml(200)}`],'Menos de 1 hora: solo algo dulce y sorbos de agua.');
   }
-  if(out!=null&&out>now&&out<match-20) add(out,'Salida',['Botella de agua de 500–750 ml','Sorbos de 150–200 ml cada 20–30 min','Orina clara = bien hidratado'],'','out');
+  if(out!=null&&out>now&&out<match-20) add(out,'Salida',away?['Bolso con la comida del camino, la colación y lo de 30 min antes','2 botellas de agua de 500–750 ml','Sorbos de 150–200 ml cada 20–30 min']:['Botella de agua de 500–750 ml','Sorbos de 150–200 ml cada 20–30 min','Orina clara = bien hidratado'],'','out');
   if(pre&&H>=45){
     const items= club==='platano'?['½ a 1 plátano del club']: club==='otro'?['Lo que entregue el club, en porción chica (½ barra o 2–3 galletas)']:[LAST[v('last')].f(kg)];
     add(match-30,'30 min antes',[...items,`Agua: ${ml(r(kg*3,50))}`],'Come esto justo antes de entrar a la cancha: es liviano y da energía rápida.',club==='nada'?'snack':'club');
   }
   add(match,'Partido',['Sorbos de agua en el entretiempo'],'','out');
-  add(match+90,'Después del partido (dentro de 1 h)',['1–2 vasos de leche semidescremada o 1 yogur','Pan con huevo, pavo o quesillo','Agua hasta que la orina vuelva a estar clara'],'Recupera músculo y energía.');
+  add(match+90,'Después del partido (dentro de 1 h)',away?['1–2 vasos de leche semidescremada o 1 yogur (llévalos para el regreso)','Pan con huevo, pavo o quesillo (llévalo en el bolso)','Agua hasta que la orina vuelva a estar clara']:['1–2 vasos de leche semidescremada o 1 yogur','Pan con huevo, pavo o quesillo','Agua hasta que la orina vuelva a estar clara'],'Recupera músculo y energía.');
   const antes=ev.filter(e=>e.t<match&&e.t>=now).sort((a,b)=>a.t-b.t);
   const times=[...antes.map(e=>e.t),match];
   antes.forEach((e,i)=>{for(let t=e.t+60;times[i+1]-t>=40;t+=60)add(t,'Agua',[`${ml(250)} en sorbos`],'Un vaso cada hora, de a sorbos.','out')});
@@ -367,17 +382,18 @@ function plan(){
   let mode;
   if(day===0) mode=gen(now,match,out);
   else{
-    if(now<1200) add(now,'Resto del día de hoy',['Come normal y variado, sin cosas nuevas ni frituras','Toma agua durante el día: un vaso cada hora, de a sorbos'],'Hoy no hay que comer de más: lo importante es no probar cosas raras.');
+    if(now<1200) add(now,'Resto del día de hoy',['Come normal y variado, sin cosas nuevas ni frituras','Toma agua durante el día: un vaso cada hora, de a sorbos',...(away?['Arma el bolso del viaje: comida del camino, colación, algo para 30 min antes y 2 botellas de agua']:[])],'Hoy no hay que comer de más: lo importante es no probar cosas raras.');
     const aT=toMin($('ateAt').value), yaCena=v('ate')==='meal'&&aT!=null&&aT<=now&&now-aT<300;
     if(now<=1230&&!yaCena) add(Math.max(1200,now+15),'Cena',[carbText(v('carb'),kg,1),protText(v('prot'),kg,1),side,`Agua: ${ml(r(kg*4,50))}`,'Poco aceite, sin frituras ni comida rápida'].filter(Boolean),'Una cena normal con carbohidrato (fideos, arroz o papas) deja energía para mañana.');
-    add(Math.max(1290,now+15),'Antes de dormir',['1 vaso de agua','Acostarse temprano: dormir bien ayuda a rendir'],'');
-    const wake=match-420>=60?420:match-90;
-    if(match>=870) add(1440+450,'Desayuno',colItems(['1 vaso de leche, yogur o agua']),'Algo liviano al levantarse (suponemos que se levanta a las 7:00).');
+    add(Math.max(1290,now+15),'Antes de dormir',['1 vaso de agua',...(away?['Deja el bolso del viaje armado y listo en la puerta']:[]),'Acostarse temprano: dormir bien ayuda a rendir'],'');
+    const wk=toMin($('wake').value);
+    const wake=wk!=null?wk:(away&&out!=null?Math.min(420,out-60):(match-420>=60?420:match-90));
+    if(!away&&match>=870) add(1440+450,'Desayuno',colItems(['1 vaso de leche, yogur o agua']),'Algo liviano al levantarse (suponemos que se levanta a las 7:00).');
     mode=gen(1440+wake,M,O);
   }
   ev.sort((a,b)=>a.t-b.t);
   ev.forEach(e=>{e.bolso= O!=null&&O>now&&e.t>O&&e.t<M&&e.title!=='Salida'});
-  return {ev,mode,H,kg,day,match};
+  return {ev,mode,H,kg,day,match,away,noOut:away&&out==null};
 }
 
 let lastText='',lastPlan=null,shown=false,createdAt='',createdDate='';
@@ -396,7 +412,7 @@ function render(){
   if(p.err){empty(p.err,p.info?'note':'err');return}
   ['copy','pdf'].forEach(i=>$(i).hidden=false);$('how').hidden=false;lastPlan=p;$('madeAt').textContent=createdAt;
   const h=Math.floor(p.H/60), m=p.H%60;
-  $('sum').innerHTML=`<span class="chip">Faltan ${h} h${m?' '+m+' min':''}</span><span class="chip">Partido ${p.day?'mañana':'hoy'} ${fmt(p.match)}</span><span class="chip">${p.mode}</span><span class="chip">${p.kg} kg</span>`;
+  $('sum').innerHTML=`<span class="chip">Faltan ${h} h${m?' '+m+' min':''}</span><span class="chip">Partido ${p.day?'mañana':'hoy'} ${fmt(p.match)}</span>${p.away?'<span class="chip">🚌 De visita</span>':''}<span class="chip">${p.mode}</span><span class="chip">${p.kg} kg</span>${p.noOut?'<span class="err">Pon la hora de salida de la casa para repartir las comidas del viaje.</span>':''}`;
   const a=p.ev.find(e=>e.title==='30 min antes');
   if(a){$('alert30').hidden=false;$('alert30').innerHTML=`<strong>⏰ Aviso importante</strong>A las <b>${fmt(a.t)}</b>, 30 minutos antes del partido, <b>tiene que comer</b>: ${a.items[0]}. ¡No te lo saltes!`}
   else $('alert30').hidden=true;
@@ -408,7 +424,7 @@ function render(){
     return hd+`<li class="ev ${e.kind}${al?' alert':''}${isDone?' done':''}"><div class="time">${fmt(e.t)}</div><div class="body"><h3>${al?'⏰ 30 minutos antes del partido':e.title}${e.bolso?'<span class="tag'+(e.kind==='club'?' c':'')+'">'+(e.kind==='club'?'en el club':'llevar en el bolso')+'</span>':''}</h3>${al?'<span class="tag urgent">No te lo saltes</span>':''}<ul>${e.items.map(i=>`<li>${i}</li>`).join('')}</ul>${e.why?`<div class="why">${e.why}</div>`:''}${canCheck?`<button type="button" class="chk" data-k="${k}" aria-pressed="${isDone}">${isDone?'✅ Listo':'✔ Ya lo hice'}</button>`:''}</div></li>`;
   }).join('');
   let lt=-1;
-  lastText='⚽ PLAN PRE-PARTIDO ('+p.kg+' kg) · partido '+(p.day?'mañana':'hoy')+' '+fmt(p.match)+'\n\n'+p.ev.map(e=>{const d=e.t>=1440?1:0;let hd='';if(p.day&&d!==lt){lt=d;hd=(d?'📅 MAÑANA (día del partido)':'📅 HOY')+'\n\n'}
+  lastText='⚽ PLAN PRE-PARTIDO ('+p.kg+' kg) · partido '+(p.day?'mañana':'hoy')+' '+fmt(p.match)+(p.away?' · de visita 🚌':'')+'\n\n'+p.ev.map(e=>{const d=e.t>=1440?1:0;let hd='';if(p.day&&d!==lt){lt=d;hd=(d?'📅 MAÑANA (día del partido)':'📅 HOY')+'\n\n'}
     const al=e.title==='30 min antes';
     return hd+`🕐 ${fmt(e.t)} · ${al?'⏰ 30 MIN ANTES DEL PARTIDO (NO TE LO SALTES)':e.title}${e.bolso?' (llevar)':''}\n`+e.items.map(i=>'• '+i).join('\n')}).join('\n\n')+'\n\n🚫 Evitar: frituras, comida rápida, legumbres, integrales, bebidas con gas o energéticas.\n\n✅ Sigue el plan de arriba hacia abajo. Si te saltas una comida, NO comas el doble: rehaz el plan desde ahora en cadetes.cl/comida-pre-partido';
 }
@@ -428,7 +444,7 @@ $('redo').addEventListener('click',()=>{
   createdAt=hm(n);createdDate=new Date().toDateString();
   render();$('res').scrollIntoView({behavior:'smooth',block:'start'});
 });
-['kg','now','out','match','day','ate','ateAt','carb','prot','side','col','fruit','club','last','pre'].forEach(id=>{$(id).addEventListener('input',render);$(id).addEventListener('change',render)});
+['kg','now','out','match','day','where','wake','ate','ateAt','carb','prot','side','col','fruit','club','last','pre'].forEach(id=>{$(id).addEventListener('input',render);$(id).addEventListener('change',render)});
 $('copy').addEventListener('click',()=>{
   const ok=()=>{$('copied').hidden=false;setTimeout(()=>$('copied').hidden=true,1800)};
   const fallback=()=>{const b=$('buf');b.value=lastText;b.select();try{document.execCommand('copy');ok()}catch(e){}};
@@ -442,7 +458,7 @@ function buildPdf(p){
     d.splitTextToSize(clean(txt),mw-ind).forEach(l=>{if(y+size*.5>284){d.addPage();y=20}d.text(l,m+ind,y);y+=size*.5});y+=gap};
   const G=[28,112,72],K=[23,32,26],Y=[93,107,97];
   line('Plan pre-partido',22,'bold',G,0,1);
-  line(p.kg+' kg · Partido '+(p.day?'mañana':'hoy')+' a las '+fmt(p.match),12,'normal',Y,0,5);
+  line(p.kg+' kg · Partido '+(p.day?'mañana':'hoy')+' a las '+fmt(p.match)+(p.away?' · De visita':''),12,'normal',Y,0,5);
   let ld=-1;
   p.ev.forEach(e=>{
     const dd=e.t>=1440?1:0;
